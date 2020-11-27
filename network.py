@@ -1,22 +1,18 @@
 # %load network.py
 
 """
-network.py
-~~~~~~~~~~
-IT WORKS
-
 A module to implement the stochastic gradient descent learning
-algorithm for a feedforward neural network.  Gradients are calculated
-using backpropagation.  Note that I have focused on making the code
-simple, easily readable, and easily modifiable.  It is not optimized,
-and omits many desirable features.
+algorithm for a feedforward neural network and Optimal Brain Damage algorithm 
+for network prunning.  
+Gradients are calculated using backpropagation.
+
+Implementation based on: 
+- Michael A.Nielsen, "Neural Networks and Deep Learning", Determination Press, 2015
+- Yann LeCun, John S.Denker, Sara A. Solla, "Optimal Brain Damage", Advances in Neural Information Processing Systems, 1989
 """
 
 #### Libraries
-# Standard library
 import random
-
-# Third-party libraries
 import numpy as np
 
 class Network(object):
@@ -36,6 +32,9 @@ class Network(object):
         self.sizes = sizes
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(y, x)
+                        for x, y in zip(sizes[:-1], sizes[1:])]
+        #OBD 
+        self.saliencies = [np.zeros((y, x))
                         for x, y in zip(sizes[:-1], sizes[1:])]
 
     def feedforward(self, a):
@@ -139,10 +138,78 @@ class Network(object):
         \partial a for the output activations."""
         return (output_activations-y)
 
-    def OBD(self, training_data):
 
-        """ Iterate over """
+        ####### OBD module ########
+        """
+        weighted sum:    z vectors (in code) -> a (in LeCun)
+        activations:     activation (in code) -> x (in LeCun)
+        """
+    def OBD(self, training_data):
+        
+        """Calculate saliencies based on second derivatives h"""
+        nabla_h = [np.zeros(w.shape) for w in self.weights]
+
+        """ Iterate over training examples """
         for x, y in training_data:
+            delta_nabla_h = self.backpropOBD(x,y)
+            nabla_h = [nh+(dnh/len(training_data))
+                         for nh, dnh in zip(nabla_h, delta_nabla_h)]
+
+        self.saliencies = [(h * w**2)/2 
+                            for w, h in zip(self.weights, nabla_h)]
+
+        
+
+    def backpropOBD(self, x, y):
+
+        #second_derivaties = [np.zeros(b.shape) for b in self.biases]
+        h_vector = [np.zeros(w.shape) for w in self.weights]
+
+        # feedforward
+        activation = x
+        activations = [x] # list to store all the activations, layer by layer
+        zs = [] # list to store all the z vectors, layer by layer
+        for b, w in zip(self.biases, self.weights):
+            z = np.dot(w, activation)+b
+            zs.append(z)
+            activation = sigmoid(z)
+            activations.append(activation)
+
+        #backward pass
+        delta = self.cost_derivative(activations[-1], y) * \
+            sigmoid_second_prime(zs[-1])
+
+        delta2_z = boundry_OBD_derivative(zs[-1], y)
+
+        #second_derivaties[-1] = delta2_z
+        h_vector[-1] = np.dot(delta2_z, activations[-2].transpose())
+
+        #iterate over layers
+        for l in range(2, self.num_layers):
+            z = zs[-l]
+            sp = sigmoid_prime(z)
+
+            #backpropagate second term of (7) in LeCun
+            delta = np.dot(self.weights[-l+1].transpose(), delta) * \
+             sigmoid_second_prime(z)
+            
+            #backpropagate second derivative (7) in LeCun
+            delta2_z = np.dot(self.weights[-l+1].transpose(), delta2_z) * sp**2 + \
+             delta
+
+            #second_derivaties[-l] = delta2_z
+            h_vector[-l] = np.dot(delta2_z, activations[-l-1]**2.transpose())
+           
+        return h_vector
+
+
+    def boundry_OBD_derivative(self, weighted_sums, y):
+        """
+        Boundry condition at the output layer 
+        (8) in LeCun 
+        """
+        return 2*sigmoid_prime(weighted_sums)**2 - \ 
+            2(y-sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
 
 
 
