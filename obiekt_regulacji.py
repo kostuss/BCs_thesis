@@ -150,9 +150,8 @@ class SimplePID:
 		self.setPoint=setPoint
 
 
-
 if __name__ == "__main__":
-	'''
+	"""
 	dmc=DMC(8, 5, [0,1,2,3], 2, 2)
 	#print(dmc.M_p)
 	#print(dmc.M)
@@ -161,10 +160,10 @@ if __name__ == "__main__":
 	dmc.calculate_U_delta(0)
 	print(dmc.U_delta)
 	print(dmc.U_delta_P)
-	'''
+	"""
 
-	'''
-
+	
+	"""
 	#initialize simulation object
 	sim_object1=SimObject(3 ,4, 1, 2)
 	sim_object2=SimObject(1, 20, 1, 2)
@@ -184,7 +183,8 @@ if __name__ == "__main__":
 	ax.plot(time, sim_object1.u_list, color='b')
 	ax.set_title('Simulation')
 	plt.show()
-	'''
+	"""
+
 	y_zad=4
 	iterations=100
 	T1=10

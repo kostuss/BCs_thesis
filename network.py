@@ -1,5 +1,3 @@
-# %load network.py
-
 """
 A module to implement the stochastic gradient descent learning
 algorithm for a feedforward neural network and Optimal Brain Damage algorithm 
@@ -18,22 +16,18 @@ import numpy as np
 class Network(object):
 
     def __init__(self, sizes):
-        """The list ``sizes`` contains the number of neurons in the
-        respective layers of the network.  For example, if the list
-        was [2, 3, 1] then it would be a three-layer network, with the
-        first layer containing 2 neurons, the second layer 3 neurons,
-        and the third layer 1 neuron.  The biases and weights for the
-        network are initialized randomly, using a Gaussian
-        distribution with mean 0, and variance 1.  Note that the first
-        layer is assumed to be an input layer, and by convention we
-        won't set any biases for those neurons, since biases are only
-        ever used in computing the outputs from later layers."""
+        """
+        arg ``sizes`` contains the number of neurons in the
+        respective layers of the network. e.g sizes=[30,50,10]
+        The biases and weights for the network are initialized randomly,
+        using a Gaussian distribution with mean 0, and variance 1. 
+        """
         self.num_layers = len(sizes)
         self.sizes = sizes
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(y, x)
                         for x, y in zip(sizes[:-1], sizes[1:])]
-        #OBD 
+        #saliencies for each parameter (weight) used in OBD algorithm 
         self.saliencies = [np.zeros((y, x))
                         for x, y in zip(sizes[:-1], sizes[1:])]
 
@@ -48,11 +42,10 @@ class Network(object):
         """Train the neural network using mini-batch stochastic
         gradient descent.  The ``training_data`` is a list of tuples
         ``(x, y)`` representing the training inputs and the desired
-        outputs.  The other non-optional parameters are
-        self-explanatory.  If ``test_data`` is provided then the
+        outputs.
+        If ``test_data`` is provided then the
         network will be evaluated against the test data after each
-        epoch, and partial progress printed out.  This is useful for
-        tracking progress, but slows things down substantially."""
+        epoch, and partial progress printed out."""
 
         training_data = list(training_data)
         n = len(training_data)
@@ -133,6 +126,16 @@ class Network(object):
                         for (x, y) in test_data]
         return sum(int(x == y) for (x, y) in test_results)
 
+    def show_accuracy(self, test_data):
+        """
+        Print to console accuracy for the given test data
+        Method uses 'evaluate' method
+        """
+        n_test=len(test_data)
+        correct=self.evaluate(test_data)
+        print("Accuracy : {} / {} = {:.2f}".format(correct,n_test, correct/n_test))
+
+
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
@@ -158,8 +161,6 @@ class Network(object):
         self.saliencies = [(h * w**2)/2 
                             for w, h in zip(self.weights, nabla_h)]
 
-        
-
     def backpropOBD(self, x, y):
 
         #second_derivaties = [np.zeros(b.shape) for b in self.biases]
@@ -179,10 +180,9 @@ class Network(object):
         delta = self.cost_derivative(activations[-1], y) * \
             sigmoid_second_prime(zs[-1])
 
-        delta2_z = boundry_OBD_derivative(zs[-1], y)
+        delta2_z = self.boundry_OBD_derivative(zs[-1], y)
 
-        #second_derivaties[-1] = delta2_z
-        h_vector[-1] = np.dot(delta2_z, activations[-2].transpose())
+        h_vector[-1] = np.dot(delta2_z, activations[-2].transpose()**2)
 
         #iterate over layers
         for l in range(2, self.num_layers):
@@ -194,26 +194,25 @@ class Network(object):
              sigmoid_second_prime(z)
             
             #backpropagate second derivative (7) in LeCun
-            delta2_z = np.dot(self.weights[-l+1].transpose(), delta2_z) * sp**2 + \
+            delta2_z = np.dot(self.weights[-l+1].transpose()**2, delta2_z) * sp**2 + \
              delta
 
             #second_derivaties[-l] = delta2_z
-            h_vector[-l] = np.dot(delta2_z, activations[-l-1]**2.transpose())
+            h_vector[-l] = np.dot(delta2_z, activations[-l-1].transpose()**2)
            
         return h_vector
-
 
     def boundry_OBD_derivative(self, weighted_sums, y):
         """
         Boundry condition at the output layer 
         (8) in LeCun 
         """
-        return 2*sigmoid_prime(weighted_sums)**2 - \ 
-            2(y-sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
+        return 2 * sigmoid_prime(weighted_sums)**2 - \
+            2 * (y - sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
 
 
 
-#### Miscellaneous functions
+#### Sigmoid function and its derivatives
 def sigmoid(z):
     """The sigmoid function."""
     return 1.0/(1.0+np.exp(-z))
