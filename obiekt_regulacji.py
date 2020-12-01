@@ -53,9 +53,9 @@ class SimObject:
 
 def generate_s_vaules(Sim_class, D, T1, T2, K, TD):
 	sim_object=Sim_class(T1,T2,K,TD)
-	for i in range(D):
+	for i in range(D+1):
 		sim_object.make_simulation_step(1)
-	return sim_object.y_list
+	return sim_object.y_list[1:]
 
 
 class DMC:
@@ -153,13 +153,7 @@ class SimplePID:
 
 
 if __name__ == "__main__":
-
 	'''
-	s_list =generate_s_vaules(SimObject, 30, 6, 4, 1, 2)
-	print(len(s_list))
-	print(s_list)
-	
-
 	#initialize simulation object
 	sim_object1=SimObject(3 ,4, 1, 2)
 	sim_object2=SimObject(1, 20, 1, 2)
@@ -182,29 +176,38 @@ if __name__ == "__main__":
 	ax.set_title('Simulation')
 	plt.show()
 	
+
 	s_list=[1,2,4,7]
 	dmc=DMC(5, 7, s_list, 1, 1)
 
-	print(dmc.Psi)
-	print(dmc.Lambda)
+	#print(dmc.Psi)
+	#print(dmc.Lambda)
 
-	print(dmc.M_p)
-	print(dmc.M)
-
+	#print(dmc.M_p)
+	#print(dmc.M)
 	'''
 
-	y_zad=4
-	iterations=50
+	# regulacja DMC
+	y_zad=2
+	iterations=150
 	T1=5
 	T2=4
 	K=1
-	TD=3
+	TD=0
 
 	#DMC regulation
-	s_list=generate_s_vaules(SimObject, 30, T1, T2, K, TD)
+	s_list=generate_s_vaules(SimObject, 100, T1, T2, K, TD)
+
+	print(type(s_list))
+	print(len(s_list))
+	print(s_list)
+
+
 	sim_object1=SimObject(T1, T2, K, TD)
 	dmc=DMC(50, 50, s_list, 1, 1)
 	dmc.set_Y_zad(0)
+
+	print(dmc.M)
 	
 	#PID
 	#pid=SimplePID(P=0.5, I=0.1, D=0.1)
@@ -228,7 +231,6 @@ if __name__ == "__main__":
 		#y_k_pid=sim_object2.make_simulation_step(u_value_pid)
 		#u_value_pid=pid.get_u(y_k_pid)
 
-	print(dmc.U_delta)
 	fig=plt.figure()
 	ax=fig.add_axes([0,0,1,1])
 	time=[i for i in range(iterations+5)]
@@ -239,7 +241,6 @@ if __name__ == "__main__":
 	ax.plot(time, y_zad_list, color='y')
 	ax.set_title('Simulation')
 	plt.show()
-
 
  	
 
