@@ -22,20 +22,20 @@ class SimObject:
 		self.b_2=(K/(T1-T2))*(self.alpha_1*T2*(1-self.alpha_2) - \
 			self.alpha_2*T1*(1-self.alpha_1))
 
-		self.u_list=[]
-		self.y_list=[]
+		self.u_list=np.zeros(0)
+		self.y_list=np.zeros(0)
 
 	def get_lag_u(self, lag):
 
 		if lag>len(self.u_list):
-			return 0
+			return 0.0
 		else:
 			return self.u_list[-lag]
 
 	def get_lag_y(self, lag):
 
 		if lag>len(self.y_list):
-			return 0
+			return 0.0
 		else: 
 			return self.y_list[-lag]
 
@@ -47,15 +47,16 @@ class SimObject:
 		y_lag2=self.get_lag_y(2)
 
 		y_current=self.b_1*u_lag1 + self.b_2*u_lag2 - self.a_1*y_lag1 - self.a_2*y_lag2
-		self.y_list.append(y_current)
-		self.u_list.append(u)
+		self.y_list = np.append(self.y_list, y_current)
+		self.u_list = np.append(self.u_list, u)
 		return y_current
 
 def generate_s_vaules(Sim_class, D, T1, T2, K, TD):
 	sim_object=Sim_class(T1,T2,K,TD)
-	for i in range(D+1):
-		sim_object.make_simulation_step(1)
-	return sim_object.y_list[1:]
+
+	for i in range(D):
+		sim_object.make_simulation_step(1.0)
+	return sim_object.y_list[:]
 
 
 class DMC:
@@ -89,7 +90,7 @@ class DMC:
 		self.M_p = self.init_M_p(S_list, n)
 
 		#macierz
-		self.M = self.init_M(S_list,n,n_u)
+		self.M = self.init_M(S_list, n, n_u)
 
 		self.K = inv(self.M.T @ self.Psi @ self.M + self.Lambda) @ self.M.T @ self.Psi
 
@@ -99,7 +100,7 @@ class DMC:
 		arr=np.zeros((N,len(S_list)-1))
 		for i in range(N):
 			for j in range(len(S_list)-1):
-				arr[i][j]= (S_list[i+j+1] if i+j+1+1<=len(S_list) else S_list[-1]) - S_list[j]
+				arr[i][j] = (S_list[i+j+1] if i+j+1+1<=len(S_list) else S_list[-1]) - S_list[j]
 		return arr
 
 	def init_M(self, S_list, n, n_u):
@@ -153,94 +154,94 @@ class SimplePID:
 
 
 if __name__ == "__main__":
+
+
 	'''
-	#initialize simulation object
-	sim_object1=SimObject(3 ,4, 1, 2)
-	sim_object2=SimObject(1, 20, 1, 2)
-	#perform simulation
-
-	for i in range(80):
-		sim_object1.make_simulation_step(1)
-		sim_object2.make_simulation_step(1)
-		#print('Step: ',i)
-
-	print(sim_object1.y_list)
-
-	#plot results
-	fig=plt.figure()
-	ax=fig.add_axes([0,0,1,1])
-	time=[i for i in range(80)]
-	ax.plot(time, sim_object1.y_list, color='r')
-	ax.plot(time, sim_object2.y_list, color='y')
-	ax.plot(time, sim_object1.u_list, color='b')
-	ax.set_title('Simulation')
-	plt.show()
-	
-
-	s_list=[1,2,4,7]
+	s_list=[1,2,4,7,11]
 	dmc=DMC(5, 7, s_list, 1, 1)
 
-	#print(dmc.Psi)
-	#print(dmc.Lambda)
+	print(dmc.Psi)
+	print(dmc.Lambda)
 
-	#print(dmc.M_p)
-	#print(dmc.M)
-	'''
+	print(dmc.M_p)
+	print(dmc.M)
+
+'''
 
 	# regulacja DMC
-	y_zad=2
-	iterations=150
-	T1=5
+	y_zad = 2.0
+	iterations=40
+	T1=9
 	T2=4
 	K=1
-	TD=0
+	TD=3
 
-	#DMC regulation
-	s_list=generate_s_vaules(SimObject, 100, T1, T2, K, TD)
+	D=60
 
-	print(type(s_list))
-	print(len(s_list))
-	print(s_list)
+	# wektor odpowiedzi skokowych
+	s_list=np.array(generate_s_vaules(SimObject, D, T1, T2, K, TD))
 
 
-	sim_object1=SimObject(T1, T2, K, TD)
-	dmc=DMC(50, 50, s_list, 1, 1)
-	dmc.set_Y_zad(0)
-
-	print(dmc.M)
+	#wykres odpowiedzi skokowej ukladu
 	
-	#PID
-	#pid=SimplePID(P=0.5, I=0.1, D=0.1)
-	#pid.set_setPoint(y_zad)
-	#sim_object2=SimObject(T1, T2, K, TD)
+	time=[i for i in range(D)]
+	one_vector=[1 for i in range(D)]
 
-	u_value_dmc=0
-	u_value_pid=0
-	y_k_dmc=0
+	plt.step(time, s_list, color='r')
+	plt.step(time, one_vector, color='b')
+	plt.title('Wykres odpowiedzi skokowej')
+	plt.show()
+	
 
+	#obiket refulacji
+	sim_object=SimObject(T1, T2, K, TD)
+	dmc=DMC(D, D, s_list, 1, 1)
+	dmc.set_Y_zad(0)
+	print(dmc.K.shape)
+	
+	#poczatkowe wartosci sterowania
+	u_value_dmc=0.0
+	y_k_dmc=0.0
+
+	#poczatkowa petla przy wartosci zadanej 0
 	for i in range(5):
-		y_k_dmc=sim_object1.make_simulation_step(u_value_dmc)
 		u_value_dmc += dmc.calculate_U_delta(y_k_dmc)
+		y_k_dmc=sim_object.make_simulation_step(u_value_dmc)
+	
 
+	#ustawienie wartosci zadanej i regulacja DMC
 	dmc.set_Y_zad(y_zad)
-
 	for i in range(iterations):
-		y_k_dmc = sim_object1.make_simulation_step(u_value_dmc)
 		u_value_dmc += dmc.calculate_U_delta(y_k_dmc)
+		y_k_dmc = sim_object.make_simulation_step(u_value_dmc)
+	
 		
-		#y_k_pid=sim_object2.make_simulation_step(u_value_pid)
-		#u_value_pid=pid.get_u(y_k_pid)
-
-	fig=plt.figure()
-	ax=fig.add_axes([0,0,1,1])
+	#wyswietlenie przebiegu regulacji
 	time=[i for i in range(iterations+5)]
-	y_zad_list=[y_zad for i in range(iterations+5)]
+	y_zad_list=[0.0 for i in range(5)] + [y_zad for i in range(iterations)]
 
-	ax.plot(time, sim_object1.y_list, color='r')
-	ax.plot(time, sim_object1.u_list, color='b')
-	ax.plot(time, y_zad_list, color='y')
-	ax.set_title('Simulation')
+	fig = plt.figure()
+	ax = fig.add_subplot(1, 1, 1)
+	# Major ticks every 20, minor ticks every 5
+	#major_ticks = np.arange(0, D+5, 10)
+	x_ticks = np.arange(0, iterations+5, 1)
+	x_major_ticks = np.arange(0, iterations+5, 10)
+
+	ax.set_xticks(x_ticks, minor=True)
+	ax.set_xticks(x_major_ticks)
+
+	#ax.set_yticks(major_ticks)
+	#ax.set_yticks(minor_ticks, minor=True)
+
+	# And a corresponding grid
+	ax.grid(which='both')
+	ax.grid(which='minor', alpha=0.2)
+	ax.grid(which='major', alpha=0.5)
+
+	plt.step(time, sim_object.y_list, color='r')
+	plt.step(time, sim_object.u_list, color='b')
+	plt.step(time, y_zad_list, color='y')
+	plt.title('Regulacja DMC')
 	plt.show()
 
- 	
 
