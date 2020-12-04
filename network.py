@@ -37,6 +37,14 @@ class Network(object):
             a = sigmoid(np.dot(w, a)+b)
         return a
 
+    def feedforward_epsilon(self, a, weights):
+        """Return the output of the network with chosen weights. 
+        Used for calculating symetric derivative.
+        """
+        for b, w in zip(self.biases, weights):
+            a = sigmoid(np.dot(w, a)+b)
+        return a
+
     def SGD(self, training_data, epochs, mini_batch_size, eta,
             test_data=None):
         """Train the neural network using mini-batch stochastic
@@ -136,12 +144,64 @@ class Network(object):
         print("Accuracy : {} / {} = {:.2f}".format(correct,n_test, correct/n_test))
 
 
+    def cost_function(self, output_activations, y):
+        """Return cost for a single training example  """
+        return 1/2 * np.linalg.norm(y - output_activations)**2
+
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
         return (output_activations-y)
 
 
+    def second_symetric_derivative(self, wt_index, training_example):
+        """
+        Calculate second derivative (diagonal of the Hesian) for the given parameter 
+        (weight) using second symetric derivative  
+        arg wt_index - tuple for weight identification (layer, to i-th neuron, from j-th neuron)
+        """
+        
+        x = training_example[0]
+        y = training_example[1]
+
+        epsilon = np.finfo(np.float64).eps
+
+        # positive epsilon change
+        weights_epsilon = [np.copy(cop) for cop in self.weights]
+        #print("Weight =:" , weights_epsilon[wt_index[0]][wt_index[1]][wt_index[2]])
+        #print("Weight  :" , self.weights[wt_index[0]][wt_index[1]][wt_index[2]])
+
+        weights_epsilon[wt_index[0]][wt_index[1]][wt_index[2]] += epsilon
+        #print("Weight +:",weights_epsilon[wt_index[0]][wt_index[1]][wt_index[2]])
+        #print("Weight  :" , self.weights[wt_index[0]][wt_index[1]][wt_index[2]])
+        f_xh_pos = self.cost_function(self.feedforward_epsilon(x, weights_epsilon), y)
+        print("Value +:" , f_xh_pos)
+
+        # negative epsilon change
+        weights_epsilon = [np.copy(cop) for cop in self.weights]
+        weights_epsilon[wt_index[0]][wt_index[1]][wt_index[2]] -= epsilon
+        #print("Weight -:" , weights_epsilon[wt_index[0]][wt_index[1]][wt_index[2]])
+        #print("Weight  :" , self.weights[wt_index[0]][wt_index[1]][wt_index[2]])
+        f_xh_neg = self.cost_function(self.feedforward_epsilon(x, weights_epsilon), y)
+        print("Value -:" , f_xh_neg)
+
+        # without epsilon change
+        f_x = self.cost_function(self.feedforward(x), y)
+        print("Value =:" , f_x)
+        return (f_xh_pos - (2 * f_x) + f_xh_neg) / epsilon**2
+
+
+    def evaluate_second_derivative(self, wt_index, training_example):
+
+        symetric_derivative = self.second_symetric_derivative(wt_index, training_example)
+
+        x = training_example[0]
+        y = training_example[1]
+        backprop_derivative = self.backpropOBD(training_example[0], training_example[1])[ wt_index[0] ][ wt_index[1] ][ wt_index[2] ]
+
+        return (symetric_derivative , backprop_derivative)
+
+        
         ####### OBD module ########
         """
         weighted sum:    z vectors (in code) -> a (in LeCun)
