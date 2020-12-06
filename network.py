@@ -31,6 +31,10 @@ class Network(object):
         self.saliencies = [np.zeros((y, x))
                         for x, y in zip(sizes[:-1], sizes[1:])]
 
+        #mask for retraining network with freezed weights 
+        self.mask = [np.ones((y, x))
+                        for x, y in zip(sizes[:-1], sizes[1:])]
+
     def feedforward(self, a):
         """Return the output of the network if ``a`` is input."""
         for b, w in zip(self.biases, self.weights):
@@ -85,8 +89,8 @@ class Network(object):
             delta_nabla_b, delta_nabla_w = self.backprop(x, y)
             nabla_b = [nb+dnb for nb, dnb in zip(nabla_b, delta_nabla_b)]
             nabla_w = [nw+dnw for nw, dnw in zip(nabla_w, delta_nabla_w)]
-        self.weights = [w-(eta/len(mini_batch))*nw
-                        for w, nw in zip(self.weights, nabla_w)]
+        self.weights = [(w-(eta/len(mini_batch))*nw) * mask
+                        for w, nw, mask in zip(self.weights, nabla_w, self.mask)]
         self.biases = [b-(eta/len(mini_batch))*nb
                        for b, nb in zip(self.biases, nabla_b)]
 
@@ -141,7 +145,7 @@ class Network(object):
         """
         n_test=len(test_data)
         correct=self.evaluate(test_data)
-        print("Accuracy : {} / {} = {:.2f}".format(correct,n_test, correct/n_test))
+        print("Accuracy : {} / {} = {:.3f}".format(correct,n_test, correct/n_test))
 
 
     def cost_function(self, output_activations, y):
@@ -207,7 +211,7 @@ class Network(object):
         weighted sum:    z vectors (in code) -> a (in LeCun)
         activations:     activation (in code) -> x (in LeCun)
         """
-    def OBD(self, training_data):
+    def OBD(self, training_data, percent_to_cut):
         
         """Calculate saliencies based on second derivatives h"""
         nabla_h = [np.zeros(w.shape) for w in self.weights]
@@ -215,11 +219,15 @@ class Network(object):
         """ Iterate over training examples """
         for x, y in training_data:
             delta_nabla_h = self.backpropOBD(x,y)
-            nabla_h = [nh+(dnh/len(training_data))
+            nabla_h = [nh + dnh
                          for nh, dnh in zip(nabla_h, delta_nabla_h)]
 
-        self.saliencies = [(h * w**2)/2 
+        self.saliencies = [(h * w**2)/(2 * len(training_data))
                             for w, h in zip(self.weights, nabla_h)]
+
+        self.cut_weights(percent_to_cut)
+
+
 
     def backpropOBD(self, x, y):
 
@@ -237,8 +245,7 @@ class Network(object):
             activations.append(activation)
 
         #backward pass
-        delta = self.cost_derivative(activations[-1], y) * \
-            sigmoid_second_prime(zs[-1])
+        delta = self.cost_derivative(activations[-1], y)
 
         delta2_z = self.boundry_OBD_derivative(zs[-1], y)
 
@@ -248,14 +255,14 @@ class Network(object):
         for l in range(2, self.num_layers):
             z = zs[-l]
             sp = sigmoid_prime(z)
+            sp2 = sigmoid_second_prime(z)
 
             #backpropagate second term of (7) in LeCun
-            delta = np.dot(self.weights[-l+1].transpose(), delta) * \
-             sigmoid_second_prime(z)
+            delta = np.dot(self.weights[-l+1].transpose(), delta * sigmoid_prime(zs[-l+1]))
             
             #backpropagate second derivative (7) in LeCun
             delta2_z = np.dot(self.weights[-l+1].transpose()**2, delta2_z) * sp**2 + \
-             delta
+             delta * sp2
 
             #second_derivaties[-l] = delta2_z
             h_vector[-l] = np.dot(delta2_z, activations[-l-1].transpose()**2)
@@ -270,6 +277,33 @@ class Network(object):
         return 2 * sigmoid_prime(weighted_sums)**2 - \
             2 * (y - sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
 
+    def cut_weights(self, percent_to_cut):
+        """Cuts given part of weights by setting it to zero and freezing """
+
+        #List of tuples (index of weight , saliency )
+        saliencies_list = []
+
+        for i_layer , saliencies in enumerate(self.saliencies):
+            for i_row, row in enumerate(saliencies.tolist()):
+                for i_column, value in enumerate(row):
+                    saliencies_list.append(( [i_layer, i_row, i_column], value))
+
+
+        saliencies_list.sort(key = lambda x: x[1])
+
+        to_cut = [element[0] for element in
+             saliencies_list[:int(len(saliencies_list) * percent_to_cut)]]
+
+        print("{} out of {} weights cut".format(len(to_cut), len(saliencies_list)))
+
+        for wt_index in to_cut:
+            self.weights[wt_index[0]][wt_index[1]][wt_index[2]] = 0.0
+            self.mask[wt_index[0]][wt_index[1]][wt_index[2]] = 0.0
+
+    def restore_mask(self):
+
+        for i in range(len(self.mask)):
+            self.mask[i].fill(1.0)
 
 
 #### Sigmoid function and its derivatives
