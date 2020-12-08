@@ -168,7 +168,8 @@ class Network(object):
         x = training_example[0]
         y = training_example[1]
 
-        epsilon = np.finfo(np.float64).eps
+        #TODO : przetestowac rozne epsilony
+        epsilon = 10000 * np.finfo(np.float64).eps
 
         # positive epsilon change
         weights_epsilon = [np.copy(cop) for cop in self.weights]
@@ -261,8 +262,9 @@ class Network(object):
             delta = np.dot(self.weights[-l+1].transpose(), delta * sigmoid_prime(zs[-l+1]))
             
             #backpropagate second derivative (7) in LeCun
-            delta2_z = np.dot(self.weights[-l+1].transpose()**2, delta2_z) * sp**2 + \
-             delta * sp2
+            delta2_z =  sp**2 * np.dot(self.weights[-l+1].transpose()**2, delta2_z) # + \
+            #for testing approximation stated in LeCun
+            # sp2 * delta 
 
             #second_derivaties[-l] = delta2_z
             h_vector[-l] = np.dot(delta2_z, activations[-l-1].transpose()**2)
@@ -274,8 +276,8 @@ class Network(object):
         Boundry condition at the output layer 
         (8) in LeCun 
         """
-        return 2 * sigmoid_prime(weighted_sums)**2 - \
-            2 * (y - sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
+        return 2 * sigmoid_prime(weighted_sums)**2 #- \
+            #2 * (y - sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
 
     def cut_weights(self, percent_to_cut):
         """Cuts given part of weights by setting it to zero and freezing """
