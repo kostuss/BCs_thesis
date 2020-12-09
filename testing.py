@@ -15,17 +15,11 @@ def sigmoid_second_prime(z):
     return -(1/(np.exp(z)+1))+(3/((np.exp(z)+1)**2))-(2/((np.exp(z)+1)**3))
 
 
-x_range=[x for x in np.arange(-5,5,0.05)]
-sig=[sigmoid(x) for x in np.arange(-5,5,0.05)]
-sig_prime=[sigmoid_prime(x) for x in np.arange(-5,5,0.05)]
-sig_2prime=[sigmoid_second_prime(x) for x in np.arange(-5,5,0.05)]
+
+def simulation(B):
+	for i in range(10):
+		B +=1
 
 
-fig=plt.figure()
-ax=fig.add_axes([0,0,1,1])
-ax.plot(x_range, sig, color='r')
-ax.plot(x_range, sig_prime, color='b')
-ax.plot(x_range, sig_2prime, color='y')
-ax.set_title('Sigmoid with derivative')
-plt.show()
+
 

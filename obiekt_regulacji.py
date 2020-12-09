@@ -5,25 +5,28 @@ from numpy.linalg import inv
 
 
 class SimObject: 
+
 	def __init__(self, T1, T2, K , TD):
 
 		#parameters defininig regulation object
-		self.T1=T1
-		self.T2=T2
-		self.K=K
-		self.TD=TD
+		self.T1 = T1
+		self.T2 = T2
+		self.K = K
+		self.TD = TD
 
 		#constatns for equation
-		self.alpha_1=math.exp(-(1/T1))
-		self.alpha_2=math.exp(-(1/T2))
-		self.a_1=-self.alpha_1-self.alpha_2
-		self.a_2=self.alpha_1*self.alpha_2
-		self.b_1=(K/(T1-T2))*(T1*(1-self.alpha_1)-T2*(1-self.alpha_2))
-		self.b_2=(K/(T1-T2))*(self.alpha_1*T2*(1-self.alpha_2) - \
+		self.alpha_1 = math.exp(-(1/T1))
+		self.alpha_2 = math.exp(-(1/T2))
+		self.a_1 = -self.alpha_1-self.alpha_2
+		self.a_2 = self.alpha_1*self.alpha_2
+		self.b_1 = (K/(T1-T2))*(T1*(1-self.alpha_1)-T2*(1-self.alpha_2))
+		self.b_2 = (K/(T1-T2))*(self.alpha_1*T2*(1-self.alpha_2) - \
 			self.alpha_2*T1*(1-self.alpha_1))
 
-		self.u_list=np.zeros(0)
-		self.y_list=np.zeros(0)
+		self.u_list = np.zeros(0)
+		self.y_list = np.zeros(0)
+		self.y_zad_list = np.zeros(0)
+		self.e_list = np.zeros(0)
 
 	def get_lag_u(self, lag):
 
@@ -39,7 +42,7 @@ class SimObject:
 		else: 
 			return self.y_list[-lag]
 
-	def make_simulation_step(self, u):
+	def make_simulation_step(self, u, y_zad):
 		#first lag
 		u_lag1=self.get_lag_u(self.TD+1)
 		u_lag2=self.get_lag_u(self.TD+2)
@@ -49,15 +52,11 @@ class SimObject:
 		y_current=self.b_1*u_lag1 + self.b_2*u_lag2 - self.a_1*y_lag1 - self.a_2*y_lag2
 		self.y_list = np.append(self.y_list, y_current)
 		self.u_list = np.append(self.u_list, u)
+		self.y_zad_list = np.append(self.y_zad_list, y_zad)
 		return y_current
 
-def generate_s_vaules(Sim_class, D, T1, T2, K, TD):
-	sim_object=Sim_class(T1,T2,K,TD)
-
-	for i in range(D):
-		sim_object.make_simulation_step(1.0)
-	return sim_object.y_list[:]
-
+	def calculate_e_values(self):
+		self.e_list = self.y_zad_list - self.y_list
 
 class DMC:
 
@@ -153,95 +152,118 @@ class SimplePID:
 		self.setPoint=setPoint
 
 
-if __name__ == "__main__":
+def generate_s_vaules(Sim_class, D, T1, T2, K, TD):
+	sim_object=Sim_class(T1,T2,K,TD)
 
+	for i in range(D):
+		sim_object.make_simulation_step(1.0, 1.0)
+	return sim_object.y_list[:]
 
-	'''
-	s_list=[1,2,4,7,11]
-	dmc=DMC(5, 7, s_list, 1, 1)
-
-	print(dmc.Psi)
-	print(dmc.Lambda)
-
-	print(dmc.M_p)
-	print(dmc.M)
-
-'''
-
-	# regulacja DMC
-	y_zad = 2.0
-	iterations=40
-	T1=9
-	T2=4
-	K=1
-	TD=3
-
-	D=60
-
-	# wektor odpowiedzi skokowych
-	s_list=np.array(generate_s_vaules(SimObject, D, T1, T2, K, TD))
-
-
-	#wykres odpowiedzi skokowej ukladu
-	
-	time=[i for i in range(D)]
-	one_vector=[1 for i in range(D)]
-
-	plt.step(time, s_list, color='r')
-	plt.step(time, one_vector, color='b')
-	plt.title('Wykres odpowiedzi skokowej')
-	plt.show()
-	
-
-	#obiket refulacji
-	sim_object=SimObject(T1, T2, K, TD)
-	dmc=DMC(D, D, s_list, 1, 1)
-	dmc.set_Y_zad(0)
-	print(dmc.K.shape)
-	
-	#poczatkowe wartosci sterowania
-	u_value_dmc=0.0
-	y_k_dmc=0.0
-
-	#poczatkowa petla przy wartosci zadanej 0
-	for i in range(5):
-		u_value_dmc += dmc.calculate_U_delta(y_k_dmc)
-		y_k_dmc=sim_object.make_simulation_step(u_value_dmc)
-	
-
-	#ustawienie wartosci zadanej i regulacja DMC
-	dmc.set_Y_zad(y_zad)
+def simulation_loop(controller, sim_object, iterations, y_zad, u_value, y_value):
+	controller.set_Y_zad(y_zad)
 	for i in range(iterations):
-		u_value_dmc += dmc.calculate_U_delta(y_k_dmc)
-		y_k_dmc = sim_object.make_simulation_step(u_value_dmc)
-	
-		
+		u_value += controller.calculate_U_delta(y_value)
+		y_value = sim_object.make_simulation_step(u_value, y_zad)
+
+	return u_value, y_value
+
+def plot_simulation(sim_object):
 	#wyswietlenie przebiegu regulacji
-	time=[i for i in range(iterations+5)]
-	y_zad_list=[0.0 for i in range(5)] + [y_zad for i in range(iterations)]
+	sim_length = len(sim_object.y_list)
+	time=[i for i in range(sim_length)]
 
 	fig = plt.figure()
 	ax = fig.add_subplot(1, 1, 1)
 	# Major ticks every 20, minor ticks every 5
 	#major_ticks = np.arange(0, D+5, 10)
-	x_ticks = np.arange(0, iterations+5, 1)
-	x_major_ticks = np.arange(0, iterations+5, 10)
+	x_ticks = np.arange(0, sim_length, 1)
+	x_major_ticks = np.arange(0, sim_length, 10)
 
 	ax.set_xticks(x_ticks, minor=True)
 	ax.set_xticks(x_major_ticks)
 
-	#ax.set_yticks(major_ticks)
-	#ax.set_yticks(minor_ticks, minor=True)
 
 	# And a corresponding grid
 	ax.grid(which='both')
 	ax.grid(which='minor', alpha=0.2)
 	ax.grid(which='major', alpha=0.5)
 
-	plt.step(time, sim_object.y_list, color='r')
-	plt.step(time, sim_object.u_list, color='b')
-	plt.step(time, y_zad_list, color='y')
+	plt.step(time, sim_object.y_list, color='r', label = 'wyjście obiektu')
+	plt.step(time, sim_object.u_list, color='b', label = 'sterowanie')
+	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana')
 	plt.title('Regulacja DMC')
+	plt.xlabel("k")
+	plt.legend()
 	plt.show()
 
+
+def plot_step_response(s_list):
+	#wyswietlenie odpowiedzi skokowej obiektu regulacji
+	sim_length = len(s_list)
+	time=[i for i in range(sim_length)]
+	one_vector=[1 for i in range(sim_length)]
+
+	fig = plt.figure()
+	ax = fig.add_subplot(1, 1, 1)
+	# Major ticks every 20, minor ticks every 5
+	#major_ticks = np.arange(0, D+5, 10)
+	x_ticks = np.arange(0, sim_length, 1)
+	x_major_ticks = np.arange(0, sim_length, 10)
+
+	ax.set_xticks(x_ticks, minor=True)
+	ax.set_xticks(x_major_ticks)
+
+	# And a corresponding grid
+	ax.grid(which='both')
+	ax.grid(which='minor', alpha=0.2)
+	ax.grid(which='major', alpha=0.5)
+
+	plt.step(time, s_list, color='r')
+	plt.step(time, one_vector, color='b')
+	plt.title('Wykres odpowiedzi skokowej')
+	plt.show()
+
+
+if __name__ == "__main__":
+
+
+	# regulacja DMC
+	iterations=35
+	T1=4
+	T2=3
+	K=1
+	TD=5
+	D=60
+
+	# wektor odpowiedzi skokowych
+	s_list=np.array(generate_s_vaules(SimObject, D, T1, T2, K, TD))
+	plot_step_response(s_list)
+
+	#obiekt refulacji
+	sim_object=SimObject(T1, T2, K, TD)
+	dmc=DMC(D, D, s_list, 1, 1)
+	
+	#poczatkowe wartosci sterowania
+	u_value_dmc=0.0
+	y_k_dmc=0.0
+	
+	#poczatkowa petla przy wartosci zadanej 0
+	y_zad = 0.0
+	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, 5,
+	 y_zad, u_value_dmc , y_k_dmc)
+	
+	#zmiana wartosci zadanej i regulacja
+	y_zad = 10.0
+	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
+	 y_zad, u_value_dmc , y_k_dmc)
+	
+	#zmiana wartosci zadanej i regulacja
+	'''
+	y_zad = 0.0
+	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
+	 y_zad, u_value_dmc , y_k_dmc)
+	'''
+
+	sim_object.calculate_e_values()
+	plot_simulation(sim_object)
 
