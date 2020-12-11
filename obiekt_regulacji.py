@@ -152,8 +152,8 @@ class SimplePID:
 		self.setPoint=setPoint
 
 
-def generate_s_vaules(Sim_class, D, T1, T2, K, TD):
-	sim_object=Sim_class(T1,T2,K,TD)
+def generate_s_vaules(D, T1, T2, K, TD):
+	sim_object = SimObject(T1,T2,K,TD)
 
 	for i in range(D):
 		sim_object.make_simulation_step(1.0, 1.0)
@@ -188,9 +188,9 @@ def plot_simulation(sim_object):
 	ax.grid(which='minor', alpha=0.2)
 	ax.grid(which='major', alpha=0.5)
 
-	plt.step(time, sim_object.y_list, color='r', label = 'wyjście obiektu')
-	plt.step(time, sim_object.u_list, color='b', label = 'sterowanie')
-	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana')
+	plt.step(time, sim_object.y_list, color='r', label = 'wyjście obiektu', where='post')
+	plt.step(time, sim_object.u_list, color='b', label = 'sterowanie', where='post')
+	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana', where='post')
 	plt.title('Regulacja DMC')
 	plt.xlabel("k")
 	plt.legend()
@@ -218,8 +218,8 @@ def plot_step_response(s_list):
 	ax.grid(which='minor', alpha=0.2)
 	ax.grid(which='major', alpha=0.5)
 
-	plt.step(time, s_list, color='r')
-	plt.step(time, one_vector, color='b')
+	plt.step(time, s_list, color='r', where='post')
+	plt.step(time, one_vector, color='b', where='post')
 	plt.title('Wykres odpowiedzi skokowej')
 	plt.show()
 
