@@ -191,6 +191,8 @@ def plot_simulation(sim_object):
 	plt.step(time, sim_object.y_list, color='r', label = 'wyjście obiektu', where='post')
 	plt.step(time, sim_object.u_list, color='b', label = 'sterowanie', where='post')
 	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana', where='post')
+	plt.step(time, sim_object.e_list, color='g', label = 'uchyb_regulacji', where='post')
+
 	plt.title('Regulacja DMC')
 	plt.xlabel("k")
 	plt.legend()
@@ -228,32 +230,37 @@ if __name__ == "__main__":
 
 
 	# regulacja DMC
-	iterations=35
-	T1=4
-	T2=3
+	iterations=40
+	T1=5.5
+	T2=2.5
 	K=1
-	TD=5
+	TD=8
 	D=60
 
 	# wektor odpowiedzi skokowych
-	s_list=np.array(generate_s_vaules(SimObject, D, T1, T2, K, TD))
+	s_list = np.array(generate_s_vaules(D, T1, T2, K, TD))
 	plot_step_response(s_list)
 
 	#obiekt refulacji
-	sim_object=SimObject(T1, T2, K, TD)
-	dmc=DMC(D, D, s_list, 1, 1)
+	sim_object = SimObject(T1, T2, K, TD)
+	dmc = DMC(D, D, s_list, 1, 1)
 	
 	#poczatkowe wartosci sterowania
-	u_value_dmc=0.0
-	y_k_dmc=0.0
+	u_value_dmc = 0.0
+	y_k_dmc = 0.0
 	
 	#poczatkowa petla przy wartosci zadanej 0
 	y_zad = 0.0
-	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, 5,
+	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, 1,
 	 y_zad, u_value_dmc , y_k_dmc)
 	
 	#zmiana wartosci zadanej i regulacja
 	y_zad = 10.0
+	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
+	 y_zad, u_value_dmc , y_k_dmc)
+
+	#zmiana wartosci zadanej i regulacja
+	y_zad = 0.0
 	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
 	 y_zad, u_value_dmc , y_k_dmc)
 	
