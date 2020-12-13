@@ -48,6 +48,18 @@ class Scaler:
 		return scaled_data
 
 
+def preproces_data(file):
+
+	train_dmc = pickle.load(open(file, "rb"))
+	scaler_object = Scaler(train_dmc)
+	scaled_train = scaler_object(train_dmc)
+
+	return scaled_train
+
+
+
+
+
 if __name__ == "__main__":
 
 	scaler = Scaler([0])

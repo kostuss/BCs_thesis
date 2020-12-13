@@ -169,7 +169,7 @@ class Network(object):
         y = training_example[1]
 
         #TODO : przetestowac rozne epsilony
-        epsilon = 10000 * np.finfo(np.float64).eps
+        epsilon = np.finfo(np.float32).eps
 
         # positive epsilon change
         weights_epsilon = [np.copy(cop) for cop in self.weights]

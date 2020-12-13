@@ -132,6 +132,32 @@ class DMC:
 
 		return delta_u
 
+class NetController:
+
+	def __init__(self, net, scaler):
+
+		self.net = net
+		self.scaler = scaler
+		self.U_lag = np.zeros(39)
+		self.E_lag = np.zeros(40)
+
+	def update_U_lag(self, u):
+		self.U_lag = np.delete(np.insert(self.U_lag, 0, u), len(self.U_lag)-1)
+
+	def update_E_lag(self, e):
+		self.E_lag = np.delete(np.insert(self.E_lag, 0, e), len(self.E_lag)-1)
+
+	def calculate_u_value(self, Y_current, Y_zad):
+
+		self.update_E_lag(Y_zad - Y_current)
+		X = np.concatenate((self.U_lag , self.E_lag, np.array([Y_current]))).reshape(-1,1)
+		u_current = self.scaler.inv_scale_output_value(self.net.feedforward(self.scaler.scale_input_value(X))[0][0])
+		self.update_U_lag(u_current)
+
+		return u_current
+
+
+
 class SimplePID:
 
 	def __init__(self, P=0.2, I=0.1, D=0.1):
@@ -167,7 +193,15 @@ def simulation_loop(controller, sim_object, iterations, y_zad, u_value, y_value)
 
 	return u_value, y_value
 
-def plot_simulation(sim_object):
+def simulation_loop_network(net_controller, sim_object, iterations, y_zad, u_value, y_value):
+	for i in range(iterations):
+		u_value = net_controller.calculate_u_value(y_value, y_zad)
+		y_value = sim_object.make_simulation_step(u_value, y_zad)
+
+	return u_value, y_value
+
+
+def plot_simulation(sim_object, title):
 	#wyswietlenie przebiegu regulacji
 	sim_length = len(sim_object.y_list)
 	time=[i for i in range(sim_length)]
@@ -191,9 +225,9 @@ def plot_simulation(sim_object):
 	plt.step(time, sim_object.y_list, color='r', label = 'wyjście obiektu', where='post')
 	plt.step(time, sim_object.u_list, color='b', label = 'sterowanie', where='post')
 	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana', where='post')
-	plt.step(time, sim_object.e_list, color='g', label = 'uchyb_regulacji', where='post')
+	#plt.step(time, sim_object.e_list, color='g', label = 'uchyb_regulacji', where='post')
 
-	plt.title('Regulacja DMC')
+	plt.title(f"Regulacja {title}")
 	plt.xlabel("k")
 	plt.legend()
 	plt.show()
@@ -272,5 +306,5 @@ if __name__ == "__main__":
 	'''
 
 	sim_object.calculate_e_values()
-	plot_simulation(sim_object)
+	plot_simulation(sim_object,'DMC')
 
