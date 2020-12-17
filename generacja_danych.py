@@ -20,20 +20,20 @@ def print_size(object):
 learning_data = []
 
 # regulacja DMC
-iterations = 50
+iterations = 40
 D = 60
 K = 1
 
 
 #iteracja po T1 i T2
-for T1 in np.arange(2,10,0.5):
-	for T2 in np.arange(1,T1,0.5):
+for T1 in np.arange(2,9,1):
+	for T2 in np.arange(1,T1,1):
 		#iteracja po opoznieniu
 		for TD in np.arange(1,7,1):
 			# wektor odpowiedzi skokowych
 			s_list = np.array(obiekt_regulacji.generate_s_vaules(D, T1, T2, K, TD))
 			#iteracja po wartosciach zadanych
-			for zad in np.arange(1,11,0.5):
+			for zad in np.arange(1,10,0.1):
 				#obiekt regulacji
 				sim_object= obiekt_regulacji.SimObject(T1, T2, K, TD)
 				dmc = obiekt_regulacji.DMC(D, D, s_list, 1, 1)
@@ -60,19 +60,20 @@ for T1 in np.arange(2,10,0.5):
 
 				for i in range(len(sim_object.u_list)):
 					#pojedynczy przyklad uczacy
-					X = np.zeros(80)
+					X = np.zeros(31)
 
-					start = i - 39 if i-39 > 0 else 0
-					#przepisanie przeszylych 29 sygnalow sterowania lub kr
-					for idx, u in enumerate(np.flip(sim_object.u_list[start:i])):
-						X[idx] = u
+					#start = i - 29 if i- 29 > 0 else 0
+					##przepisanie przeszylych 29 sygnalow sterowania lub kr
+					#for idx, u in enumerate(np.flip(sim_object.u_list[start:i])):
+					#	X[idx] = u
 
+					start = i - 29 if i - 29 > 0 else 0
 					#przepisanie obecnej i przeszlych 29 wartosci uchybu
 					for idx, e in enumerate(np.flip(sim_object.e_list[start:i+1])):
-						X[idx+39] = e
+						X[idx] = e
 					
 					#dodanie obecnego wyjscia
-					X[79] = sim_object.y_list[i]
+					X[30] = sim_object.y_zad_list[i]
 
 					#dodanie przykladu uczacego do listy
 					learning_data.append((X.reshape(-1,1), sim_object.u_list[i]))
@@ -83,7 +84,7 @@ print_size(learning_data)
 print(type(learning_data[0]))
 print(learning_data[0][0].shape)
 
-joblib.dump(learning_data, 'dane/dmc_regulation_examples_1.pkl',1)  
+joblib.dump(learning_data, 'dane/dmc_regulation_examples_3.pkl',1)  
 #zapisanie danych w formacie pickle
 #pickle.dump(learning_data, open("dane/dmc_regulation_examples.p", "wb"))
 

@@ -138,8 +138,8 @@ class NetController:
 
 		self.net = net
 		self.scaler = scaler
-		self.U_lag = np.zeros(39)
-		self.E_lag = np.zeros(40)
+		self.U_lag = np.zeros(9)
+		self.E_lag = np.zeros(30)
 
 	def update_U_lag(self, u):
 		self.U_lag = np.delete(np.insert(self.U_lag, 0, u), len(self.U_lag)-1)
@@ -150,7 +150,8 @@ class NetController:
 	def calculate_u_value(self, Y_current, Y_zad):
 
 		self.update_E_lag(Y_zad - Y_current)
-		X = np.concatenate((self.U_lag , self.E_lag, np.array([Y_current]))).reshape(-1,1)
+		#X = np.concatenate((self.U_lag , self.E_lag, np.array([Y_zad]))).reshape(-1,1)
+		X = np.concatenate((self.E_lag, np.array([Y_zad]))).reshape(-1,1)
 		u_current = self.scaler.inv_scale_output_value(self.net.feedforward(self.scaler.scale_input_value(X))[0][0])
 		self.update_U_lag(u_current)
 
@@ -264,11 +265,11 @@ if __name__ == "__main__":
 
 
 	# regulacja DMC
-	iterations=40
-	T1=5.5
-	T2=2.5
+	iterations=35
+	T1=5
+	T2=4
 	K=1
-	TD=8
+	TD=3
 	D=60
 
 	# wektor odpowiedzi skokowych
@@ -293,10 +294,6 @@ if __name__ == "__main__":
 	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
 	 y_zad, u_value_dmc , y_k_dmc)
 
-	#zmiana wartosci zadanej i regulacja
-	y_zad = 0.0
-	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
-	 y_zad, u_value_dmc , y_k_dmc)
 	
 	#zmiana wartosci zadanej i regulacja
 	'''

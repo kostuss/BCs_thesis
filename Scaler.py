@@ -58,8 +58,6 @@ def preproces_data(file):
 
 
 
-
-
 if __name__ == "__main__":
 
 	scaler = Scaler([0])
