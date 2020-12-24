@@ -35,6 +35,8 @@ class Network(object):
         self.mask = [np.ones((y, x))
                         for x, y in zip(sizes[:-1], sizes[1:])]
 
+        self.cost_delta_epsilon = 0.000005
+
     def feedforward(self, a):
         """Return the output of the network if ``a`` is input."""
         for b, w in zip(self.biases, self.weights):
@@ -49,7 +51,7 @@ class Network(object):
             a = sigmoid(np.dot(w, a)+b)
         return a
 
-    def SGD(self, training_data, epochs, mini_batch_size, eta,
+    def SGD(self, training_data, epochs_limit, mini_batch_size, eta,
             test_data=None):
         """Train the neural network using mini-batch stochastic
         gradient descent.  The ``training_data`` is a list of tuples
@@ -61,22 +63,40 @@ class Network(object):
 
         training_data = list(training_data)
         n = len(training_data)
+        total_train_cost = []
+        total_test_cost = []
+        prev_cost = np.inf
+        prev_delta_cost_list = np.full((3,),np.inf)
 
         if test_data:
             test_data = list(test_data)
             n_test = len(test_data)
 
-        for j in range(epochs):
+        for j in range(epochs_limit):
             random.shuffle(training_data)
             mini_batches = [
                 training_data[k:k+mini_batch_size]
                 for k in range(0, n, mini_batch_size)]
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
+
+            if (j+1)%50 == 0: 
+                print("Epoch {} complete".format(j+1))
+
+            current_cost = self.total_cost(training_data)
+            total_train_cost.append(current_cost)
+
             if test_data:
-                print("Epoch {} : {} / {}".format(j,self.evaluate(test_data),n_test));
-            else:
-                print("Epoch {} complete".format(j))
+                total_test_cost.append(self.total_cost(test_data))
+            prev_delta_cost_list = np.delete(np.insert(prev_delta_cost_list, 0, np.abs(prev_cost - current_cost)),-1)
+            prev_cost = current_cost
+
+            #stopping rule
+            if all(prev_delta_cost_list < self.cost_delta_epsilon):
+                print("Training ended at epoch {}".format(j+1))
+                return total_train_cost, total_test_cost 
+
+        return total_train_cost, total_test_cost 
 
     def update_mini_batch(self, mini_batch, eta):
         """Update the network's weights and biases by applying
@@ -148,9 +168,19 @@ class Network(object):
         print("Accuracy : {} / {} = {:.3f}".format(correct,n_test, correct/n_test))
 
 
-    def cost_function(self, output_activations, y):
-        """Return cost for a single training example  """
-        return 1/2 * np.linalg.norm(y - output_activations)**2
+    def total_cost(self, data):
+        """Return quadratic cost for all examples"""
+        cost = 0.0
+
+        for x, y in data: 
+            a = self.feedforward(x)
+            cost += self.cost_function(a, y)/len(data)
+
+        return cost
+
+    def cost_function(self, a, y):
+        """Return quadratic cost for a single example  """
+        return 0.5*np.linalg.norm(a-y)**2
 
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /
@@ -212,21 +242,30 @@ class Network(object):
         weighted sum:    z vectors (in code) -> a (in LeCun)
         activations:     activation (in code) -> x (in LeCun)
         """
-    def OBD(self, training_data, percent_to_cut):
+    def OBD(self, train_data, test_data):
         
         """Calculate saliencies based on second derivatives h"""
         nabla_h = [np.zeros(w.shape) for w in self.weights]
+        par_number = sum([w.shape[0]*w.shape[1] for w in self.weights])
 
-        """ Iterate over training examples """
-        for x, y in training_data:
-            delta_nabla_h = self.backpropOBD(x,y)
-            nabla_h = [nh + dnh
-                         for nh, dnh in zip(nabla_h, delta_nabla_h)]
+        test_cost = []
+        train_cost = []
+        for limit in range(par_number):
+            """ Iterate over training examples """
+            for x, y in train_data:
+                delta_nabla_h = self.backpropOBD(x,y)
+                nabla_h = [nh + dnh
+                             for nh, dnh in zip(nabla_h, delta_nabla_h)]
 
-        self.saliencies = [(h * w**2)/(2 * len(training_data))
-                            for w, h in zip(self.weights, nabla_h)]
+            self.saliencies = [(h * w**2)/(2 * len(train_data))
+                                for w, h in zip(self.weights, nabla_h)]
 
-        self.cut_weights(percent_to_cut)
+            self.cut_weights(limit+1)
+            self.SGD(train_data, 200, 10, 3.0)        
+            test_cost.append(self.total_cost(test_data))
+            train_cost.append(self.total_cost(train_data))
+
+        return train_cost, test_cost
 
 
 
@@ -279,7 +318,7 @@ class Network(object):
         return 2 * sigmoid_prime(weighted_sums)**2 #- \
             #2 * (y - sigmoid(weighted_sums)) * sigmoid_second_prime(weighted_sums)
 
-    def cut_weights(self, percent_to_cut):
+    def cut_weights(self, limit):
         """Cuts given part of weights by setting it to zero and freezing """
 
         #List of tuples (index of weight , saliency )
@@ -290,14 +329,13 @@ class Network(object):
                 for i_column, value in enumerate(row):
                     saliencies_list.append(( [i_layer, i_row, i_column], value))
 
-
         saliencies_list.sort(key = lambda x: x[1])
 
-        to_cut = [element[0] for element in
-             saliencies_list[:int(len(saliencies_list) * percent_to_cut)]]
+        to_cut = [element[0] for element in saliencies_list[:limit]]
 
         print("{} out of {} weights cut".format(len(to_cut), len(saliencies_list)))
 
+        self.restore_mask()
         for wt_index in to_cut:
             self.weights[wt_index[0]][wt_index[1]][wt_index[2]] = 0.0
             self.mask[wt_index[0]][wt_index[1]][wt_index[2]] = 0.0

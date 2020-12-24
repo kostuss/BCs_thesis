@@ -58,6 +58,9 @@ class SimObject:
 	def calculate_e_values(self):
 		self.e_list = self.y_zad_list - self.y_list
 
+	def get_mse(self):
+		return ((self.y_zad_list - self.y_list)**2).mean()
+
 class DMC:
 
 	def __init__(self, n_u, n, S_list, psi_const, lambda_const):
@@ -238,7 +241,7 @@ def plot_step_response(s_list):
 	#wyswietlenie odpowiedzi skokowej obiektu regulacji
 	sim_length = len(s_list)
 	time=[i for i in range(sim_length)]
-	one_vector=[1 for i in range(sim_length)]
+	one_vector=[0]+[1 for i in range(sim_length-1)]
 
 	fig = plt.figure()
 	ax = fig.add_subplot(1, 1, 1)
@@ -255,9 +258,10 @@ def plot_step_response(s_list):
 	ax.grid(which='minor', alpha=0.2)
 	ax.grid(which='major', alpha=0.5)
 
-	plt.step(time, s_list, color='r', where='post')
-	plt.step(time, one_vector, color='b', where='post')
+	plt.step(time, s_list, color='r', where='post', label = 'wyjście obiektu')
+	plt.step(time, one_vector, color='b', where='post', label = 'wartość zadana')
 	plt.title('Wykres odpowiedzi skokowej')
+	plt.legend()
 	plt.show()
 
 

@@ -9,10 +9,10 @@ def perform_simulation(net, scaler_object, title, zad, reference = False):
 	#Control simulation 
 	#Object identification
 	iterations = 40
-	T1 = 3
-	T2 = 1 
+	T1 = 5
+	T2 = 2 
 	K = 1
-	TD = 2
+	TD = 0
 	D = 60
 
 	###DMC Control
@@ -57,7 +57,10 @@ def perform_simulation(net, scaler_object, title, zad, reference = False):
 	#plot simulations
 	if reference:
 		obiekt_regulacji.plot_simulation(sim_object_dmc, "DMC")
+		print("MSE dmc: {}".format(sim_object_dmc.get_mse()))
 	obiekt_regulacji.plot_simulation(sim_object_net, title)
+	print("MSE net: {}".format(sim_object_net.get_mse()))
+
 
 
 def perform_simulation_2(net, scaler_object, title, zad, reference = False):
