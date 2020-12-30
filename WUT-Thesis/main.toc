@@ -11,38 +11,38 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.1\relax .\kern .5em }Algorytm DMC}{14}{subsubsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.2\relax .\kern .5em }Obiekt regulacji}{14}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2\relax .\kern .5em }Obiekt regulacji}{16}{subsubsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2\relax .\kern .5em }Sztuczne Sieci Neuronowe}{14}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2\relax .\kern .5em }Sztuczne Sieci Neuronowe}{17}{subsection.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1\relax .\kern .5em }Architektura sieci}{14}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1\relax .\kern .5em }Architektura sieci}{17}{subsubsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2\relax .\kern .5em }Algorytm OBD}{14}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2\relax .\kern .5em }Algorytm OBD}{17}{subsubsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3\relax .\kern .5em }Strategia eksperyment\IeC {\'o}w}{14}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3\relax .\kern .5em }Strategia eksperyment\IeC {\'o}w}{17}{subsection.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4\relax .\kern .5em }De Finibus Bonorum et Malorum}{15}{section.4}
+\contentsline {section}{\numberline {4\relax .\kern .5em }De Finibus Bonorum et Malorum}{18}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1\relax .\kern .5em }Critique of Pure Reason}{16}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1\relax .\kern .5em }Critique of Pure Reason}{19}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2\relax .\kern .5em }Categorical Imperative}{18}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2\relax .\kern .5em }Categorical Imperative}{21}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1\relax .\kern .5em }Deontological Ethics}{18}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1\relax .\kern .5em }Deontological Ethics}{21}{subsubsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2\relax .\kern .5em }Consequentialism -- the Ideal of practical reason}{19}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2\relax .\kern .5em }Consequentialism -- the Ideal of practical reason}{22}{subsubsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3\relax .\kern .5em }G\"odel's ontological proof}{19}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3\relax .\kern .5em }G\"odel's ontological proof}{22}{subsection.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5\relax .\kern .5em }Code listings}{21}{section.5}
+\contentsline {section}{\numberline {5\relax .\kern .5em }Code listings}{24}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\kern .5em }Summatio}{23}{section.6}
+\contentsline {section}{\numberline {6\relax .\kern .5em }Summatio}{26}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Bibliografia}{25}{section*.1}
+\contentsline {section}{Bibliografia}{29}{section*.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{27}{section*.2}
+\contentsline {section}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{31}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{27}{section*.2}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{31}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis tabel}{27}{section*.2}
+\contentsline {section}{Spis tabel}{31}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis za\IeC {\l }\IeC {\k a}cznik\IeC {\'o}w}{27}{section*.3}
+\contentsline {section}{Spis za\IeC {\l }\IeC {\k a}cznik\IeC {\'o}w}{31}{section*.3}

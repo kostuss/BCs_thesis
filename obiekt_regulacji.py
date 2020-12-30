@@ -231,7 +231,7 @@ def plot_simulation(sim_object, title):
 	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana', where='post')
 	#plt.step(time, sim_object.e_list, color='g', label = 'uchyb_regulacji', where='post')
 
-	plt.title(f"Regulacja {title}")
+	#plt.title(f"Regulacja {title}")
 	plt.xlabel("k")
 	plt.legend()
 	plt.show()
@@ -274,7 +274,7 @@ if __name__ == "__main__":
 	T2=4
 	K=1
 	TD=3
-	D=60
+	D=50
 
 	# wektor odpowiedzi skokowych
 	s_list = np.array(generate_s_vaules(D, T1, T2, K, TD))
@@ -294,7 +294,7 @@ if __name__ == "__main__":
 	 y_zad, u_value_dmc , y_k_dmc)
 	
 	#zmiana wartosci zadanej i regulacja
-	y_zad = 10.0
+	y_zad = 5.0
 	u_value_dmc, y_k_dmc = simulation_loop(dmc, sim_object, iterations,
 	 y_zad, u_value_dmc , y_k_dmc)
 

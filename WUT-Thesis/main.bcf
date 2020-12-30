@@ -1924,29 +1924,31 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">goossens93</bcf:citekey>
-    <bcf:citekey order="2">haykin1999</bcf:citekey>
-    <bcf:citekey order="3">osowski2013</bcf:citekey>
-    <bcf:citekey order="4">hornik1991</bcf:citekey>
-    <bcf:citekey order="5">osowskiOBD</bcf:citekey>
-    <bcf:citekey order="6">lecun1989</bcf:citekey>
-    <bcf:citekey order="7">chaber2018</bcf:citekey>
-    <bcf:citekey order="8">osowskiOBD</bcf:citekey>
-    <bcf:citekey order="9">kavzoglu1998</bcf:citekey>
-    <bcf:citekey order="10">hassibi1993</bcf:citekey>
-    <bcf:citekey order="11">kiti2009</bcf:citekey>
-    <bcf:citekey order="12">hosen2011</bcf:citekey>
-    <bcf:citekey order="13">afram2017</bcf:citekey>
-    <bcf:citekey order="14">stp2009</bcf:citekey>
-    <bcf:citekey order="15">szczypiorski2015</bcf:citekey>
-    <bcf:citekey order="16">duqu2011</bcf:citekey>
-    <bcf:citekey order="17">shs2015</bcf:citekey>
-    <bcf:citekey order="18">wozniak2018</bcf:citekey>
-    <bcf:citekey order="19">dcp19</bcf:citekey>
-    <bcf:citekey order="20">benzmuller2014</bcf:citekey>
-    <bcf:citekey order="21">goedel95</bcf:citekey>
-    <bcf:citekey order="22">wang97</bcf:citekey>
-    <bcf:citekey order="23">koons2005</bcf:citekey>
+    <bcf:citekey order="1">haykin1999</bcf:citekey>
+    <bcf:citekey order="2">osowski2013</bcf:citekey>
+    <bcf:citekey order="3">hornik1991</bcf:citekey>
+    <bcf:citekey order="4">osowskiOBD</bcf:citekey>
+    <bcf:citekey order="5">lecun1989</bcf:citekey>
+    <bcf:citekey order="6">chaber2018</bcf:citekey>
+    <bcf:citekey order="7">osowskiOBD</bcf:citekey>
+    <bcf:citekey order="8">kavzoglu1998</bcf:citekey>
+    <bcf:citekey order="9">hassibi1993</bcf:citekey>
+    <bcf:citekey order="10">kiti2009</bcf:citekey>
+    <bcf:citekey order="11">hosen2011</bcf:citekey>
+    <bcf:citekey order="12">afram2017</bcf:citekey>
+    <bcf:citekey order="13">stp2009</bcf:citekey>
+    <bcf:citekey order="14">tatjewski2016</bcf:citekey>
+    <bcf:citekey order="15">dmc1979</bcf:citekey>
+    <bcf:citekey order="16">stp2009</bcf:citekey>
+    <bcf:citekey order="17">szczypiorski2015</bcf:citekey>
+    <bcf:citekey order="18">duqu2011</bcf:citekey>
+    <bcf:citekey order="19">shs2015</bcf:citekey>
+    <bcf:citekey order="20">wozniak2018</bcf:citekey>
+    <bcf:citekey order="21">dcp19</bcf:citekey>
+    <bcf:citekey order="22">benzmuller2014</bcf:citekey>
+    <bcf:citekey order="23">goedel95</bcf:citekey>
+    <bcf:citekey order="24">wang97</bcf:citekey>
+    <bcf:citekey order="25">koons2005</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

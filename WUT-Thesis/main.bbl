@@ -19,43 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{goossens93}{book}{}
-      \name{author}{3}{}{%
-        {{hash=0743efb276e9219ee664a9b3dbd60619}{%
-           family={Goossens},
-           familyi={G\bibinitperiod},
-           given={Michel},
-           giveni={M\bibinitperiod}}}%
-        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
-           family={Mittelbach},
-           familyi={M\bibinitperiod},
-           given={Frank},
-           giveni={F\bibinitperiod}}}%
-        {{hash=e341c89f7bb5be4f5a050618c0b63942}{%
-           family={Samarin},
-           familyi={S\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Reading, Massachusetts}%
-      }
-      \list{publisher}{1}{%
-        {Addison-Wesley}%
-      }
-      \strng{namehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{fullhash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{bibnamehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{authorbibnamehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{authornamehash}{369a4e878eb8157d94588ee72e0b486b}
-      \strng{authorfullhash}{369a4e878eb8157d94588ee72e0b486b}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The LaTeX Companion}
-      \field{year}{1993}
-    \endentry
     \entry{haykin1999}{book}{}
       \name{author}{1}{}{%
         {{hash=063cab79afce40578e4b31b02ab5eb8e}{%
@@ -76,8 +39,8 @@
       \strng{authorbibnamehash}{063cab79afce40578e4b31b02ab5eb8e}
       \strng{authornamehash}{063cab79afce40578e4b31b02ab5eb8e}
       \strng{authorfullhash}{063cab79afce40578e4b31b02ab5eb8e}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Neural Networks: A Comprehensive Foundation, 2nd Edition}
@@ -103,8 +66,8 @@
       \strng{authorbibnamehash}{3c06fe4fb220f70b56a14f1be2a46534}
       \strng{authornamehash}{3c06fe4fb220f70b56a14f1be2a46534}
       \strng{authorfullhash}{3c06fe4fb220f70b56a14f1be2a46534}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Sieci neuronowe do przetwarzania informacji}
@@ -124,8 +87,8 @@
       \strng{authorbibnamehash}{0718cbec1a3be03bdd8268756faa86da}
       \strng{authornamehash}{0718cbec1a3be03bdd8268756faa86da}
       \strng{authorfullhash}{0718cbec1a3be03bdd8268756faa86da}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Neural Networks}
@@ -153,8 +116,8 @@
       \strng{authorbibnamehash}{3c06fe4fb220f70b56a14f1be2a46534}
       \strng{authornamehash}{3c06fe4fb220f70b56a14f1be2a46534}
       \strng{authorfullhash}{3c06fe4fb220f70b56a14f1be2a46534}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Sieci neuronowe do przetwarzania informacji}
@@ -178,8 +141,8 @@
       \strng{authorbibnamehash}{867c9afbbc57e34ac546e18e7a5794fd}
       \strng{authornamehash}{867c9afbbc57e34ac546e18e7a5794fd}
       \strng{authorfullhash}{867c9afbbc57e34ac546e18e7a5794fd}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in Neural Information Processing Systems 2}
@@ -200,8 +163,8 @@
       \strng{authorbibnamehash}{0054cd616a93111b7a342549d09dcde4}
       \strng{authornamehash}{0054cd616a93111b7a342549d09dcde4}
       \strng{authorfullhash}{0054cd616a93111b7a342549d09dcde4}
-      \field{sortinit}{7}
-      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nonlinear Dynamics}
@@ -225,8 +188,8 @@
       \strng{authorbibnamehash}{773a42fc58ae9aebf6657d557478429d}
       \strng{authornamehash}{773a42fc58ae9aebf6657d557478429d}
       \strng{authorfullhash}{773a42fc58ae9aebf6657d557478429d}
-      \field{sortinit}{9}
-      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{24th Annual Conference and Exhibition of the Remote Sensing Society}
@@ -249,8 +212,8 @@
       \strng{authorbibnamehash}{cca77775f89030906189c3c988e48b36}
       \strng{authornamehash}{cca77775f89030906189c3c988e48b36}
       \strng{authorfullhash}{cca77775f89030906189c3c988e48b36}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{IEEE International Conference on Neural Networks}
@@ -332,7 +295,7 @@
       \field{volume}{141}
       \field{year}{2017}
     \endentry
-    \entry{stp2009}{report}{}
+    \entry{stp2009}{book}{}
       \name{author}{1}{}{%
         {{hash=309e0c10108a5664472622de045e8a22}{%
            family={Ławryńczuk},
@@ -340,7 +303,7 @@
            given={Maciej},
            giveni={M\bibinitperiod}}}%
       }
-      \list{institution}{1}{%
+      \list{publisher}{1}{%
         {Politechnika Warszawska}%
       }
       \strng{namehash}{309e0c10108a5664472622de045e8a22}
@@ -354,8 +317,56 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Sterowanie procesów ciągłych, preskrypt}
-      \field{type}{techreport}
       \field{year}{2009}
+    \endentry
+    \entry{tatjewski2016}{book}{}
+      \name{author}{1}{}{%
+        {{hash=991fe5a3b69195adf9f3ed4ba5623082}{%
+           family={Tatjewski},
+           familyi={T\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Warszawa}%
+      }
+      \list{publisher}{1}{%
+        {Akademicka Oficyna Wydawnicza EXIT}%
+      }
+      \strng{namehash}{991fe5a3b69195adf9f3ed4ba5623082}
+      \strng{fullhash}{991fe5a3b69195adf9f3ed4ba5623082}
+      \strng{bibnamehash}{991fe5a3b69195adf9f3ed4ba5623082}
+      \strng{authorbibnamehash}{991fe5a3b69195adf9f3ed4ba5623082}
+      \strng{authornamehash}{991fe5a3b69195adf9f3ed4ba5623082}
+      \strng{authorfullhash}{991fe5a3b69195adf9f3ed4ba5623082}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sterowanie zaawansowane obiektów przemysłowych. Struktury i algorytmy}
+      \field{year}{2016}
+    \endentry
+    \entry{dmc1979}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=cc1599d88946c9191a0fb1b4d8157158}{%
+           family={Culter\bibnamedelima C.R.},
+           familyi={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Ramker\bibnamedelima B.L.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{fullhash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{bibnamehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{authorbibnamehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{authornamehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{authorfullhash}{cc1599d88946c9191a0fb1b4d8157158}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the AIChE National Meeting, Houston, USA}
+      \field{title}{Dynamic matrix control – a computer control algorithm.}
+      \field{year}{1979}
     \endentry
     \entry{szczypiorski2015}{article}{}
       \name{author}{3}{}{%
@@ -462,8 +473,8 @@
       \strng{authorbibnamehash}{098dcc12967fae4e45ef78066e79fd31}
       \strng{authornamehash}{098dcc12967fae4e45ef78066e79fd31}
       \strng{authorfullhash}{098dcc12967fae4e45ef78066e79fd31}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Programowanie kwadratowe w usuwaniu efektu rozmycia ruchu w fotografii cyfrowej}
@@ -484,8 +495,8 @@
       \strng{authorbibnamehash}{4bb38ab8e963d4b8baf83a7518363fc3}
       \strng{authornamehash}{4bb38ab8e963d4b8baf83a7518363fc3}
       \strng{authorfullhash}{4bb38ab8e963d4b8baf83a7518363fc3}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Dostęp zdalny (14.03.2019): \url{https://github.com/ArturB/DCP-19}}
