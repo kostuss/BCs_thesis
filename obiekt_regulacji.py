@@ -260,7 +260,7 @@ def plot_step_response(s_list):
 
 	plt.step(time, s_list, color='r', where='post', label = 'wyjście obiektu')
 	plt.step(time, one_vector, color='b', where='post', label = 'wartość zadana')
-	plt.title('Wykres odpowiedzi skokowej')
+	#plt.title('Wykres odpowiedzi skokowej')
 	plt.legend()
 	plt.show()
 

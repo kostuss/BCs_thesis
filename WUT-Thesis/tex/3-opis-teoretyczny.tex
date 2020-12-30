@@ -1,0 +1,37 @@
+\newpage % Rozdziały zaczynamy od nowej strony.
+\section{Opis teoretyczny rozwiązania}
+\par W rozdziale przedstawione zostaną wszystkie założenia teoretyczne niezbędne do pełnego zrozumienia przedmiotu pracy i późniejszej interpretacji uzyskanych rezultatów. Na początku przedstawiona zostanie idea regulacji predykcyjnej wraz z algorytmem DMC oraz obiektem regulacji, który zostanie użyty w trakcie eksperymentów. W tej części pracy przydatne były opracowania \cite{stp2009} oraz  .  Następnie omówię architekturę sztucznej sieci neuronowej wraz z opisem funkcji aktywacji i strategią uczenia. Istotnym działem z punktu widzenia niniejszej pracy jest opis algorytmu OBD czyli metody upraszczania sieci neuronowej wykorzystanej w trakcie eksperymentów. Na końcu omówię strategię zastosowaną w trakcie wykonanych eksperymentów.
+
+\subsection{Regulacja Predykcyjna}
+\par Regulacja predykcyjna uznawana jest za jedną z zaawansowanych technik regulacji, które to zastąpiły uprzednio powszechnie stosowane regulatory PID. Dla wielowymiarowych i skomplikowanych procesów, regulacja w oparciu o identyfikacje jednego punktu charakterystyki obiektu, jak to wygląda w regulatorze PID, może okazać się nieefektywna. Rozwiązaniem jest tutaj wykorzystanie zasady przesuwanego horyzontu i wyznaczanie w każdej chwili \(kT\), gdzie T oznacza okres próbkowania, sekwencji przyszłych wartości sygnału sterującego. Idea każdego z algorytmów regulacji predykcyjnej polega na wyznaczeniu w każdej iteracji wektora przyrostów sygnału sterującego.
+ 
+\begin{equation}
+\Delta U(k) \, = \, [\Delta u(k|k)\quad \Delta u(k+1|k)\quad \Delta u(k+2|k)\quad ... \quad \Delta u(k + N_u - 1|k)]^T
+\end{equation}
+
+gdzie przez \(N_u\) oznaczamy horyzont sterowania, a notacja \(\Delta u(k+p|k\) oznacza przyrost sygnału sterującego obliczony w chwili \(k\), który ma być wykorzystany do sterowania w chwili \(k+p\). W istocie jednak do sterowania wykorzystuje się tylko pierwszą wartość wyznaczanego wektora i prawo regulacji w kolejnych iteracjach przyjmuje postać
+
+\begin{equation}
+u(k) \, = \, u(k|k) \, = \, \Delta u(k|k) + u(k-1)
+\end{equation}
+
+\subsubsection{Algorytm DMC}
+Główna idea algorytmu DMC (Dynamic Matrix Control), przedstawionego w \cite{dmc1979}, opiera się na wykorzystaniu modelu odpowiedzi skokowej do predykcji. Algorytm DMC identyfikuje dynamikę obiektu regulacji za pomocą dyskretnych odpowiedzi skokowych, które są reakcją wyjścia na jednostkowy skok sygnału sterującego. Na rysunku przedstawiono przykładową odpowiedź skokową obiektu regulacji, który to opisany zostanie w kolejnym podrozdziale.
+\begin{figure}[!h]
+    \label{fig:tradycyjne-logo-pw}
+    \centering \includegraphics[width=0.5\linewidth]{logopw.png}
+    \caption{Tradycyjne godło Politechniki Warszawskiej}
+\end{figure}
+
+
+\subsubsection{Obiekt regulacji}
+
+
+\subsection{Sztuczne Sieci Neuronowe}
+
+\subsubsection{Architektura sieci}
+
+\subsubsection{Algorytm OBD}
+
+\subsection{Strategia eksperymentów}
+
