@@ -6,18 +6,21 @@
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Obiekt regulacji}{subsection.3.1}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Sztuczne Sieci Neuronowe}{section.3}% 7
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Architektura sieci}{subsection.3.2}% 8
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Algorytm OBD}{subsection.3.2}% 9
-\BOOKMARK [2][-]{subsection.3.3}{Strategia eksperyment\363w}{section.3}% 10
-\BOOKMARK [1][-]{section.4}{De Finibus Bonorum et Malorum}{}% 11
-\BOOKMARK [2][-]{subsection.4.1}{Critique of Pure Reason}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.2}{Categorical Imperative}{section.4}% 13
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Deontological Ethics}{subsection.4.2}% 14
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Consequentialism \205 the Ideal of practical reason}{subsection.4.2}% 15
-\BOOKMARK [2][-]{subsection.4.3}{G\366del's ontological proof}{section.4}% 16
-\BOOKMARK [1][-]{section.5}{Code listings}{}% 17
-\BOOKMARK [1][-]{section.6}{Summatio}{}% 18
-\BOOKMARK [1][-]{section*.1}{Bibliografia}{}% 19
-\BOOKMARK [1][-]{section*.2}{Wykaz symboli i skr\363t\363w}{}% 20
-\BOOKMARK [1][-]{section*.2}{Spis rysunk\363w}{}% 21
-\BOOKMARK [1][-]{section*.2}{Spis tabel}{}% 22
-\BOOKMARK [1][-]{section*.3}{Spis za\233acznik\363w}{}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Wsteczna propagacja gradientu}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Algorytm OBD}{subsection.3.2}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Strategia eksperyment\363w}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Opis wybranych element\363w implementacji}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Algorytm DMC}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Architektura sieci neuronowej}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Algorytm OBD}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Wyniki pracy}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Generacja danych}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Uczenie sieci neuronowej}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Zastosowanie algorytmu OBD}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.4}{Weryfikacja rozwiazania}{section.5}% 20
+\BOOKMARK [1][-]{section.6}{Summatio}{}% 21
+\BOOKMARK [1][-]{section*.1}{Bibliografia}{}% 22
+\BOOKMARK [1][-]{section*.2}{Wykaz symboli i skr\363t\363w}{}% 23
+\BOOKMARK [1][-]{section*.2}{Spis rysunk\363w}{}% 24
+\BOOKMARK [1][-]{section*.2}{Spis tabel}{}% 25
+\BOOKMARK [1][-]{section*.3}{Spis za\233acznik\363w}{}% 26

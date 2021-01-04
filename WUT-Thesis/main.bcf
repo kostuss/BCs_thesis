@@ -1940,15 +1940,10 @@
     <bcf:citekey order="14">tatjewski2016</bcf:citekey>
     <bcf:citekey order="15">dmc1979</bcf:citekey>
     <bcf:citekey order="16">stp2009</bcf:citekey>
-    <bcf:citekey order="17">szczypiorski2015</bcf:citekey>
-    <bcf:citekey order="18">duqu2011</bcf:citekey>
-    <bcf:citekey order="19">shs2015</bcf:citekey>
-    <bcf:citekey order="20">wozniak2018</bcf:citekey>
-    <bcf:citekey order="21">dcp19</bcf:citekey>
-    <bcf:citekey order="22">benzmuller2014</bcf:citekey>
-    <bcf:citekey order="23">goedel95</bcf:citekey>
-    <bcf:citekey order="24">wang97</bcf:citekey>
-    <bcf:citekey order="25">koons2005</bcf:citekey>
+    <bcf:citekey order="17">osowski2013</bcf:citekey>
+    <bcf:citekey order="18">nielsen2015</bcf:citekey>
+    <bcf:citekey order="19">osowski2013</bcf:citekey>
+    <bcf:citekey order="20">lecun1989</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

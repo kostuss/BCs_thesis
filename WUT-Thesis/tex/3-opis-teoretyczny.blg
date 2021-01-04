@@ -1,0 +1,5 @@
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is '3-opis-teoretyczny.blg'
+[27] biber:313> INFO - === pon sty  4, 2021, 20:42:30
+[106] Utils.pm:185> ERROR - Cannot find control file '3-opis-teoretyczny.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[107] Biber.pm:114> INFO - ERRORS: 1
