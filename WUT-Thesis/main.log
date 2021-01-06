@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  5 JAN 2021 00:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  6 JAN 2021 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1932,11 +1932,39 @@ Underfull \vbox (badness 1635) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23])
-(./tex/3-1-listing-kodu.tex [24]) (./tex/4-wyniki-pracy.tex [25]) [26] [27]
-[28
+(./tex/3-1-listing-kodu.tex [24]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) [25] [26]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 86.
 
 
-] [29] (./main.lof)
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `futs' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [27] [28] [29]
+Overfull \hbox (40.1405pt too wide) in paragraph at lines 186--187
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[30]
+Overfull \hbox (2.12415pt too wide) in paragraph at lines 233--234
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.12415pt too wide) in paragraph at lines 256--257
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (./tex/4-wyniki-pracy.tex [31] [32]) [33] [34] [35
+
+
+] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
@@ -1944,23 +1972,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- (./main.app)
+(./main.app)
 \tf@app=\write9
 \openout9 = `main.app'.
 
- [30]
+ [36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-[32]
+ [37]
+[38]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
- [33]
+ [39]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C280D14662056F04703B7F65235072D9;1705.
+(rerunfilecheck)             Checksum: 13399BBCFC0742962D2BA81C780C71C7;1726.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1970,13 +1998,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29914 strings out of 494847
- 521964 string characters out of 6178850
- 1418665 words of memory out of 5000000
- 32483 multiletter control sequences out of 15000+600000
- 631059 words of font info for 263 fonts, out of 8000000 for 9000
+ 30725 strings out of 494847
+ 530756 string characters out of 6178850
+ 1433665 words of memory out of 5000000
+ 33073 multiletter control sequences out of 15000+600000
+ 635483 words of font info for 295 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 46i,12n,76p,10397b,1779s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,12n,80p,10397b,3390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dis
@@ -1986,10 +2014,10 @@ ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
 dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
 putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (33 pages, 557484 bytes).
+Output written on main.pdf (39 pages, 589706 bytes).
 PDF statistics:
- 478 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 111 named destinations out of 1000 (max. 500000)
- 29945 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 708 PDF objects out of 1000 (max. 8388607)
+ 631 compressed objects within 7 object streams
+ 283 named destinations out of 1000 (max. 500000)
+ 30457 words of extra memory for PDF output out of 35830 (max. 10000000)
 

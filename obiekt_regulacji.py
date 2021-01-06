@@ -7,13 +7,11 @@ from numpy.linalg import inv
 class SimObject: 
 
 	def __init__(self, T1, T2, K , TD):
-
 		#parameters defininig regulation object
 		self.T1 = T1
 		self.T2 = T2
 		self.K = K
 		self.TD = TD
-
 		#constatns for equation
 		self.alpha_1 = math.exp(-(1/T1))
 		self.alpha_2 = math.exp(-(1/T2))
@@ -43,7 +41,7 @@ class SimObject:
 			return self.y_list[-lag]
 
 	def make_simulation_step(self, u, y_zad):
-		#first lag
+
 		u_lag1=self.get_lag_u(self.TD+1)
 		u_lag2=self.get_lag_u(self.TD+2)
 		y_lag1=self.get_lag_y(1)
@@ -65,7 +63,7 @@ class DMC:
 
 	def __init__(self, n_u, n, S_list, psi_const, lambda_const):
 		
-		#horyzont sterwania - ile przyszlych wartosci sterowania wyznaczanych jest w kazdej iteracji algorytmu
+		#horyzont sterwania 
 		self.n_u = n_u
 		#horyzont predykcji - 
 		self.n = n 
@@ -83,17 +81,12 @@ class DMC:
 
 		#wektor przeszlych przyrostow sterowania
 		self.U_delta_P = np.zeros(len(S_list)-1)
-
-
+		
+		#macierze wyznaczane w trakcie inicjalizacji klasy
 		self.Psi = np.diag([psi_const for i in range(n)])
 		self.Lambda = np.diag([lambda_const for i in range(n_u)])
-		
-		#macierz
 		self.M_p = self.init_M_p(S_list, n)
-
-		#macierz
 		self.M = self.init_M(S_list, n, n_u)
-
 		self.K = inv(self.M.T @ self.Psi @ self.M + self.Lambda) @ self.M.T @ self.Psi
 
 
@@ -125,7 +118,7 @@ class DMC:
 	def update_U_delta_P(self, u_delta_current):
 		self.U_delta_P = np.delete(np.insert(self.U_delta_P, 0, u_delta_current),-1)
 
-	#wyznaczenie kolejnych wartosci sterowania
+	#wyznaczenie wektora optymalnych przytostów sterownaia
 	def calculate_U_delta(self, Y_current): 
 
 		self.Y_k.fill(Y_current)
@@ -231,7 +224,7 @@ def plot_simulation(sim_object, title):
 	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana', where='post')
 	#plt.step(time, sim_object.e_list, color='g', label = 'uchyb_regulacji', where='post')
 
-	#plt.title(f"Regulacja {title}")
+	plt.title(f"Regulacja {title}")
 	plt.xlabel("k")
 	plt.legend()
 	plt.show()

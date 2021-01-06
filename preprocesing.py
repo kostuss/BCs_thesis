@@ -32,6 +32,30 @@ def plot_cost_epoch(train_cost, test_cost, start):
 	plt.legend()
 	plt.show()
 
+def plot_cost_epoch(train_cost, test_cost, start):
+	sim_length = len(train_cost)
+	time=[i for i in range(start,sim_length)]
+
+	fig = plt.figure()
+	ax = fig.add_subplot(1, 1, 1)
+	x_ticks = np.arange(0, sim_length, 10)
+	x_major_ticks = np.arange(0, sim_length, 50)
+
+	ax.set_xticks(x_ticks, minor=True)
+	ax.set_xticks(x_major_ticks)
+
+	# And a corresponding grid
+	ax.grid(which='minor', alpha=0.2)
+	ax.grid(which='major', alpha=0.5)
+
+	plt.plot(time, train_cost[start:], color='r', label = 'dane treningowe')
+	plt.plot(time, test_cost[start:], color='b', label = 'dane testowe')
+
+	plt.title(f"Zależność funkcji kosztu od liczby zredukowanych wag")
+	plt.xlabel("Liczba zredukowanych wag")
+	plt.legend()
+	plt.show()
+
 def plot_cost_neurons(train_cost, test_cost, neuron_numbers):
 	
 	sim_length = len(train_cost)
@@ -82,10 +106,11 @@ plot_cost_epoch(cost_train, cost_test, 30)
 
 
 simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 5.21, reference=True)
-simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 3.0, reference=False)
+#simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 3.0, reference=False)
 
 cost_train, cost_test = net.OBD(scaled_train,scaled_test)
 plot_cost_epoch(cost_train, cost_test, 0)
+simulation.perform_simulation(net, scaler_object, "sieć OBD", 5.21, reference=False)
 
 '''
 #iteration by neuron number in hidden layer

@@ -25,30 +25,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4\relax .\kern .5em }Opis wybranych element\IeC {\'o}w implementacji}{25}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1\relax .\kern .5em }Algorytm DMC}{25}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1\relax .\kern .5em }Algorytm DMC z obiektem regulacji}{25}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2\relax .\kern .5em }Architektura sieci neuronowej}{25}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2\relax .\kern .5em }Architektura sieci neuronowej}{27}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3\relax .\kern .5em }Algorytm OBD}{25}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3\relax .\kern .5em }Algorytm OBD}{29}{subsection.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5\relax .\kern .5em }Wyniki pracy}{26}{section.5}
+\contentsline {section}{\numberline {5\relax .\kern .5em }Wyniki pracy}{33}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1\relax .\kern .5em }Generacja danych}{26}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.1\relax .\kern .5em }Generacja danych}{33}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2\relax .\kern .5em }Uczenie sieci neuronowej}{26}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2\relax .\kern .5em }Uczenie sieci neuronowej}{33}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3\relax .\kern .5em }Zastosowanie algorytmu OBD}{26}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.3\relax .\kern .5em }Zastosowanie algorytmu OBD}{33}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4\relax .\kern .5em }Weryfikacja rozwi\IeC {\k a}zania}{26}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.4\relax .\kern .5em }Weryfikacja rozwi\IeC {\k a}zania}{33}{subsection.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\kern .5em }Summatio}{27}{section.6}
+\contentsline {section}{\numberline {6\relax .\kern .5em }Summatio}{34}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Bibliografia}{29}{section*.1}
+\contentsline {section}{Bibliografia}{35}{section*.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{30}{section*.2}
+\contentsline {section}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{36}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{30}{section*.2}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{36}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis tabel}{30}{section*.2}
+\contentsline {section}{Spis tabel}{36}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis za\IeC {\l }\IeC {\k a}cznik\IeC {\'o}w}{30}{section*.3}
+\contentsline {section}{Spis za\IeC {\l }\IeC {\k a}cznik\IeC {\'o}w}{36}{section*.3}

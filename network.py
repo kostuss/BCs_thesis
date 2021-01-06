@@ -14,13 +14,10 @@ import random
 import numpy as np
 
 class Network(object):
-
     def __init__(self, sizes):
         """
-        arg ``sizes`` contains the number of neurons in the
-        respective layers of the network. e.g sizes=[30,50,10]
-        The biases and weights for the network are initialized randomly,
-        using a Gaussian distribution with mean 0, and variance 1. 
+        argument sizez zwiera listę prezentujaca 
+        liczbe neuronow w kolejnych warstwach sieci. 
         """
         self.num_layers = len(sizes)
         self.sizes = sizes
@@ -242,7 +239,46 @@ class Network(object):
         weighted sum:    z vectors (in code) -> a (in LeCun)
         activations:     activation (in code) -> x (in LeCun)
         """
+
     def OBD(self, train_data, test_data):
+        
+        """Calculate saliencies based on second derivatives h"""
+        nabla_h = [np.zeros(w.shape) for w in self.weights]
+        par_number = sum([w.shape[0]*w.shape[1] for w in self.weights])
+
+        test_cost = []
+        train_cost = []
+        prev_cost = np.inf
+        prev_delta_cost_list = np.full((4,),np.inf)
+
+        for limit in range(int(0.9*par_number)):
+            """ Iterate over training examples """
+            for x, y in train_data:
+                delta_nabla_h = self.backpropOBD(x,y)
+                nabla_h = [nh + dnh
+                             for nh, dnh in zip(nabla_h, delta_nabla_h)]
+
+            self.saliencies = [(h * w**2)/(2 * len(train_data))
+                                for w, h in zip(self.weights, nabla_h)]
+
+            self.cut_weights(limit+1)
+            self.SGD(train_data, 200, 10, 3.0)        
+            test_cost.append(self.total_cost(test_data))
+            train_cost.append(self.total_cost(train_data))
+
+            current_cost = self.total_cost(test_data)
+            
+            prev_delta_cost_list = np.delete(np.insert(prev_delta_cost_list, 0, prev_cost - current_cost),-1)
+            prev_cost = current_cost
+
+            #stopping rule
+            if all(prev_delta_cost_list < self.cost_delta_epsilon/200):
+                print("OBD ended after cut of {} out of {} weights".format(limit+1, par_number))
+                return train_cost, test_cost 
+
+        return train_cost, test_cost
+
+    def OBD_full(self, train_data, test_data):
         
         """Calculate saliencies based on second derivatives h"""
         nabla_h = [np.zeros(w.shape) for w in self.weights]
@@ -267,13 +303,9 @@ class Network(object):
 
         return train_cost, test_cost
 
-
-
     def backpropOBD(self, x, y):
-
-        #second_derivaties = [np.zeros(b.shape) for b in self.biases]
+        
         h_vector = [np.zeros(w.shape) for w in self.weights]
-
         # feedforward
         activation = x
         activations = [x] # list to store all the activations, layer by layer
@@ -284,24 +316,22 @@ class Network(object):
             activation = sigmoid(z)
             activations.append(activation)
 
-        #backward pass
+        #wsteczna propagacja drugich pochodnych
         delta = self.cost_derivative(activations[-1], y)
-
         delta2_z = self.boundry_OBD_derivative(zs[-1], y)
-
         h_vector[-1] = np.dot(delta2_z, activations[-2].transpose()**2)
 
-        #iterate over layers
+        #iteracja po kolejnych warstwach
         for l in range(2, self.num_layers):
             z = zs[-l]
             sp = sigmoid_prime(z)
             sp2 = sigmoid_second_prime(z)
 
-            #backpropagate second term of (7) in LeCun
-            delta = np.dot(self.weights[-l+1].transpose(), delta * sigmoid_prime(zs[-l+1]))
-            
+            #(7) in LeCun
+            delta = np.dot(self.weights[-l+1].transpose(), delta * sigmoid_prime(zs[-l+1]))        
             #backpropagate second derivative (7) in LeCun
-            delta2_z =  sp**2 * np.dot(self.weights[-l+1].transpose()**2, delta2_z) # + \
+            delta2_z =  sp**2 * np.dot(self.weights[-l+1].transpose()**2, delta2_z) 
+            # + \
             #for testing approximation stated in LeCun
             # sp2 * delta 
 
