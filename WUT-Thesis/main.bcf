@@ -1938,12 +1938,23 @@
     <bcf:citekey order="12">afram2017</bcf:citekey>
     <bcf:citekey order="13">stp2009</bcf:citekey>
     <bcf:citekey order="14">tatjewski2016</bcf:citekey>
-    <bcf:citekey order="15">dmc1979</bcf:citekey>
-    <bcf:citekey order="16">stp2009</bcf:citekey>
-    <bcf:citekey order="17">osowski2013</bcf:citekey>
-    <bcf:citekey order="18">nielsen2015</bcf:citekey>
-    <bcf:citekey order="19">osowski2013</bcf:citekey>
-    <bcf:citekey order="20">lecun1989</bcf:citekey>
+    <bcf:citekey order="15">nielsen2015</bcf:citekey>
+    <bcf:citekey order="16">osowski2013</bcf:citekey>
+    <bcf:citekey order="17">wawrzynski2019</bcf:citekey>
+    <bcf:citekey order="18">dmc1979</bcf:citekey>
+    <bcf:citekey order="19">stp2009</bcf:citekey>
+    <bcf:citekey order="20">nielsen2015</bcf:citekey>
+    <bcf:citekey order="21">nielsen2015</bcf:citekey>
+    <bcf:citekey order="22">wawrzynski2019</bcf:citekey>
+    <bcf:citekey order="23">wawrzynski2019</bcf:citekey>
+    <bcf:citekey order="24">nielsen2015</bcf:citekey>
+    <bcf:citekey order="25">nielsen2015</bcf:citekey>
+    <bcf:citekey order="26">osowski2013</bcf:citekey>
+    <bcf:citekey order="27">nielsen2015</bcf:citekey>
+    <bcf:citekey order="28">osowski2013</bcf:citekey>
+    <bcf:citekey order="29">lecun1989</bcf:citekey>
+    <bcf:citekey order="30">nielsen2015</bcf:citekey>
+    <bcf:citekey order="31">wawrzynski2019</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

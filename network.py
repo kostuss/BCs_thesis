@@ -286,7 +286,7 @@ class Network(object):
 
         test_cost = []
         train_cost = []
-        for limit in range(par_number):
+        for limit in range(int(0.95*par_number)):
             """ Iterate over training examples """
             for x, y in train_data:
                 delta_nabla_h = self.backpropOBD(x,y)

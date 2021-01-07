@@ -346,28 +346,6 @@
       \field{title}{Sterowanie zaawansowane obiektów przemysłowych. Struktury i algorytmy}
       \field{year}{2016}
     \endentry
-    \entry{dmc1979}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=cc1599d88946c9191a0fb1b4d8157158}{%
-           family={Culter\bibnamedelima C.R.},
-           familyi={C\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={Ramker\bibnamedelima B.L.},
-           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-      }
-      \strng{namehash}{cc1599d88946c9191a0fb1b4d8157158}
-      \strng{fullhash}{cc1599d88946c9191a0fb1b4d8157158}
-      \strng{bibnamehash}{cc1599d88946c9191a0fb1b4d8157158}
-      \strng{authorbibnamehash}{cc1599d88946c9191a0fb1b4d8157158}
-      \strng{authornamehash}{cc1599d88946c9191a0fb1b4d8157158}
-      \strng{authorfullhash}{cc1599d88946c9191a0fb1b4d8157158}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the AIChE National Meeting, Houston, USA}
-      \field{title}{Dynamic matrix control – a computer control algorithm.}
-      \field{year}{1979}
-    \endentry
     \entry{nielsen2015}{book}{}
       \name{author}{1}{}{%
         {{hash=790b57a148d0102f1420b73dd7d8cb95}{%
@@ -391,6 +369,55 @@
       \field{labeltitlesource}{title}
       \field{title}{Neural Networks and Deep Learning}
       \field{year}{2015}
+    \endentry
+    \entry{wawrzynski2019}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3cf3906a27273df131b6558955875ead}{%
+           family={Wawrzyński},
+           familyi={W\bibinitperiod},
+           given={Paweł},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Warszawa}%
+      }
+      \list{publisher}{1}{%
+        {Oficyna Wydawnicza Politechniki Warszawskiej}%
+      }
+      \strng{namehash}{3cf3906a27273df131b6558955875ead}
+      \strng{fullhash}{3cf3906a27273df131b6558955875ead}
+      \strng{bibnamehash}{3cf3906a27273df131b6558955875ead}
+      \strng{authorbibnamehash}{3cf3906a27273df131b6558955875ead}
+      \strng{authornamehash}{3cf3906a27273df131b6558955875ead}
+      \strng{authorfullhash}{3cf3906a27273df131b6558955875ead}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Podstawy sztucznej inteligencji}
+      \field{year}{2019}
+    \endentry
+    \entry{dmc1979}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=cc1599d88946c9191a0fb1b4d8157158}{%
+           family={Culter\bibnamedelima C.R.},
+           familyi={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Ramker\bibnamedelima B.L.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{fullhash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{bibnamehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{authorbibnamehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{authornamehash}{cc1599d88946c9191a0fb1b4d8157158}
+      \strng{authorfullhash}{cc1599d88946c9191a0fb1b4d8157158}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the AIChE National Meeting, Houston, USA}
+      \field{title}{Dynamic matrix control – a computer control algorithm.}
+      \field{year}{1979}
     \endentry
   \enddatalist
 \endrefsection
