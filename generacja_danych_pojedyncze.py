@@ -27,7 +27,7 @@ TD = 0
 s_list = np.array(obiekt_regulacji.generate_s_vaules(D, T1, T2, K, TD))
 
 #iteracja po wartosciach zadanych
-for idx, zad in np.ndenumerate(np.arange(1,10,0.1)):
+for idx, zad in np.ndenumerate(np.arange(1,10.1,0.1)):
 	#obiekt regulacji
 	sim_object= obiekt_regulacji.SimObject(T1, T2, K, TD)
 	dmc = obiekt_regulacji.DMC(D, D, s_list, 1, 1)
@@ -130,9 +130,9 @@ for zad in np.arange(1,9,0.2):
 
 print("Train data len: ", len(train_data))
 print_size(train_data)
-joblib.dump(train_data, 'dane/dmc_regulation_data_1_train.pkl',1)
+#joblib.dump(train_data, 'dane/dmc_regulation_data_1_train.pkl',1)
 
 print("Test data len: ", len(test_data))
 print_size(test_data)
-joblib.dump(test_data, 'dane/dmc_regulation_data_1_test.pkl',1)
+#joblib.dump(test_data, 'dane/dmc_regulation_data_1_test.pkl',1)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  7 JAN 2021 23:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  8 JAN 2021 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1806,7 +1806,10 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 49.
- [3] [4]
+ [3] [4
+
+
+]
 
 pdfTeX warning: pdflatex (file ./eiti/oswiadczenie_autora_pracy.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
@@ -1817,8 +1820,6 @@ Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line
  66.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
 [5 <./eiti/oswiadczenie_autora_pracy.pdf>] [6
-
-
 
 
 ]
@@ -1959,7 +1960,55 @@ Overfull \hbox (2.12415pt too wide) in paragraph at lines 256--257
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) (./tex/4-wyniki-pracy.tex [31] [32]) [33] [34] [35
+) (./tex/4-wyniki-pracy.tex [31] [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+<img/cost_neuron_number_train.png, id=590, 567.3195pt x 346.896pt>
+File: img/cost_neuron_number_train.png Graphic file (type png)
+<use img/cost_neuron_number_train.png>
+Package pdftex.def Info: img/cost_neuron_number_train.png  used on input line 1
+7.
+(pdftex.def)             Requested size: 306.71939pt x 187.54865pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/cost_neuron_number_test.png, id=591, 560.8152pt x 346.896pt>
+File: img/cost_neuron_number_test.png Graphic file (type png)
+<use img/cost_neuron_number_test.png>
+Package pdftex.def Info: img/cost_neuron_number_test.png  used on input line 23
+.
+(pdftex.def)             Requested size: 306.71939pt x 189.71886pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34] [35 <./img/cost_neuron_number_train.png> <./img/cost_neuron_number_test.pn
+g>]
+<img/cost_epoch_150.png, id=604, 462.528pt x 346.896pt>
+File: img/cost_epoch_150.png Graphic file (type png)
+<use img/cost_epoch_150.png>
+Package pdftex.def Info: img/cost_epoch_150.png  used on input line 32.
+(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+<img/cost_epoch_150_zoom.png, id=605, 462.528pt x 346.896pt>
+File: img/cost_epoch_150_zoom.png Graphic file (type png)
+<use img/cost_epoch_150_zoom.png>
+Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 38.
+(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/cost_OBD_full.png, id=606, 462.528pt x 346.896pt>
+File: img/cost_OBD_full.png Graphic file (type png)
+<use img/cost_OBD_full.png>
+Package pdftex.def Info: img/cost_OBD_full.png  used on input line 52.
+(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./tex/5-podsumowanie.tex [36 <./img/cost_epoch_150.png>]) [37 <./img/cost_ep
+och_150_zoom.png>] [38 <./img/cost_OBD_full.png>] [39
 
 
 ] (./main.lof)
@@ -1970,23 +2019,19 @@ Overfull \hbox (2.12415pt too wide) in paragraph at lines 256--257
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
-(./main.app)
+ (./main.app)
 \tf@app=\write9
 \openout9 = `main.app'.
 
- [36]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37]
-[38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
- [39]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+ [40] [41]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
+ [42]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 579A362BC98232696DD96AD2809A0AC7;1744.
+(rerunfilecheck)             Checksum: 612CF6A2FCFB4BF037F411E08A1E1205;1748.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1996,11 +2041,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30728 strings out of 494847
- 530871 string characters out of 6178850
- 1434430 words of memory out of 5000000
- 33075 multiletter control sequences out of 15000+600000
- 635483 words of font info for 295 fonts, out of 8000000 for 9000
+ 30776 strings out of 494847
+ 532003 string characters out of 6178850
+ 1269523 words of memory out of 5000000
+ 33103 multiletter control sequences out of 15000+600000
+ 635753 words of font info for 298 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
  46i,12n,80p,10397b,3390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2012,10 +2057,10 @@ ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
 dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
 putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (39 pages, 592370 bytes).
+Output written on main.pdf (42 pages, 771946 bytes).
 PDF statistics:
- 723 PDF objects out of 1000 (max. 8388607)
- 643 compressed objects within 7 object streams
- 284 named destinations out of 1000 (max. 500000)
- 30457 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 758 PDF objects out of 1000 (max. 8388607)
+ 665 compressed objects within 7 object streams
+ 292 named destinations out of 1000 (max. 500000)
+ 30482 words of extra memory for PDF output out of 35830 (max. 10000000)
 

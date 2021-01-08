@@ -31,7 +31,7 @@ def perform_simulation(net, scaler_object, title, zad, reference = False):
 	 y_zad, u_value_dmc , y_k_dmc)
 
 	#zmiana wartosci zadanej i regulacja
-	y_zad = 5.0
+	y_zad = zad
 	u_value_dmc, y_k_dmc = obiekt_regulacji.simulation_loop(dmc, sim_object_dmc, iterations,
 	 y_zad, u_value_dmc , y_k_dmc)
 

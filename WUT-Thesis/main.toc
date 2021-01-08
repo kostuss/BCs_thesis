@@ -35,20 +35,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1\relax .\kern .5em }Generacja danych}{33}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2\relax .\kern .5em }Wyb\IeC {\'o}r struktury sieci}{33}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2\relax .\kern .5em }Wyb\IeC {\'o}r struktury sieci}{34}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3\relax .\kern .5em }Zastosowanie algorytmu OBD}{33}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.3\relax .\kern .5em }Zastosowanie algorytmu OBD}{36}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4\relax .\kern .5em }Zastosowanie innych obiekt\IeC {\'o}w regulacji}{33}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.4\relax .\kern .5em }Zastosowanie innych obiekt\IeC {\'o}w regulacji}{36}{subsection.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\kern .5em }Summatio}{34}{section.6}
+\contentsline {section}{\numberline {6\relax .\kern .5em }Podsumowanie}{37}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Bibliografia}{35}{section*.1}
+\contentsline {section}{Bibliografia}{39}{section*.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{36}{section*.2}
+\contentsline {section}{Wykaz symboli i skr\IeC {\'o}t\IeC {\'o}w}{40}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis rysunk\IeC {\'o}w}{36}{section*.2}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{40}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis tabel}{36}{section*.2}
+\contentsline {section}{Spis tabel}{40}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis za\IeC {\l }\IeC {\k a}cznik\IeC {\'o}w}{36}{section*.3}
+\contentsline {section}{Spis za\IeC {\l }\IeC {\k a}cznik\IeC {\'o}w}{40}{section*.3}

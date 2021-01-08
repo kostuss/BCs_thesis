@@ -90,8 +90,8 @@ class Network(object):
 
             #stopping rule
             if all(prev_delta_cost_list < self.cost_delta_epsilon):
-                print("Training ended at epoch {}".format(j+1))
-                return total_train_cost, total_test_cost 
+               print("Training ended at epoch {}".format(j+1))
+               return total_train_cost, total_test_cost 
 
         return total_train_cost, total_test_cost 
 
@@ -286,7 +286,7 @@ class Network(object):
 
         test_cost = []
         train_cost = []
-        for limit in range(int(0.95*par_number)):
+        for limit in range(int(1*par_number)):
             """ Iterate over training examples """
             for x, y in train_data:
                 delta_nabla_h = self.backpropOBD(x,y)

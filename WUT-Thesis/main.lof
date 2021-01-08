@@ -10,3 +10,13 @@
 \contentsline {figure}{\numberline {3.4.}{\ignorespaces Model neuronu. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {wawrzynski2019} }}{19}{figure.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.5.}{\ignorespaces Przebieg funkcji sigmoidalnej unipolarnej. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {nielsen2015}}}{19}{figure.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby neuron\IeC {\'o}w w warstwie ukrytej - dane treningowe}}{35}{figure.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby neuron\IeC {\'o}w w warstwie ukrytej - dane testowe}}{35}{figure.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami}}{36}{figure.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami (uci\IeC {\k e}te warto\IeC {\'s}ci pocz\IeC {\k a}tkowe)}}{37}{figure.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby zredukowanych wag - dane testowe i treningowe}}{38}{figure.5.5}
