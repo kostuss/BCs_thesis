@@ -21,7 +21,7 @@ iterations = 40
 D = 60
 K = 1
 T1 = 5
-T2 = 3
+T2 = 2
 TD = 0
 
 s_list = np.array(obiekt_regulacji.generate_s_vaules(D, T1, T2, K, TD))
@@ -130,9 +130,9 @@ for zad in np.arange(1,9,0.2):
 
 print("Train data len: ", len(train_data))
 print_size(train_data)
-#joblib.dump(train_data, 'dane/dmc_regulation_data_1_train.pkl',1)
+joblib.dump(train_data, 'dane/dmc_regulation_data_1_train.pkl',1)
 
 print("Test data len: ", len(test_data))
 print_size(test_data)
-#joblib.dump(test_data, 'dane/dmc_regulation_data_1_test.pkl',1)
+joblib.dump(test_data, 'dane/dmc_regulation_data_1_test.pkl',1)
 

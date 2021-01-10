@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  8 JAN 2021 23:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  10 JAN 2021 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1817,14 +1817,14 @@ sion: found PDF version <1.7>, but at most version <1.5> allowed
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
 Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line
- 66.
+ 65.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
 [5 <./eiti/oswiadczenie_autora_pracy.pdf>] [6
 
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 72.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 71.
  (./main.toc
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 4.
 
@@ -1988,27 +1988,48 @@ g>]
 <img/cost_epoch_150.png, id=604, 462.528pt x 346.896pt>
 File: img/cost_epoch_150.png Graphic file (type png)
 <use img/cost_epoch_150.png>
-Package pdftex.def Info: img/cost_epoch_150.png  used on input line 32.
+Package pdftex.def Info: img/cost_epoch_150.png  used on input line 33.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 <img/cost_epoch_150_zoom.png, id=605, 462.528pt x 346.896pt>
 File: img/cost_epoch_150_zoom.png Graphic file (type png)
 <use img/cost_epoch_150_zoom.png>
-Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 38.
+Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 39.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/cost_OBD_full.png, id=606, 462.528pt x 346.896pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[36 <./img/cost_epoch_150.png>]
+Underfull \vbox (badness 1755) has occurred while \output is active []
+
+ [37 <./img/cost_epoch_150_zoom.png>]
+<img/regulation_net_5.png, id=620, 462.528pt x 346.896pt>
+File: img/regulation_net_5.png Graphic file (type png)
+<use img/regulation_net_5.png>
+Package pdftex.def Info: img/regulation_net_5.png  used on input line 63.
+(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+<img/regulation_DMC_5.png, id=621, 462.528pt x 346.896pt>
+File: img/regulation_DMC_5.png Graphic file (type png)
+<use img/regulation_DMC_5.png>
+Package pdftex.def Info: img/regulation_DMC_5.png  used on input line 69.
+(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/cost_OBD_full.png, id=622, 462.528pt x 346.896pt>
 File: img/cost_OBD_full.png Graphic file (type png)
 <use img/cost_OBD_full.png>
-Package pdftex.def Info: img/cost_OBD_full.png  used on input line 52.
+Package pdftex.def Info: img/cost_OBD_full.png  used on input line 81.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./tex/5-podsumowanie.tex [36 <./img/cost_epoch_150.png>]) [37 <./img/cost_ep
-och_150_zoom.png>] [38 <./img/cost_OBD_full.png>] [39
+) (./tex/5-podsumowanie.tex [38 <./img/regulation_net_5.png>]) [39 <./img/regul
+ation_DMC_5.png>] [40 <./img/cost_OBD_full.png>] [41
 
 
 ] (./main.lof)
@@ -2019,13 +2040,13 @@ och_150_zoom.png>] [38 <./img/cost_OBD_full.png>] [39
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- (./main.app)
+(./main.app)
 \tf@app=\write9
 \openout9 = `main.app'.
 
- [40] [41]
+ [42] [43]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
- [42]
+ [44]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
@@ -2041,11 +2062,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30776 strings out of 494847
- 532003 string characters out of 6178850
+ 30799 strings out of 494847
+ 532420 string characters out of 6178850
  1269523 words of memory out of 5000000
- 33103 multiletter control sequences out of 15000+600000
- 635753 words of font info for 298 fonts, out of 8000000 for 9000
+ 33115 multiletter control sequences out of 15000+600000
+ 636149 words of font info for 301 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
  46i,12n,80p,10397b,3390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2057,10 +2078,10 @@ ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
 dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
 putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (42 pages, 771946 bytes).
+Output written on main.pdf (44 pages, 809823 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 665 compressed objects within 7 object streams
- 292 named destinations out of 1000 (max. 500000)
- 30482 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 778 PDF objects out of 1000 (max. 8388607)
+ 679 compressed objects within 7 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 30492 words of extra memory for PDF output out of 35830 (max. 10000000)
 

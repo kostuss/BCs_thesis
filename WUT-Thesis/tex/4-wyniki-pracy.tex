@@ -6,7 +6,7 @@ Niniejszy rozdział prezentuje główne wyniki uzyskane w trakcie badania i zawi
 Niezbędnym krokiem przed przystąpieniem do trenowania sieci neuronowej jest generacja danych, na podstawie których sieć następnie zostanie nauczona. Celem pracy jest zweryfikowanie zdolności adaptacji sieci do działania jako regulator DMC. Kierując się tym założeniem oczywistym wydaje się wygenerowanie danych uczących na podstawie symulacji przeprowadzonych z wykorzystaniem rzeczywistego regulatora DMC. Praca ma jedynie charakter porównawczy, a więc za najogólniejszy przykład regulacji możemy wybrać dostosowanie wyjścia obiektu regulacji do jednokrotnego skoku wartości zadanej. Jako obiekt regulacji wybrany został w tej części układ opisany we wcześniejszej części pracy, który identyfikujemy poprzez następujące parametry: \( T_1=5, \, T_2=2, \, K=1, \, T_d=0 \). Wybór dokonany został w sposób arbitralny, gdyż przeprowadzenie eksperymentów z wykorzystaniem dowolnego innego układu pozwala osiągnąć zbliżone rezultaty i wyciągnąć analogiczne wnioski.
 \par Na tym etapie należy podjąć decyzję odnośnie wartości na podstawie, których sieć neuronowa dokonywać będzie regulacji. Kierując się analogią do klasycznych metod za dobrą metodę wybrano sterowanie na podstawie wartości uchybu regulacji oraz aktualnej wartości zadanej. W trakcie przeprowadzanych eksperymentów długość symulacji wynosi 40 okresów jako okres, po którym układ regulowany za pomocą regulatora DMC osiąga pełną stabilność. Na tej podstawie do sterowania za pomocą sieci wybrane zostało 30 wartości uchyby regulacji oraz aktualna wartość zadana. Wyjściem sieci jest oczywiście pojedynczy sygnał sterujący co stanowi pewną modyfikację względem algorytmu DMC gdzie, w każdej iteracji wyznaczana jest zmiana sterowania. Opisana modyfikacja stanowi jedynie szczegół implementacyjny, który nie wpływa na wyniki osiągane przez sieć.
 \par Jak zostało już to opisane w części teoretycznej dane uczące i weryfikujące generowane są w sposób niezależny na podstawie oddzielnych przebiegów regulacji. Dzięki takiej strategi mamy pewność, że sieć zostanie przetestowana pod kątem ogólnej aproksymacji algorytmu OBD, a nie jedynie wybranych przebiegów regulacji. Tak więc kolejno przeprowadzone zostały eksperymenty polegające na wyznaczeniu przebiegu regulacji predykcyjnej dla jednostkowych skoków wartości zadanej z zakresu od 1 do 10 z krokiem co 0,1. Przebiegi regulacji podzielone zostały na dane uczące i weryfikujące w stosunku 75\% - 25\% . Po próbkowaniu dla każdej iteracji zbiór uczący ostatecznie składa się z 3015 przykładów, natomiast weryfikujący z 1035.
-\par Ostatnim krokiem przed przystąpieniem do procedury uczenia sieci neuronowej i doboru optymalnej architektury. Jak już zostało wskazane z uwagi na sigmoidalną funkcję aktywacji koniecznym było napisanie modułu skalującego zarówno dane wejściowe jak i wyjściowe sieci do zakresu \( (-1,1 \). Warto zauważyć, że skalowanie wartości wejściowych i wyjściowych przebiega niezależnie oraz moduł skalujący umożliwia odwrotne skalowanie wartości sterowania, które następnie wykorzystywana jest w trakcie regulacji. Stanowi to istotne ograniczenie w działaniu sieci, a mianowicie sieć jest w stanie regulować tylko układy dla których pożądane wartości sterowania zawierają się w zakresie reprezentowanym przez dane wykorzystane do nauki sieci.  
+\par Ostatnim krokiem przed przystąpieniem do procedury uczenia sieci neuronowej i doboru optymalnej architektury. Jak już zostało wskazane z uwagi na sigmoidalną funkcję aktywacji koniecznym było napisanie modułu skalującego zarówno dane wejściowe jak i wyjściowe sieci do zakresu \( (-1,1) \). Warto zauważyć, że skalowanie wartości wejściowych i wyjściowych przebiega niezależnie oraz moduł skalujący umożliwia odwrotne skalowanie wartości sterowania, które następnie wykorzystywana jest w trakcie regulacji. Stanowi to istotne ograniczenie w działaniu sieci, a mianowicie sieć jest w stanie regulować tylko układy dla których pożądane wartości sterowania zawierają się w zakresie reprezentowanym przez dane wykorzystane do nauki sieci.  
 
 \subsection{Wybór struktury sieci}
 Pierwszym krokiem prowadzącym do wyselekcjonowania optymalnej architektury sieci jest wybór jej struktury. Liczba neuronów w warstwie wejściowej i wyjściowej ściśle zależy do charakterystyki problemu, a więc wygenerowanych uprzednio danych. Szczególną uwagę należy poświęcić za to prawidłowemu doborowi liczby neuronów w warstwie ukrytej. W tym celu przeprowadzono eksperyment pokazujący wartość kwadratowej funkcji kosztu w zależności od liczby neuronów w warstwie ukrytej. Przetestowano wartości z zakresu od 5 do 200 neuronów, a wyniki symulacji zaprezentowane zostały na Rysunku 5.1. 
@@ -26,6 +26,7 @@ Pierwszym krokiem prowadzącym do wyselekcjonowania optymalnej architektury siec
 
 \par Analiza wykresów dostarcza kilka istotnych obserwacji. Pierwszą z nich jest to, że nawet niezwykle prosta strukturą jaką jest sieć neuronowa o jedynie 5 neuronach w warstwie ukrytej jest w stanie zadowalająco dobrze nauczyć się postawionego przed nią zadania regulacji. Warto jednak zwrócić uwagę, że sieci o małej liczbie neuronów wykazują się wysoką niestabilnością przez co rezultaty przez nie osiągane mogą różnić się pomiędzy kolejnymi próbami. Po kilkukrotnym powtórzeniu eksperymentu zaobserwowano wyeliminowanie problemu dla sieci neuronowych z liczbą neuronów w warstwie ukrytych przekraczającą 100. Na tej podstawie do dalszych eksperymentów wybrana została sieć o 150 neuronach. 
 \par Po wybraniu optymalnej struktury sieci należy zwrócić uwagę na zależność kosztu od liczby epok, przez które jest trenowana sieć. Pozwoli to na weryfikację wartości granicznej gradientu funkcji celu, która stanowi warunek wyjścia dla metody uczenia sieci. Początkowa kryterium wyjścia ustalone zostało na poziomie \( 10^{-5} \) co oznacza, że jeżeli gradient funkcji kosztu przez 3 kolejne iteracje jest mniejszy od zadanej wartości algorytm przerywa uczenie sieci. Eksperyment ten możemy przeprowadzić zdejmując wcześniejsze ograniczenie i sprawdzając jak zmienia się funkcja kosztu dla 300 iteracji algorytmu (epok). Wykres przedstawiający wspomnianą zależność zaprezentowany został na Rysunku 5.3 natomiast na Rysunku 5.4 przedstawione zostały te same dane ale z uciętymi 50 początkowymi wartościami w celu dokładniejszej prezentacji wyników czytelnikowi.
+\par Należy zwrócić uwagę, że już po 40 epokach wyniki osiągane przez sieć należy uznać za satysfakcjonujące, jednak w dalszym ciągu obserwujemy stosunkowo duże wahania wartości funkcji kosztu i nie można mówić tutaj o pełnej stabilności. Okresowe wahania ustają po około 150 iteracjach algorytmu uczenia i po takiej liczbie epok możemy uznać, że redukcja funkcji kosztu jest nieznaczna. Po wielokrotnym powtórzeniu eksperymentu oraz przetestowaniu różnych wartości kryterium wyjścia za zadowalająca wartość przyjęto \( 5*10^{-6} \), co stanowi redukcję wcześniej przyjętego poziomu o połowę.
 
 \begin{figure}[h]
   \label{fig:Koszt-liczba-epok}
@@ -38,14 +39,42 @@ Pierwszym krokiem prowadzącym do wyselekcjonowania optymalnej architektury siec
   \centering \includegraphics[width=0.7\linewidth]{cost_epoch_150_zoom.png}
   \caption{Zależność kosztu od liczby epok dla sieci z 150 neuronami (ucięte wartości początkowe)}
 \end{figure}
- 
 
-%- koszt dla roznych wielkosci sieci
-%- koszt dla roznej liczby epok 
-%- przyklady regulacji z porównaniem MSE
+\par Na tym etapie warto dokonać porównania klasycznej metody DMC z regulatorem opartym o w pełni wytrenowaną sieć neuronową, jeszcze przed zastosowaniem algorytmu OBD. W tym celu przeprowadzono następujący eksperyment, sprawdzono zdolność dostosowania wyjścia obiektu do jednokrotnego skoku wartości zadanej. Za miarę jakości regulacji przyjęto powszechnie stosowany błąd średniokwadratowy \emph{(ang. mean squared error MSE)}. Sprawdzono zdolność dostosowania wyjścia obiektu do 5 różnych wartości zadanych: 2,5 ; 4 ; 5,21 ; 6,1 ; 7. Wartości dobrane zostały w taki sposób aby sprawdzić zachowanie regulatora na całym zakresie reprezentowanym przez dane uczące. Eksperyment został powtórzony 10-krotnie aby wyeliminować wpływ pewnej losowości, jaką charakteryzuje się proces uczenia sieci neuronowej. Uśrednione wartości błędu MSE dla każdej z wartości zadanej zaprezentowane zostały w tabeli 5.1.
+\begin{table}[!h] \label{tab:tabela1} \centering
+\caption{Porównanie MSE dla w pełni wytrenowanej sieci}
+\begin{tabular} {| c | c | c |} \hline
+    Wartość zadana & MSE sieć & MSE DMC \\ \hline\hline
+    2,5 & 0,606 & 0,592 \\ \hline
+    4 & 1,499 & 1,517 \\ \hline
+    5,21 & 2,518 & 2,573 \\ \hline
+    6,1 & 3,457 & 3,527 \\ \hline
+    7 & 4,579 & 4,645 \\ \hline
+    Średnia & 2,532 & 2,571 \\ \hline
+    
+\end{tabular}
+\end{table}
+Analizując przedstawioną tabele możemy stwierdzić, że sieć neuronowa poradziła sobie z zadaniem regulacji, które zostało przed nią postawione. Co więcej dla czterech z pięciu przypadków obserwujemy mniejszą wartość błędu MSE niż dla regulatora DMC. Przypadek dla którego klasyczny regulator poradził sobie nieznacznie lepiej dotyczył najmniejszej wartości zadanej co może świadczyć o tym, że w obrębie względnie małych zmian wartości zadanych regulacja oparta o sieć neuronową charakteryzuje się mniejszą precyzją. Jest to jednak hipoteza, która wymagałaby dokładniejszej analizy w czasie przyszłego rozwoju niniejszej pracy. Warto natomiast zwrócić uwagę na to, że dla wartości zadanej wynoszącej 5,21 sieć w pełni poradziła sobie z zadaniem regulacji przed nią postawionym. Jest to o tyle ważne, że dana wartość nie była reprezentowana w danych uczących co udowadnia, że sieć neuronowa nauczona została ogólnego zadania regulacji, a nie jedynie przebiegów dla pojedynczych wartości zadanych, które znalazły odzwierciedlenie w przykładach trenujących. 
 
+\par Warto pokazać również przebieg jednej z przykładowych regulacji, na podstawie których wyznaczona została Tabela 5.1. Zaprezentowane zostaną przebiegi dla wartości zadanej 5,21 z przyczyn opisanych w poprzednim paragrafie. Na Rysunku 5.5 widzimy regulację z wykorzystaniem sieci neuronowej dla wybranej wartości zadanej, natomiast Rysunek 5.6 pokazuje referencyjny przebieg uzyskany z wykorzystaniem regulatora DMC. Dokonując porównania dwóch wykresów możemy stwierdzić, że przebiegi wyjścia obiektu dla dwóch różnych regulatorów są do siebie zbliżone. Warto zauważyć, że regulacja z wykorzystaniem sieci neuronowej charakteryzuje się mniejszą stabilnością sygnału sterującego. Z cała pewnością jest to istotne ograniczenie, które jednak może potwierdzać zauważoną zależność z przeglądu literatury, przykłady praktycznego zastosowania sieci neuronowej w regulacji dotyczą jedynie wysoce dynamicznych obiektów. Pełnej weryfikacji postawionej tezy będzie można jednak dokonać po przetestowaniu uproszczonej sieci neuronowej.
+
+\begin{figure}[h]
+  \label{fig:sim-net-5}
+  \centering \includegraphics[width=0.7\linewidth]{regulation_net_5.png}
+  \caption{Regulacja do wartości zadanej 5,21 - wytrenowana sieć neuronowa}
+\end{figure}
+
+\begin{figure}[h]
+  \label{fig:sim-dmc-5}
+  \centering \includegraphics[width=0.7\linewidth]{regulation_DMC_5.png}
+  \caption{Regulacja do wartości zadanej 5,21 - DMC}
+\end{figure}
+
+\par Przeprowadzony eksperyment wskazuje również na zasadność ustalenia kryterium wyjścia na wartość \( 5*10^{-6} \). W trakcie 10 powtórzeń uczenie sieci kończyło się w zakresie od 126 do 258 iteracji, po których uśredniony koszt wynosił 0,00012 z odchyleniem standardowym wynoszącym \( 2,9*10^{-5} \). Są to rezultaty, które możemy uznać za satysfakcjonujące przed przystąpieniem do procedury redukcji sieci.
 
 \subsection{Zastosowanie algorytmu OBD}
+
+Jak już zostało wskazane w rozdziale z opisem teoretycznym zastosowanie algorytmu OBD wymaga wcześniejszego osiągnięcia minimum funkcji kosztu na danych uczących. Z tego względu algorytm OBD zastosowany będzie do sieci neuronowej stanowiącej wynik analizy przeprowadzonej w poprzednim podrozdziale.
 
 \begin{figure}[h]
   \label{fig:Koszt-OBD-full}

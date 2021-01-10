@@ -78,7 +78,7 @@ class Network(object):
                 self.update_mini_batch(mini_batch, eta)
 
             if (j+1)%50 == 0: 
-                print("Epoch {} complete".format(j+1))
+                print("Epoch {} finished".format(j+1))
 
             current_cost = self.total_cost(training_data)
             total_train_cost.append(current_cost)
@@ -90,7 +90,7 @@ class Network(object):
 
             #stopping rule
             if all(prev_delta_cost_list < self.cost_delta_epsilon):
-               print("Training ended at epoch {}".format(j+1))
+               print("Finished training at epoch {}".format(j+1))
                return total_train_cost, total_test_cost 
 
         return total_train_cost, total_test_cost 

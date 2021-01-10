@@ -87,7 +87,7 @@ def plot_cost_neurons(train_cost, test_cost, neuron_numbers, test = False):
 
 if __name__ == "__main__":
 
-	###Load Data
+	####Load Data
 	file_train = "dane/dmc_regulation_data_1_train.pkl"
 	file_test = "dane/dmc_regulation_data_1_test.pkl"
 
@@ -100,8 +100,37 @@ if __name__ == "__main__":
 	scaled_train = scaler_object.scale_data(train_data)
 	scaled_test = scaler_object.scale_data(test_data)
 	print("Data loaded")
+	#####
 
-	
+	#comparison of two methods   
+	MSE_vector_dmc = [[] for i in range(5)]
+	MSE_vector_net = [[] for i in range(5)]
+	exit_vector = []
+	cost_vector = []
+	#y_zad = [2.5 , 4, 5.21 , 6.1 , 7]
+	y_zad = [5.21, 2.5]
+	for iteration in range(4):
+		net = network.Network([31, 150, 1])
+		cost_train, cost_test = net.SGD(scaled_train, 300, 10, 3, scaled_test)
+		cost_vector.append(cost_train[-1])
+		for idx, zad in enumerate(y_zad):
+			#mse_net, mse_dmc = simulation.perform_simulation_comp(net, scaler_object, zad)
+			#MSE_vector_dmc[idx].append(mse_dmc)
+			#MSE_vector_net[idx].append(mse_net)
+			if iteration==0:
+				simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", zad, reference=True)
+			else:
+				simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", zad, reference=False)
+
+
+		print({"Iteration {} finished".format(iteration)})
+
+	print('simulation finished')
+	#porowananie wynikow
+	#print([[round(np.mean(x),3),round(np.mean(y),3)] for x,y in zip(MSE_vector_net, MSE_vector_dmc)])
+
+
+	'''
 	#cost for single network
 	net = network.Network([31, 150, 1])
 	cost_train, cost_test = net.SGD(scaled_train, 300, 10, 3, scaled_test)
@@ -114,11 +143,11 @@ if __name__ == "__main__":
 	simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 5.21, reference=True)
 	#simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 3.0, reference=False)
 
-	#cost_train, cost_test = net.OBD_full(scaled_train,scaled_test)
-	#plot_cost_OBD(cost_train, cost_test, 0)
-	#plot_cost_OBD(cost_train[:-100], cost_test[:-100], 0)
-
-	#simulation.perform_simulation(net, scaler_object, "sieć OBD", 5.21, reference=True)
+	cost_train, cost_test = net.OBD_full(scaled_train,scaled_test)
+	plot_cost_OBD(cost_train, cost_test, 0)
+	plot_cost_OBD(cost_train[:-100], cost_test[:-100], 0)
+	simulation.perform_simulation(net, scaler_object, "sieć OBD", 5.21, reference=True)
+	'''
 
 
 	'''

@@ -19,4 +19,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.4.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami (uci\IeC {\k e}te warto\IeC {\'s}ci pocz\IeC {\k a}tkowe)}}{37}{figure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby zredukowanych wag - dane testowe i treningowe}}{38}{figure.5.5}
+\contentsline {figure}{\numberline {5.5.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - wytrenowana sie\IeC {\'c} neuronowa}}{38}{figure.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - DMC}}{39}{figure.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby zredukowanych wag - dane testowe i treningowe}}{40}{figure.5.7}
