@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  10 JAN 2021 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  17 JAN 2021 13:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1584,6 +1584,15 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 LaTeX Warning: Label `fig:struktura-sieci' multiply defined.
 
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1972,7 +1981,7 @@ Package pdftex.def Info: img/cost_neuron_number_train.png  used on input line 1
 (pdftex.def)             Requested size: 306.71939pt x 187.54865pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <img/cost_neuron_number_test.png, id=591, 560.8152pt x 346.896pt>
 File: img/cost_neuron_number_test.png Graphic file (type png)
@@ -1981,7 +1990,7 @@ Package pdftex.def Info: img/cost_neuron_number_test.png  used on input line 23
 .
 (pdftex.def)             Requested size: 306.71939pt x 189.71886pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [34] [35 <./img/cost_neuron_number_train.png> <./img/cost_neuron_number_test.pn
 g>]
@@ -1997,7 +2006,7 @@ Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 39.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2018,35 +2027,133 @@ Package pdftex.def Info: img/regulation_DMC_5.png  used on input line 69.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/cost_OBD_full.png, id=622, 462.528pt x 346.896pt>
-File: img/cost_OBD_full.png Graphic file (type png)
-<use img/cost_OBD_full.png>
-Package pdftex.def Info: img/cost_OBD_full.png  used on input line 81.
+[38]
+<img/cost_OBD_full_test.png, id=626, 565.8741pt x 346.896pt>
+File: img/cost_OBD_full_test.png Graphic file (type png)
+<use img/cost_OBD_full_test.png>
+Package pdftex.def Info: img/cost_OBD_full_test.png  used on input line 81.
+(pdftex.def)             Requested size: 306.71939pt x 188.03563pt.
+<img/cost_OBD_full_train.png, id=627, 574.5465pt x 346.896pt>
+File: img/cost_OBD_full_train.png Graphic file (type png)
+<use img/cost_OBD_full_train.png>
+Package pdftex.def Info: img/cost_OBD_full_train.png  used on input line 87.
+(pdftex.def)             Requested size: 306.71939pt x 185.19318pt.
+
+Underfull \vbox (badness 2035) has occurred while \output is active []
+
+ [39 <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>] [40 <./img/cost
+_OBD_full_test.png> <./img/cost_OBD_full_train.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+<img/regulation_net_obd_2.png, id=648, 462.528pt x 346.896pt>
+File: img/regulation_net_obd_2.png Graphic file (type png)
+<use img/regulation_net_obd_2.png>
+Package pdftex.def Info: img/regulation_net_obd_2.png  used on input line 115.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./tex/5-podsumowanie.tex [38 <./img/regulation_net_5.png>]) [39 <./img/regul
-ation_DMC_5.png>] [40 <./img/cost_OBD_full.png>] [41
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42]
+<img/regulation_net_obd_5.png, id=655, 462.528pt x 346.896pt>
+File: img/regulation_net_obd_5.png Graphic file (type png)
+<use img/regulation_net_obd_5.png>
+Package pdftex.def Info: img/regulation_net_obd_5.png  used on input line 123.
+(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43 <./img/regulation_net_obd_2.png> <./img/regulation_net_obd_5.png>]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 134.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 134.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 134.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 134.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 134.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 134.
+ [44]
+<img/regulation_TD1_net.png, id=670, 462.528pt x 346.896pt>
+File: img/regulation_TD1_net.png Graphic file (type png)
+<use img/regulation_TD1_net.png>
+Package pdftex.def Info: img/regulation_TD1_net.png  used on input line 151.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+<img/regulation_TD1_dmc.png, id=671, 462.528pt x 346.896pt>
+File: img/regulation_TD1_dmc.png Graphic file (type png)
+<use img/regulation_TD1_dmc.png>
+Package pdftex.def Info: img/regulation_TD1_dmc.png  used on input line 157.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+<img/regulation_TD2_net.png, id=672, 462.528pt x 346.896pt>
+File: img/regulation_TD2_net.png Graphic file (type png)
+<use img/regulation_TD2_net.png>
+Package pdftex.def Info: img/regulation_TD2_net.png  used on input line 166.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+<img/regulation_TD2_dmc.png, id=673, 462.528pt x 346.896pt>
+File: img/regulation_TD2_dmc.png Graphic file (type png)
+<use img/regulation_TD2_dmc.png>
+Package pdftex.def Info: img/regulation_TD2_dmc.png  used on input line 172.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+ [45 <./img/regulation_TD1_net.png> <./img/regulation_TD1_dmc.png> <./img/regul
+ation_TD2_net.png> <./img/regulation_TD2_dmc.png>]
+<img/regulation_T73_net.png, id=686, 462.528pt x 346.896pt>
+File: img/regulation_T73_net.png Graphic file (type png)
+<use img/regulation_T73_net.png>
+Package pdftex.def Info: img/regulation_T73_net.png  used on input line 199.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+<img/regulation_T73_dmc.png, id=687, 462.528pt x 346.896pt>
+File: img/regulation_T73_dmc.png Graphic file (type png)
+<use img/regulation_T73_dmc.png>
+Package pdftex.def Info: img/regulation_T73_dmc.png  used on input line 205.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/regulation_T41_net.png, id=688, 462.528pt x 346.896pt>
+File: img/regulation_T41_net.png Graphic file (type png)
+<use img/regulation_T41_net.png>
+Package pdftex.def Info: img/regulation_T41_net.png  used on input line 216.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+<img/regulation_T41_dmc.png, id=689, 462.528pt x 346.896pt>
+File: img/regulation_T41_dmc.png Graphic file (type png)
+<use img/regulation_T41_dmc.png>
+Package pdftex.def Info: img/regulation_T41_dmc.png  used on input line 222.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[46]) (./tex/5-podsumowanie.tex
+Underfull \vbox (badness 3168) has occurred while \output is active []
+
+ [47 <./img/regulation_T73_net.png> <./img/regulation_T73_dmc.png> <./img/regul
+ation_T41_net.png> <./img/regulation_T41_dmc.png>] [48]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49])
+[50] [51
 
 
 ] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- (./main.lot)
+ (./main.lot [52])
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
-(./main.app)
+ (./main.app)
 \tf@app=\write9
 \openout9 = `main.app'.
 
- [42] [43]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
- [44]
+ [53]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
@@ -2062,11 +2169,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30799 strings out of 494847
- 532420 string characters out of 6178850
+ 30976 strings out of 494847
+ 536090 string characters out of 6178850
  1269523 words of memory out of 5000000
- 33115 multiletter control sequences out of 15000+600000
- 636149 words of font info for 301 fonts, out of 8000000 for 9000
+ 33244 multiletter control sequences out of 15000+600000
+ 672061 words of font info for 347 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
  46i,12n,80p,10397b,3390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2078,10 +2185,10 @@ ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
 dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
 putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (44 pages, 809823 bytes).
+Output written on main.pdf (53 pages, 1049807 bytes).
 PDF statistics:
- 778 PDF objects out of 1000 (max. 8388607)
- 679 compressed objects within 7 object streams
- 297 named destinations out of 1000 (max. 500000)
- 30492 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 865 PDF objects out of 1000 (max. 8388607)
+ 734 compressed objects within 8 object streams
+ 318 named destinations out of 1000 (max. 500000)
+ 32595 words of extra memory for PDF output out of 35830 (max. 10000000)
 

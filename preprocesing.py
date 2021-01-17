@@ -33,9 +33,9 @@ def plot_cost_epoch(train_cost, test_cost, start):
 	plt.legend()
 	plt.show()
 
-def plot_cost_OBD(train_cost, test_cost, start):
+def plot_cost_OBD(train_cost, test_cost, test = False):
 	sim_length = len(train_cost)
-	time=[i for i in range(start,sim_length)]
+	time=[i for i in range(sim_length)]
 
 	fig = plt.figure()
 	ax = fig.add_subplot(1, 1, 1)
@@ -49,8 +49,10 @@ def plot_cost_OBD(train_cost, test_cost, start):
 	ax.grid(which='minor', alpha=0.2)
 	ax.grid(which='major', alpha=0.5)
 
-	plt.plot(time, train_cost[start:], color='r', label = 'dane treningowe')
-	plt.plot(time, test_cost[start:], color='b', label = 'dane testowe')
+	if test:
+		plt.plot(time, test_cost[:], color='b', label = 'dane testowe')
+	else:
+		plt.plot(time, train_cost[:], color='r', label = 'dane treningowe')
 
 	plt.title(f"Zależność funkcji kosztu od liczby zredukowanych wag")
 	plt.xlabel("Liczba zredukowanych wag")
@@ -84,6 +86,16 @@ def plot_cost_neurons(train_cost, test_cost, neuron_numbers, test = False):
 	plt.legend()
 	plt.show()
 
+def perform_comparison(net, scaler_object, y_zad_list, show = False):
+	MSE_vector_dmc = []
+	MSE_vector_net = []
+	for zad in y_zad_list:
+		mse_net, mse_dmc = simulation.perform_simulation_comp(net, scaler_object, zad)
+		MSE_vector_dmc.append(mse_dmc)
+		MSE_vector_net.append(mse_net)
+		if show:
+			simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów z OBD", zad, reference=True)
+	return MSE_vector_net, MSE_vector_dmc
 
 if __name__ == "__main__":
 
@@ -102,6 +114,7 @@ if __name__ == "__main__":
 	print("Data loaded")
 	#####
 
+	'''
 	#comparison of two methods   
 	MSE_vector_dmc = [[] for i in range(5)]
 	MSE_vector_net = [[] for i in range(5)]
@@ -128,25 +141,36 @@ if __name__ == "__main__":
 	print('simulation finished')
 	#porowananie wynikow
 	#print([[round(np.mean(x),3),round(np.mean(y),3)] for x,y in zip(MSE_vector_net, MSE_vector_dmc)])
-
-
 	'''
+
 	#cost for single network
 	net = network.Network([31, 150, 1])
 	cost_train, cost_test = net.SGD(scaled_train, 300, 10, 3, scaled_test)
-
-	#print("Train cost: {}".format(cost_train[-1]))
-	#print("Test cost: {}".format(cost_test[-1]))
-	plot_cost_epoch(cost_train, cost_test, 0)
-	plot_cost_epoch(cost_train, cost_test, 50)
-
-	simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 5.21, reference=True)
+	print("Train cost: {}".format(cost_train[-1]))
+	print("Test cost: {}".format(cost_test[-1]))
+	#plot_cost_epoch(cost_train, cost_test, 0)
+	#plot_cost_epoch(cost_train, cost_test, 50)
+	#simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 5.21, reference=True)
 	#simulation.perform_simulation(net, scaler_object, "sieć 150 neuronów", 3.0, reference=False)
+	cost_train_OBD, cost_test_OBD = net.OBD(scaled_train,scaled_test)
+	print("Train cost after OBD: {}".format(cost_train_OBD[-1]))
+	print("Test cost after OBD: {}".format(cost_test_OBD[-1]))
+	plot_cost_OBD(cost_train_OBD, cost_test_OBD, True)
+	plot_cost_OBD(cost_train_OBD, cost_test_OBD, False)
+	
+	#plot_cost_OBD(cost_train[:-100], cost_test[:-100], True)
+	#plot_cost_OBD(cost_train[:-100], cost_test[:-100], False)
+	#simulation.perform_simulation(net, scaler_object, "sieć OBD", 5.21, reference=True)
+	'''
+	y_zad_list = [x for x in np.arange(2, 9, 0.1)]
+	MSE_vector_net, MSE_vector_dmc = perform_comparison(net, scaler_object, y_zad_list)
 
-	cost_train, cost_test = net.OBD_full(scaled_train,scaled_test)
-	plot_cost_OBD(cost_train, cost_test, 0)
-	plot_cost_OBD(cost_train[:-100], cost_test[:-100], 0)
-	simulation.perform_simulation(net, scaler_object, "sieć OBD", 5.21, reference=True)
+	y_zad_list_2 = [2.5 , 4, 5.21 , 6.1 , 7]
+	MSE_vector_net_2, MSE_vector_dmc_2 = perform_comparison(net, scaler_object, y_zad_list_2, True)
+
+	print('simulation finished')
+	#porowananie wynikow
+	#print([[round(np.mean(x),3),round(np.mean(y),3)] for x,y in zip(MSE_vector_net, MSE_vector_dmc)])
 	'''
 
 

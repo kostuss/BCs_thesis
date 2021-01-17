@@ -77,8 +77,8 @@ class Network(object):
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
 
-            if (j+1)%50 == 0: 
-                print("Epoch {} finished".format(j+1))
+            #if (j+1)%50 == 0: 
+                #print("Epoch {} finished".format(j+1))
 
             current_cost = self.total_cost(training_data)
             total_train_cost.append(current_cost)
@@ -90,7 +90,7 @@ class Network(object):
 
             #stopping rule
             if all(prev_delta_cost_list < self.cost_delta_epsilon):
-               print("Finished training at epoch {}".format(j+1))
+               #print("Finished training at epoch {}".format(j+1))
                return total_train_cost, total_test_cost 
 
         return total_train_cost, total_test_cost 
@@ -248,8 +248,7 @@ class Network(object):
 
         test_cost = []
         train_cost = []
-        prev_cost = np.inf
-        prev_delta_cost_list = np.full((4,),np.inf)
+        min_cost = np.inf
 
         for limit in range(int(0.9*par_number)):
             """ Iterate over training examples """
@@ -262,17 +261,17 @@ class Network(object):
                                 for w, h in zip(self.weights, nabla_h)]
 
             self.cut_weights(limit+1)
-            self.SGD(train_data, 200, 10, 3.0)        
-            test_cost.append(self.total_cost(test_data))
+            self.SGD(train_data, 200, 10, 3.0)
+            current_cost = self.total_cost(test_data)       
+            test_cost.append(current_cost)
             train_cost.append(self.total_cost(train_data))
+            min_cost = min(min_cost, current_cost) 
 
-            current_cost = self.total_cost(test_data)
-            
-            prev_delta_cost_list = np.delete(np.insert(prev_delta_cost_list, 0, prev_cost - current_cost),-1)
-            prev_cost = current_cost
+            if limit%200==0:
+                print('Iteration {} of {} for OBD finished'.format(limit,par_number))
 
             #stopping rule
-            if all(prev_delta_cost_list < self.cost_delta_epsilon/200):
+            if limit>2500 and min_cost == current_cost:
                 print("OBD ended after cut of {} out of {} weights".format(limit+1, par_number))
                 return train_cost, test_cost 
 
@@ -286,6 +285,7 @@ class Network(object):
 
         test_cost = []
         train_cost = []
+        print("OBD full started")
         for limit in range(int(1*par_number)):
             """ Iterate over training examples """
             for x, y in train_data:
@@ -300,7 +300,9 @@ class Network(object):
             self.SGD(train_data, 200, 10, 3.0)        
             test_cost.append(self.total_cost(test_data))
             train_cost.append(self.total_cost(train_data))
-
+            if limit%200==0:
+                print('Iteration {} of {} for OBD finished'.format(limit,par_number))
+        print('OBD finished')
         return train_cost, test_cost
 
     def backpropOBD(self, x, y):
@@ -363,7 +365,7 @@ class Network(object):
 
         to_cut = [element[0] for element in saliencies_list[:limit]]
 
-        print("{} out of {} weights cut".format(len(to_cut), len(saliencies_list)))
+        #print("{} out of {} weights cut".format(len(to_cut), len(saliencies_list)))
 
         self.restore_mask()
         for wt_index in to_cut:

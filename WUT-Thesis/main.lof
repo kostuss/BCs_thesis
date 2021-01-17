@@ -19,8 +19,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.4.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami (uci\IeC {\k e}te warto\IeC {\'s}ci pocz\IeC {\k a}tkowe)}}{37}{figure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - wytrenowana sie\IeC {\'c} neuronowa}}{38}{figure.5.5}
+\contentsline {figure}{\numberline {5.5.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - wytrenowana sie\IeC {\'c} neuronowa}}{39}{figure.5.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.6.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - DMC}}{39}{figure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby zredukowanych wag - dane testowe i treningowe}}{40}{figure.5.7}
+\contentsline {figure}{\numberline {5.7.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} funkcji kosztu od liczby zredukowanych wag - dane testowe}}{40}{figure.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} funkcji kosztu od liczby zredukowanych wag - dane treningowe}}{40}{figure.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 2,5 - zredukowana sie\IeC {\'c} neuronowa}}{43}{figure.5.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - zredukowana sie\IeC {\'c} neuronowa}}{43}{figure.5.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.11.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\(T_d=1\))}}{45}{figure.5.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.12.}{\ignorespaces Regulacja DMC obiekt (\(T_d=1\))}}{45}{figure.5.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.13.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\(T_d=2\))}}{45}{figure.5.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.14.}{\ignorespaces Regulacja DMC obiekt (\(T_d=2\))}}{45}{figure.5.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.15.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\( T_1=7, \tmspace +\thinmuskip {.1667em} T_2=3 \))}}{47}{figure.5.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.16.}{\ignorespaces Regulacja DMC obiekt (\( T_1=7, \tmspace +\thinmuskip {.1667em} T_2=3 \))}}{47}{figure.5.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.17.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\( T_1=4, \tmspace +\thinmuskip {.1667em} T_2=1 \))}}{47}{figure.5.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.18.}{\ignorespaces Regulacja DMC obiekt (\( T_1=4, \tmspace +\thinmuskip {.1667em} T_2=1 \))}}{47}{figure.5.18}

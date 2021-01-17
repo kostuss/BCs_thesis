@@ -207,8 +207,8 @@ def plot_simulation(sim_object, title):
 	ax = fig.add_subplot(1, 1, 1)
 	# Major ticks every 20, minor ticks every 5
 	#major_ticks = np.arange(0, D+5, 10)
-	x_ticks = np.arange(0, sim_length, 1)
-	x_major_ticks = np.arange(0, sim_length, 10)
+	x_ticks = np.arange(0, sim_length+1, 1)
+	x_major_ticks = np.arange(0, sim_length+1, 10)
 
 	ax.set_xticks(x_ticks, minor=True)
 	ax.set_xticks(x_major_ticks)
@@ -224,7 +224,7 @@ def plot_simulation(sim_object, title):
 	plt.step(time, sim_object.y_zad_list, color='y', label = 'wartość zadana', where='post')
 	#plt.step(time, sim_object.e_list, color='g', label = 'uchyb_regulacji', where='post')
 
-	plt.title(f"Regulacja {title}")
+	#plt.title(f"Regulacja {title}")
 	plt.xlabel("k")
 	plt.legend()
 	plt.show()
