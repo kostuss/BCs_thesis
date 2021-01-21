@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{OBD}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{train\PYGZus{}data}\PYG{p}{,} \PYG{n}{test\PYGZus{}data}\PYG{p}{):}
+ \PYG{n}{nabla\PYGZus{}h} \PYG{o}{=} \PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{w}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)} \PYG{k}{for} \PYG{n}{w} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{weights}\PYG{p}{]}
+ \PYG{n}{par\PYGZus{}number} \PYG{o}{=} \PYG{n+nb}{sum}\PYG{p}{([}\PYG{n}{w}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{w}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{k}{for} \PYG{n}{w} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{weights}\PYG{p}{])}
+ \PYG{n}{test\PYGZus{}cost} \PYG{o}{=} \PYG{p}{[]}
+ \PYG{n}{prev\PYGZus{}cost} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{inf}
+ \PYG{n}{prev\PYGZus{}delta\PYGZus{}cost\PYGZus{}list} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{full}\PYG{p}{((}\PYG{l+m+mi}{3}\PYG{p}{,),}\PYG{n}{np}\PYG{o}{.}\PYG{n}{inf}\PYG{p}{)}
+
+ \PYG{k}{for} \PYG{n}{limit} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{l+m+mf}{0.9}\PYG{o}{*}\PYG{n}{par\PYGZus{}number}\PYG{p}{)):}
+   \PYG{k}{for} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o+ow}{in} \PYG{n}{train\PYGZus{}data}\PYG{p}{:}
+     \PYG{n}{delta\PYGZus{}nabla\PYGZus{}h} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{backpropOBD}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+     \PYG{n}{nabla\PYGZus{}h} \PYG{o}{=} \PYG{p}{[}\PYG{n}{nh} \PYG{o}{+} \PYG{n}{dnh}
+       \PYG{k}{for} \PYG{n}{nh}\PYG{p}{,} \PYG{n}{dnh} \PYG{o+ow}{in} \PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{nabla\PYGZus{}h}\PYG{p}{,} \PYG{n}{delta\PYGZus{}nabla\PYGZus{}h}\PYG{p}{)]}
+
+   \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{saliencies} \PYG{o}{=} \PYG{p}{[(}\PYG{n}{h} \PYG{o}{*} \PYG{n}{w}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{train\PYGZus{}data}\PYG{p}{))} \PYG{k}{for} \PYG{n}{w}\PYG{p}{,} \PYG{n}{h} \PYG{o+ow}{in} \PYG{n+nb}{zip}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{weights}\PYG{p}{,} \PYG{n}{nabla\PYGZus{}h}\PYG{p}{)]}
+   \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cut\PYGZus{}weights}\PYG{p}{(}\PYG{n}{limit}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+   \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{SGD}\PYG{p}{(}\PYG{n}{train\PYGZus{}data}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mf}{3.0}\PYG{p}{)}
+   \PYG{n}{test\PYGZus{}cost}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{total\PYGZus{}cost}\PYG{p}{(}\PYG{n}{test\PYGZus{}data}\PYG{p}{))}
+   \PYG{n}{current\PYGZus{}cost} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{total\PYGZus{}cost}\PYG{p}{(}\PYG{n}{test\PYGZus{}data}\PYG{p}{)}
+   \PYG{n}{prev\PYGZus{}delta\PYGZus{}cost\PYGZus{}list} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{delete}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{n}{prev\PYGZus{}delta\PYGZus{}cost\PYGZus{}list}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{prev\PYGZus{}cost} \PYG{o}{\PYGZhy{}} \PYG{n}{current\PYGZus{}cost}\PYG{p}{),}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+   \PYG{n}{prev\PYGZus{}cost} \PYG{o}{=} \PYG{n}{current\PYGZus{}cost}
+   \PYG{c+c1}{\PYGZsh{}stopping rule}
+   \PYG{k}{if} \PYG{n+nb}{all}\PYG{p}{(}\PYG{n}{prev\PYGZus{}delta\PYGZus{}cost\PYGZus{}list} \PYG{o}{\PYGZlt{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{cost\PYGZus{}delta\PYGZus{}epsilon}\PYG{o}{/}\PYG{l+m+mi}{100}\PYG{p}{):}
+     \PYG{k}{return} \PYG{n}{train\PYGZus{}cost}\PYG{p}{,} \PYG{n}{test\PYGZus{}cost}
+
+ \PYG{k}{return} \PYG{n}{train\PYGZus{}cost}\PYG{p}{,} \PYG{n}{test\PYGZus{}cost}
+\end{Verbatim}

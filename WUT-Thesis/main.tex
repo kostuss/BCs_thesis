@@ -15,6 +15,21 @@
 ]{eiti/eiti-thesis}
 
 \usepackage{bm}
+\usepackage{minted}
+\setminted[python]{
+	xleftmargin=24pt, 
+    linenos=true,
+    breaklines=true,
+    encoding=utf8,
+    %fontsize=\footnotesize,
+    frame=lines
+}
+
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+
 \langpol % Dla języka angielskiego mamy \langeng
 \graphicspath{{img/}}             % Katalog z obrazkami.
 \addbibresource{bibliografia.bib} % Plik .bib z bibliografią

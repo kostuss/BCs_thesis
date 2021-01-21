@@ -3,7 +3,7 @@
 W rozdziale przedstawione zostaną wszystkie założenia teoretyczne niezbędne do pełnego zrozumienia przedmiotu pracy i późniejszej interpretacji uzyskanych rezultatów. Na początku przedstawiona zostanie idea regulacji predykcyjnej wraz z algorytmem DMC oraz obiektem regulacji, który zostanie użyty w trakcie eksperymentów. W tej części pracy przydatne były opracowania \cite{stp2009} oraz \cite{tatjewski2016}. Następnie omówię architekturę sztucznej sieci neuronowej wraz z opisem funkcji aktywacji i metodą uczenia sieci. Tutaj szczególnie pomocne okazały się pozycje \cite{nielsen2015}, \cite{osowski2013} oraz \cite{wawrzynski2019}. Uwagę należy zwrócić tutaj na opis algorytmu OBD czyli użytą w tej pracy metodę upraszczania sieci neuronowej. Na końcu omówiona zostanie strategia, która została wykorzystana w trakcie wykonanych eksperymentów. Lektura rozdziału powinna zaznajomić czytelnika z wszystkimi kluczowymi zagadnieniami z punktu widzenia niniejszej pracy.
 
 \subsection{Regulacja Predykcyjna}
-Regulacja predykcyjna uznawana jest za jedną z zaawansowanych technik regulacji, które to zastąpiły uprzednio powszechnie stosowane regulatory PID. Dla wielowymiarowych i skomplikowanych procesów, regulacja w oparciu o identyfikacje jednego punktu charakterystyki obiektu, jak to wygląda w regulatorze PID, może okazać się nieefektywna. Rozwiązaniem jest tutaj wykorzystanie zasady przesuwanego horyzontu i wyznaczanie w każdej chwili \(kT\), gdzie T oznacza okres próbkowania, sekwencji przyszłych wartości sygnału sterującego. Idea każdego z algorytmów regulacji predykcyjnej polega na wyznaczeniu w każdej iteracji wektora przyrostów sygnału sterującego.
+Regulacja predykcyjna uznawana jest za jedną z zaawansowanych technik regulacji, które to zastąpiły uprzednio powszechnie stosowane regulatory PID. Dla wielowymiarowych i skomplikowanych procesów, regulacja w oparciu o identyfikacje jednego punktu charakterystyki obiektu, jak to wygląda w regulatorze PID, może okazać się nieefektywna. Rozwiązaniem jest tutaj wykorzystanie zasady przesuwanego horyzontu i wyznaczanie w każdej chwili $kT$, gdzie $T$ oznacza okres próbkowania, sekwencji przyszłych wartości sygnału sterującego. Idea każdego z algorytmów regulacji predykcyjnej polega na wyznaczeniu w każdej iteracji wektora przyrostów sygnału sterującego
 \begin{equation}
 \Delta U(k) \, = \, [\Delta u(k|k)\quad \Delta u(k+1|k)\quad \Delta u(k+2|k)\quad ... \quad \Delta u(k + N_u - 1|k)]^T
 \end{equation}
@@ -13,17 +13,17 @@ u(k) \, = \, u(k|k) \, = \, \Delta u(k|k) + u(k-1)
 \end{equation}
 
 \subsubsection{Algorytm DMC}
-Główna idea algorytmu DMC (Dynamic Matrix Control), przedstawionego w \cite{dmc1979}, opiera się na wykorzystaniu modelu odpowiedzi skokowej do predykcji. Algorytm DMC identyfikuje dynamikę obiektu regulacji za pomocą dyskretnych odpowiedzi skokowych, które są reakcją wyjścia w kolejnych okresach próbkowania na jednostkowy skok sygnału sterującego. Na rysunku 3.1. przedstawiono przykładową odpowiedź skokową obiektu regulacji, który to opisany zostanie w kolejnym podrozdziale. Następnie tak wyznaczona odpowiedzi skokowa obiektu \(\{s_1,\, s_2,\, s_3,\, ...\, s_D \}\) wykorzystywana jest w algorytmie DMC do wyznaczenia najbardziej optymalnych wartości sterowania. Wielkość \(D\) oznacza horyzont dynamiki obiektu i powinna zostać dobrana eksperymentalnie do takiej wartości po której wyjście obiektu ulega stabilizacji. 
+Główna idea algorytmu DMC (Dynamic Matrix Control), przedstawionego w \cite{dmc1979}, opiera się na wykorzystaniu modelu odpowiedzi skokowej do predykcji. Algorytm DMC identyfikuje dynamikę obiektu regulacji za pomocą dyskretnych odpowiedzi skokowych, które są reakcją wyjścia w kolejnych okresach próbkowania na jednostkowy skok sygnału sterującego. Na rysunku 3.1. przedstawiono przykładową odpowiedź skokową obiektu regulacji, który to opisany zostanie w kolejnym podrozdziale. Następnie tak wyznaczona odpowiedź skokowa obiektu \(\{s_1,\, s_2,\, s_3,\, ...\, s_D \}\) wykorzystywana jest w algorytmie DMC do wyznaczenia optymalnych wartości sterowania. Wielkość \(D\) oznacza horyzont dynamiki obiektu i powinna zostać dobrana eksperymentalnie do takiej wartości po której wyjście obiektu ulega stabilizacji. 
 \begin{figure}[!h]
     \label{fig:Odpowiedz-skokowa}
     \centering \includegraphics[width=0.7\linewidth]{Odpowiedz_skokowa.png}
-    \caption{Przykładowa odpowiedź wyjścia obiektu na jednostkowy skok sterowania}
+    \caption{Przykładowa odpowiedź obiektu na jednostkowy skok sterowania}
 \end{figure}
 \par W każdej iteracji wektor (1) wyznaczany jest w wyniku minimalizacji wskaźnika jakości, który zapisany w formie wektorowo-macierzowej przyjmuje postać
 \begin{equation}
 J(k) \, = \, \left\| Y^{zad}(k) - \hat{Y}(k) \right\|_{\bm{\Psi}}^2 \,+ \,\left\| \Delta U(k) \right\|_{\bm{\Lambda}}^2
 \end{equation}
-gdzie wektory wartości zadanej \( Y^{zad}(k) \) oraz prognozowanej trajektorii wyjścia \( \hat{Y}(k) \) o długości \( N \) będącej horyzontem predykcji definiowane są w następujący sposób
+gdzie wektory wartości zadanej \( Y^{zad}(k) \) oraz prognozowanej trajektorii wyjścia \( \hat{Y}(k) \) o długości \( N \),  będącej horyzontem predykcji, definiowane są w następujący sposób
 \begin{equation}
 Y^{zad}(k) =
 	 \begin{bmatrix}
@@ -36,13 +36,13 @@ Y^{zad}(k) =
 		\hat{y}(k+1|k) \\
 		\vdots \\
 		\hat{y}(k+N|k)
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation}
-macierze \( \Lambda\) oraz \( \Psi\) są macierzami diagonalnymi, a w większości przypadków przyjmują postać macierzy identyczności i takie również założenie przyjęte zostało w tej pracy. 
+Macierze \( \Lambda\) oraz \( \Psi\) są macierzami diagonalnymi, a w większości przypadków przyjmują postać macierzy identyczności i takie również założenie przyjęte zostało w tej pracy. 
 \par Następnie korzystając z przekształceń szczegółowo omówionych w \cite{stp2009} zapisujemy funkcję kryterialną w postaci
 \begin{equation}
 J(k) \, = \, \left\| Y^{zad}(k) - Y(k) - \bm{M}^P \Delta U^P(k) - \bm{M} \Delta U(k) \right\|_{\bm{\Psi}}^2 \,+ \,
-\left\| \Delta U(k) \right\|_{\bm{\Lambda}}^2
+\left\| \Delta U(k) \right\|_{\bm{\Lambda}}^2 ,
 \end{equation}
 gdzie macierz \(M \) o wymiarowości \( N \times N_u \) ma strukturę
 \begin{equation}
@@ -52,8 +52,8 @@ gdzie macierz \(M \) o wymiarowości \( N \times N_u \) ma strukturę
 		s_2 & s_1 & \cdots & 0 \\
 		\vdots & \vdots & \ddots & \vdots \\
 		s_N & s_{N-1} & \cdots & s_{N-N_u+1}
-	\end{bmatrix}
-\end{equation}, 
+	\end{bmatrix} ,
+\end{equation} 
 macierz \(M^P \) o wymiarowości \( N \times (D-1) \) 
 \begin{equation}
 \bm{M^P} = 
@@ -62,19 +62,19 @@ macierz \(M^P \) o wymiarowości \( N \times (D-1) \)
 		s_3 - s_1 & s_4 - s_2 & \cdots & s_{D+1} - S_{D-1}  \\
 		\vdots & \vdots & \ddots & \vdots \\
 		s_{N+1} - s_1 & s_{N+2} - s_2 & \cdots & s_{N+D-1} - s_{D-1}
-	\end{bmatrix}
-\end{equation}, 
-natomiast wektor \( \Delta U^P(k) \) zawiera przeszłe \(D-1\) wartości zamian sygnału sterującego \(\Delta u(k-i)\). 
+	\end{bmatrix} ,
+\end{equation} 
+wektor \( \Delta U^P(k) \) zawiera przeszłe \(D-1\) wartości zamian sygnału sterującego \(\Delta u(k-i)\), natomiast wektor \(Y(k)\) o długości $N$ wypełniony jest wyjściem obiektu w chwili $k$.
 
 \par Zauważając, że funkcja jest ściśle wypukła, przyrównujemy do zera wektor gradientu funkcji i otrzymujemy wektor optymalnych przyrostów sterowania
 \begin{equation}
-\Delta U(k) \, = \, (\bm{M}^T\bm{\Psi}\bm{M}+\bm{\Lambda})^{-1}\bm{M}^T\bm{\Psi}(Y^{zad}(k) - Y(k) - \bm{M}^P \Delta U^P(k))
-\end{equation}, 
+\Delta U(k) \, = \, (\bm{M}^T\bm{\Psi}\bm{M}+\bm{\Lambda})^{-1}\bm{M}^T\bm{\Psi}(Y^{zad}(k) - Y(k) - \bm{M}^P \Delta U^P(k)) ,
+\end{equation} 
 gdzie początkową część możemy zapisać w formie 
 \begin{equation}
-\bm{K} \, = \, (\bm{M}^T\bm{\Psi}\bm{M}+\bm{\Lambda})^{-1}\bm{M}^T\bm{\Psi}
+\bm{K} \, = \, (\bm{M}^T\bm{\Psi}\bm{M}+\bm{\Lambda})^{-1}\bm{M}^T\bm{\Psi} ,
 \end{equation}
-gdzie macierz \( \bm{K}\) o wymiarowości \( N_u \times N \) wyznacza jest jednokrotnie w trakcie projektowania algorytmu. Równanie (8) stanowi podstawą działania algorytmu i posłuży do dalszej bezpośredniej implementacji.
+gdzie macierz \( \bm{K}\) o wymiarowości \( N_u \times N \) wyznacza jest jednokrotnie w trakcie projektowania algorytmu. Równanie~(8) stanowi podstawę działania algorytmu i posłuży do dalszej bezpośredniej implementacji.
 
 \subsubsection{Obiekt regulacji}
 Aby przeprowadzić niezbędne eksperymenty i dokonać porównania różnych regulatorów niezbędne jest wybranie i zaimplementowanie obiektu regulacji. W niniejszej pracy w roli obiektu wykorzystany zostanie człon inercyjny drugiego rzędu z opóźnieniem. Wybrany układ najłatwiej przedstawić w postaci równania różnicowego 
@@ -101,7 +101,7 @@ b_2 \, &= \, \frac{K}{T_1 - T_2}[\alpha_1 T_2(1-\alpha_2)-\alpha_2 T_1(1-\alpha_
 \end{figure}
 
 \subsection{Sztuczne Sieci Neuronowe}
-Sztuczne sieci neuronowe stanowią jedną z najczęściej omawianych metod przetwarzania informacji w ostatnich lat. Wielką popularność zyskały niewątpliwie dzięki swojemu interdyscyplinarnemu charakterowy, łącza one osiągnięcia biocybernetyki, elektroniki, matematyki stosowanej, statystyki oraz automatyki. Istotą działania sieci neuronowych jest próba odtworzenia zjawisk zachodzących w systemach nerwowych istot żywych poprzez zastosowanie nowoczesnych rozwiązań technologicznych.
+Sztuczne sieci neuronowe stanowią jedną z najczęściej omawianych metod przetwarzania informacji ostatnich lat. Wielką popularność zyskały niewątpliwie dzięki swojemu interdyscyplinarnemu charakterowi, łączą one osiągnięcia biocybernetyki, elektroniki, matematyki stosowanej, statystyki oraz automatyki. Istotą działania sieci neuronowych jest próba odtworzenia zjawisk zachodzących w systemach nerwowych istot żywych poprzez zastosowanie nowoczesnych rozwiązań technologicznych.
 
 \subsubsection{Architektura sieci}
 Bazując na literaturze omówionej w poprzednim rozdziale w niniejszej pracy wykorzystana zostanie jednokierunkowa sieć typu sigmoidalnego o jednej warstwie ukrytej. Jest to jedna z najprostszych możliwych struktur, w której występują trzy warstwy neuronów wejściowa, ukryta i wyjściowa. Liczba neuronów w warstwie wejściowej i wyjściowej ściśle zależy od wymiarowości danych, natomiast największy wpływ na efektywność działania sieci ma właściwy dobór liczby neuronów w warstwie ukrytej. Poglądowy schemat jednokierunkowej sieci neuronowej przedstawiony został na rysunku 3.3. Na schemacie pokazano dwie warstwy ukryte dla lepszego zrozumienia połączeń między kolejnymi warstwami. W wyjściowej strukturze pojedynczy neuron danej warstwy połączony jest ze wszystkimi neuronami kolejnej warstwy. Liczba połączeń może być później redukowana z wykorzystywaniem algorytmu OBD, który opisany zostanie w dalszej części. 
@@ -116,7 +116,7 @@ Bazując na literaturze omówionej w poprzednim rozdziale w niniejszej pracy wyk
 \begin{equation}
 f(z) \, = \, \frac{1}{1+e^{-z}}, 
 \end{equation}
-której przebieg widzimy na rysunku 3.5. Warto zauważyć, że w obrębie dostatecznie małych i dużych wartości wejścia do funkcji sigmoidalnej następuje jej stabilizacja, a co za tym idzie tak zwana stabilizacja całego neuronu.
+której przebieg widzimy na rysunku 3.5. Warto zauważyć, że w obrębie dostatecznie małych i dużych wartości wejścia do funkcji sigmoidalnej następuje jej nasycenie, a co za tym idzie tak zwana stabilizacja całego neuronu.
 %model neuronu
 \begin{figure}[!h]
     \label{fig:struktura-sieci}
@@ -141,7 +141,7 @@ Zadaniem algorytmu uczenia jest tak dobrać wartości parametrów \( \theta \) c
 \end{equation}
 W praktyce wyprowadzenie konkretnych formuł na gradient funkcji za pomocą funkcji wejścia i wag może być zbyt skomplikowane. Aby uniknąć tej niedogodności stosuje się metodę wstecznej propagacji. Celem tej metody jest obliczenie pochodnych cząstkowych \( \frac{\partial q}{\partial w_{jk}^l} \) oraz \( \frac{\partial q}{\partial b_j^l} \), gdzie \( w_{jk}^l \) oznaczą wagę łączącą k-ty neuron warstwy l-1 z j-tym neuronem warstwy l, natomiast \(b_{j}^l\) oznacza wyraz wolny j-tego neuronu warstwy l. Dla łatwiejszej prezentacji algorytmu wprowadzamy wartość \( \delta_j^l \, = \, \frac{\partial q}{\partial z_j^l} \), którą możemy interpretować jako błąd j-tego neuronu l-tej warstwy czyli pochodną cząstkową po wartości zwracanej przez sumator z rysunku 3.4. 
 
-\par Teraz możemy przedstawić algorytm wstecznej propagacji za pomocą czterech równań. Pierwszym z nich jest wyrażenie na wartości \(\delta_j^l \) dla warstwy wyjściowej \( L \) o postaci 
+\par Teraz możemy przedstawić algorytm wstecznej propagacji za pomocą czterech równań. Pierwszym z nich jest wyrażenie na \(\delta_j^l \) dla warstwy wyjściowej \( L \) o postaci 
 \begin{equation}
 \delta_j^L \, = \, \frac{\partial q}{\partial a_j^L}f^{\prime}(z_j^L),
 \end{equation}
@@ -162,15 +162,16 @@ oraz wag przypisanych do poszczególnych połączeń
 \begin{equation}
 \frac{\partial q}{\partial w_{jk}^l} \, = \, a_k^{l-1}\delta _j^l
 \end{equation}
-\par Równanie 15 - 18 stanowią bezpośrednią podstawę do póżniejszej implementacji. Wyprowadzenie tych równań zostało pominięte w pracy, z uwagi że algorytm wstecznej propagacji nie jest głównym aspektem niniejszej pracy, jednak uważny czytelnik może znaleźć pełny opis w pozycjach \cite{osowski2013} oraz \cite{nielsen2015}. 
+\par Równania~15-18 stanowią bezpośrednią podstawę do póżniejszej implementacji. Wyprowadzenie tych równań zostało pominięte w pracy, z uwagi że algorytm wstecznej propagacji nie jest głównym aspektem niniejszej pracy, jednak pełny opis można znaleźć w pozycjach \cite{osowski2013} oraz \cite{nielsen2015}.
+\par Metoda wstecznej propagacji jest jednym z najczęściej wykorzystywanych algorytmów uczenia w zagadnieniach dotyczących uczenia maszynowego. Ogólne stosowane podejście w tej dziedzinie polega na trenowaniu wybranej struktury za pomocą wcześniej wyselekcjonowanych danych. W celu ograniczenia ryzyka przeuczenia czyli zbytniego dopasowania się sieci do danych stosuje się strategię polegająca na podziale dostępnej liczby przykładów uczących na dwa zbioru uczący oraz weryfikujący, nazywane również treningowym i testowym. W ogólności metoda wstecznej propagacji powinna być przeprowadzona z wykorzystaniem zbioru uczącego, a kryterium wyjścia kończące procedurę uczenia zdefiniowane za pomocą zbioru testującego. Takie rozwiązanie powinno zapobiec niepożądanego zjawiska przeuczenia.   
 
 \subsubsection{Algorytm OBD}
-Dzięki opisanej wcześniej metodzie uczenia sieci neuronowej mamy możliwość minimalizacji błędu popełnianego przez sieć na danych uczących i weryfikujących. Niestety nie daje to pewności, że ostateczny dobór parametrów jest optymalny ze względu na wrażliwość trenowanej sieci na początkowy dobór parametrów uczenia oraz poszczególnych wartości wag. Zgodnie z \cite{osowski2013} rozwiązaniem może być tutaj zastosowanie metod redukcji sieci, a za jedną z lepszych możemy uznać algorytm OBD (Optimal Brain Damage) zaproponowany przez LeCun \cite{lecun1989}. Wskazany algorytm należy do klasy wrażliwościowych metod redukcji sieci i jego podstawowym zadaniem jest zmniejszenie liczby powiązań między-neuronowych a co za tym idzie uproszczenie struktury sieci. 
+Dzięki opisanej wcześniej metodzie uczenia sieci neuronowej mamy możliwość minimalizacji błędu popełnianego przez sieć na danych uczących i weryfikujących. Niestety nie daje to pewności, że ostateczny dobór parametrów jest optymalny ze względu na wrażliwość trenowanej sieci na początkowy dobór parametrów uczenia oraz poszczególnych wartości wag. Zgodnie z \cite{osowski2013} rozwiązaniem może być tutaj zastosowanie metod redukcji sieci, a za jedną z lepszych możemy uznać algorytm OBD zaproponowany przez LeCun \cite{lecun1989}. Wskazany algorytm należy do klasy wrażliwościowych metod redukcji sieci i jego podstawowym zadaniem jest zmniejszenie liczby powiązań między-neuronowych a co za tym idzie uproszczenie struktury sieci. 
 \par Idea algorytmu OBD polega na przypisaniu każdej z wag miary, która określi wrażliwość sieci na zmianę tej konkretnej wagi. Następnie wagi o najmniejszej wrażliwości mogą zostać usunięte co nie powinno wpłynąć w istotny sposób na działanie sieci, a za to pozwolić na uproszczenie jej struktury. Twórca algorytmu za miarę ważności danej wagi proponuje współczynnik asymetrii (ang. saliency), który zdefiniowany zostaje w następujący sposób
 \begin{equation}
-S_i \, = \, \frac{1}{2} \frac{\partial^2q}{\partial \theta_i^2} * \theta_i^2 .
+S_i \, = \, \frac{1}{2} \frac{\partial^2q}{\partial \theta_i^2} \theta_i^2 .
 \end{equation} 
-Podstawą do zdefiniowania miary było rozwinięcie funkcji celu \(q\) w szereg Taylora i na tej podstawie znalezienie parametrów, których usunięcie będzie miało najmniejszy wpływ na  \(q\). Wyznaczenie pełnej macierzy Hessego \(H\) w większości przypadków staje się niemożliwie ze względu na złożoność obliczeniową. Z tego powodu LeCun wykorzystał fakt, że wobec dodatniej określoności hesjanu macierz \(H\) jest diagonalnie dominująca. Zasadnym jest zatem uwzględnienie jedynie składników diagonalnych \( h_{ii} \), które to możemy wyznaczyć dostosowując metodę wstecznej propagacji poprzednio omówioną dla pierwszych pochodnych. 
+Podstawą do zdefiniowania miary było rozwinięcie funkcji celu \(q\)~(12) w szereg Taylora i na tej podstawie znalezienie parametrów, których usunięcie będzie miało najmniejszy wpływ na  \(q\). Wyznaczenie pełnej macierzy Hessego \(H\) w większości przypadków staje się niemożliwie ze względu na złożoność obliczeniową. Z tego powodu LeCun wykorzystał fakt, że wobec dodatniej określoności hesjanu macierz \(H\) jest diagonalnie dominująca. Zasadnym jest zatem uwzględnienie jedynie składników diagonalnych \( h_{ii} \), które to możemy wyznaczyć dostosowując metodę wstecznej propagacji poprzednio omówioną dla pierwszych pochodnych. 
 \par Podtrzymując założenie o kwadratowej funkcji kosztu dla każdego przykładu uczącego wyliczamy miarę
 \begin{equation}
 h_{ii} \, = \, \frac{\partial^2q}{\partial (w_{jk}^l)^2}, 
@@ -195,24 +196,23 @@ Przed zastosowaniem powyższego wzoru niezbędne jest wyznaczenie wartości pocz
 \end{equation}
 \par Po wyznaczeniu wartości diagonalnych \( h_{ii} \) należy uśrednić je po wszystkich przykładach uczących i na tej podstawie według wzoru (19) wyznaczyć współczynniki asymetrii, zgodnie z którymi przycinane będą kolejne wagi sieci. Ogólną procedurę algorytmu OBD zapisać możemy w następujących krokach: 
 \begin{enumerate}
- \item Wybór właściwej architektury sieci
- \item Pełne wytrenowanie danej struktury przy użyciu jednej z metod uczenia, na przykład wstecznej propagacji
- \item Obliczenie wartości diagonalnych macierzy Hessego czyli współczynników \( h_{ii} \) 
- \item Wyznaczenie współczynników asymetrii \( S_i \)
- \item Posortowanie parametrów rosnąco według współczynników \( S_i \)
- \item Usunięcie najmniej znaczących wag
- \item Powtórzenie procedury od punktu 2, aż do osiągnięcia pożądanego kryterium wyjścia  na danych weryfikujących
+ \item Wybór właściwej architektury sieci.
+ \item Pełne wytrenowanie danej struktury przy użyciu jednej z metod uczenia, na przykład wstecznej propagacji.
+ \item Obliczenie wartości diagonalnych macierzy Hessego czyli współczynników \( h_{ii} \). 
+ \item Wyznaczenie współczynników asymetrii \( S_i \).
+ \item Posortowanie parametrów rosnąco według współczynników \( S_i \).
+ \item Usunięcie najmniej znaczących wag.
+ \item Powtórzenie procedury od punktu 2, aż do osiągnięcia pożądanego kryterium wyjścia  na danych weryfikujących.
 \end{enumerate}
-Warto zauważyć, że usunięcie wagi odbywa się poprzez ustawienie jej wartości na zero i przypisanie odpowiedniej maski, która uniemożliwia metodzie wstecznej propagacji ponowną modyfikację parametru.  
+Warto zauważyć, że usunięcie wagi odbywa się poprzez ustawienie jej wartości na zero i przypisanie odpowiedniej maski, która uniemożliwia metodzie wstecznej propagacji ponownej modyfikacji parametru.  
 
 \subsection{Strategia eksperymentów}
 Opisane założenia teoretyczne stanowią podstawę do implementacji rozwiązania i przeprowadzenia eksperymentów praktycznych, których wyniki przedstawione zostaną w kolejnym rozdziale. Przed przystąpieniem do prezentacji wyników warto jednak jeszcze opisać schemat według, którego zostaną one przeprowadzone. Pozwoli to czytelnikowi na ewentualną samodzielną interpretację wyników i będzie prowadziło do lepszego zrozumienia wniosków płynących z pracy. Poniższy schemat stanowi jedynie zwięzły opis strategi, a wszystkie szczegóły wskazane zostaną we właściwym rozdziale. 
-\par Pierwszym etap jest wygenerowanie danych, które następnie stanowić będą przykłady uczące i weryfikujące zarówno dla algorytmu wstecznej propagacji jak i OBD. Generacja danych polega na przeprowadzeniu symulacji z wykorzystaniem regulatora DMC i zdefiniowanego obiektu regulacji. Warto zwrócić uwagę na fakt, że dane uczące i weryfikujące generowane będą oddzielnie, dzięki czemu działanie sieci neuronowej weryfikowane będzie z wykorzystaniem przykładów symulacji niewystępujących w danych uczących. Jednak przed zastosowaniem otrzymanych danych w procedurze uczenia sieci niezbędne jest ich przeskalowanie do wartości z zakresu od -1 do 1. Jest to niezbędny krok wymuszony przez rodzaj zastosowanej funkcji aktywacji. Wartym zauważenia jest fakt, że koniecznym było zastosowanie modułu skalującego pozwalającego na transformację danych wejściowych w dwie strony. Sieć neuronowa wykorzystana zostanie jako regulator, a zatem procedura odwrotnego skalowania jest tutaj niezbędna. 
-\par Następnie należy wytrenować sieć neuronową z wykorzystaniem opisanej metody wstecznej propagacji. Z uwagi na fakt, że kolejnym krokiem będzie wykorzystanie algorytmu OBD do redukcji sieci, należy zastosować lekko zmodyfikowaną strategię względem klasycznego podejścia do uczenia sieci neuronowej. Algorytm OBD wymaga aby funkcja celu była w swoim minimum, a zatem konieczne jest pełne wytrenowanie sieci na danych uczących bez stosowania kryterium wyjścia na danych weryfikujących. Algorytm uczenia sieci zakończy swoje działanie gdy zmiany funkcji kosztu w kolejnych iteracjach będą dostatecznie małe. Eksperymenty powtórzone zostaną dla różnej ilości neuronów w warstwie ukrytej oraz różnych wartości współczynnika uczącego sieci. Pozwoli to na wybór najbardziej optymalnej architektury przed przystąpieniem do procedury redukcji sieci. 
-\par Kolejno zastosujemy procedurę OBD dla optymalnej struktury sieci. Redukcja sieci zgodnie z opisaną wcześniej procedurą będzie kontynuowana aż zmiana funkcji kosztu na danych weryfikujących osiągnie dostatecznie mała wartość. Dzięki takiemu podejściu otrzymamy sieć neuronową, która powinna posiadać wysokie zdolności generalizacji postawionego przed nią zadania. W celu weryfikacji otrzymanego rezultatu przeprowadzona zostanie symulacja danego układu regulacji dla różnych wartości zadanych z wykorzystaniem sieci neuronowej oraz regulatora DMC. W obu przypadkach wyznaczony zostanie błąd średnio-kwadratowy i na tej podstawie możliwe będzie porównanie dwóch zastosowanych metod i weryfikacja czy sieć neuronowa jest w stanie zastąpić klasyczny regulator.
-\par Ostatnim etapem prowadzonych badań będzie przetestowanie działania sieci neuronowej jako regulatora zmodyfikowanych obiektów regulacji. Wykorzystana zostanie tutaj wcześniej opisana własność łatwej zmiany obiektu regulacji poprzez dobór odpowiednich parametrów. Przeanalizowane zostanie również działanie sieci dla bardziej skomplikowanych przebiegów regulacji, przykładowo wielokrotnego skoku wartości zadanej.
-\vspace{10mm}
-\par W rozdziale przedstawione zostały wszystkie niezbędne opisy i założenia teoretyczne pozwalające na pełne zrozumienie omawianego zagadnienia. Zaprezentowane wzory i struktury stanowią bezpośrednią podstawę do praktycznej implementacji rozwiązanie, której najważniejsze części przedstawione zostaną w kolejnym rozdziale. Dodatkowo lektura tego rozdziału powinna umożliwić czytelnikowi samodzielną interpretację wyników i dokładniejsze zrozumienie charakteru pracy.   
+\par Pierwszym etapem jest wygenerowanie danych, które następnie stanowić będą przykłady uczące i weryfikujące zarówno dla algorytmu wstecznej propagacji jak i OBD. Generacja danych polega na przeprowadzeniu symulacji z wykorzystaniem regulatora DMC i zdefiniowanego obiektu regulacji. Warto zwrócić uwagę na fakt, że dane uczące i weryfikujące generowane będą oddzielnie, dzięki czemu działanie sieci neuronowej weryfikowane będzie z wykorzystaniem przykładów symulacji niewystępujących w danych uczących. Jednak przed zastosowaniem otrzymanych danych w procedurze uczenia sieci niezbędne jest ich przeskalowanie do wartości z zakresu od -1 do 1. Ten krok wymuszony został przez rodzaj zastosowanej funkcji aktywacji. Warto zauważyć, że koniecznym było zastosowanie modułu skalującego pozwalającego na transformację danych wejściowych w dwie strony. Wyjście sieci neuronowej wykorzystane zostanie jako wartość sterująca, a zatem procedura odwrotnego skalowania jest tutaj niezbędna. 
+\par Następnie należy wytrenować sieć neuronową z wykorzystaniem opisanej metody wstecznej propagacji. Z uwagi na fakt, że kolejnym krokiem będzie wykorzystanie algorytmu OBD do redukcji sieci, koniecznym staje się zastosowanie lekko zmodyfikowanej strategii względem klasycznego podejścia w uczeniu maszynowym. Algorytm OBD wymaga aby funkcja celu była w swoim minimum, a zatem niezbędne jest pełne wytrenowanie sieci na danych uczących bez stosowania kryterium wyjścia na danych weryfikujących. Algorytm uczenia sieci zakończy swoje działanie gdy zmiany funkcji kosztu w kolejnych iteracjach będą dostatecznie małe. Eksperymenty powtórzone zostaną dla różnej ilości neuronów w warstwie ukrytej oraz różnych wartości współczynnika uczącego sieci. Pozwoli to na wybór optymalnej architektury przed przystąpieniem do procedury redukcji sieci. 
+\par Kolejno zastosujemy procedurę OBD dla optymalnej struktury sieci. Redukcja sieci zgodnie z opisaną wcześniej procedurą będzie kontynuowana aż zmiana funkcji kosztu na danych weryfikujących osiągnie dostatecznie mała wartość. Dzięki takiemu podejściu otrzymamy sieć neuronową, która powinna posiadać wysokie zdolności generalizacji postawionego przed nią zadania. W celu weryfikacji otrzymanego rezultatu przeprowadzona zostanie symulacja regulacji dla różnych wartości zadanych z wykorzystaniem sieci neuronowej oraz regulatora DMC. W obu przypadkach wyznaczony zostanie błąd średnio-kwadratowy i na tej podstawie możliwe będzie porównanie dwóch zastosowanych metod i weryfikacja czy sieć neuronowa jest w stanie zastąpić klasyczny regulator.
+\par Ostatnim etapem prowadzonych badań będzie przetestowanie działania sieci neuronowej jako regulatora zmodyfikowanych obiektów regulacji. Wykorzystana zostanie tutaj wcześniej opisana własność łatwej zmiany obiektu regulacji poprzez dobór odpowiednich parametrów. Pozwoli to określić wrażliwość obu wykorzystywanych metod na modyfikacje obiektu regulacji względem tego, do którego zostały skalibrowane.
+\par W rozdziale przedstawione zostały wszystkie niezbędne opisy i założenia teoretyczne pozwalające na pełne zrozumienie omawianego zagadnienia. Zaprezentowane wzory i struktury stanowią bezpośrednią podstawę do praktycznej implementacji, której najważniejsze części przedstawione zostaną w kolejnym rozdziale. Dodatkowo lektura tego rozdziału powinna umożliwić czytelnikowi samodzielną interpretację wyników i dokładniejsze zrozumienie charakteru pracy.  
       
 
 

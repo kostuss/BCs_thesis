@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  17 JAN 2021 13:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  21 JAN 2021 23:31
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -1539,6 +1539,124 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2017/07/08 v1.3.1 fvextra - extensions and patches for fancyvr
+b
+
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count415
+\FV@InFile=\read2
+\FV@TabBox=\box51
+\c@FancyVerbLine=\count416
+\FV@StepNumber=\count417
+\FV@OutFile=\write5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count418
+\output=\toks36
+\linenoprevgraf=\count419
+\linenumbersep=\dimen175
+\linenumberwidth=\dimen176
+\c@linenumber=\count420
+\c@pagewiselinenumber=\count421
+\c@LN@truepage=\count422
+\c@internallinenumber=\count423
+\c@internallinenumbers=\count424
+\quotelinenumbersep=\dimen177
+\bframerule=\dimen178
+\bframesep=\dimen179
+\bframebox=\box52
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count425
+\c@FV@TrueTabCounter=\count426
+\FV@TabBox@Group=\box53
+\FV@TmpLength=\skip120
+\c@FV@HighlightLinesStart=\count427
+\c@FV@HighlightLinesStop=\count428
+\FV@LoopCount=\count429
+\FV@NCharsBox=\box54
+\FV@BreakIndent=\dimen180
+\FV@BreakIndentNChars=\count430
+\FV@BreakSymbolSepLeft=\dimen181
+\FV@BreakSymbolSepLeftNChars=\count431
+\FV@BreakSymbolSepRight=\dimen182
+\FV@BreakSymbolSepRightNChars=\count432
+\FV@BreakSymbolIndentLeft=\dimen183
+\FV@BreakSymbolIndentLeftNChars=\count433
+\FV@BreakSymbolIndentRight=\dimen184
+\FV@BreakSymbolIndentRightNChars=\count434
+\c@FancyVerbLineBreakLast=\count435
+\FV@LineBox=\box55
+\FV@LineIndentBox=\box56
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count436
+\calc@Bcount=\count437
+\calc@Adimen=\dimen185
+\calc@Bdimen=\dimen186
+\calc@Askip=\skip121
+\calc@Bskip=\skip122
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count438
+\calc@Cskip=\skip123
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 67.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "main.w18")...executed.
+
+ (./main.w18)
+runsystem(rm -- "main.w18")...executed.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip124
+\fb@frw=\dimen187
+\fb@frh=\dimen188
+\FrameRule=\dimen189
+\FrameSep=\dimen190
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count439
+\float@exts=\toks37
+\float@box=\box57
+\@float@everytoks=\toks38
+\@floatcapt=\box58
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box59
+\minted@code=\write6
+\c@minted@FancyVerbLineTemp=\count440
+\c@minted@pygmentizecounter=\count441
+\@float@every@listing=\toks39
+\c@listing=\count442
+)
+runsystem(mkdir -p _minted-main)...executed.
+
+
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2018/02/14 3.18 The Babel package
 
@@ -1550,24 +1668,24 @@ Language: polish 2005/03/31 v1.2l Polish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count415
-\U@D=\dimen175
+\babel@savecnt=\count443
+\U@D=\dimen191
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count416
+\bbl@dirlevel=\count444
 )
 Package babel Info: Making " an active character on input line 83.
-\pl@left=\dimen176
-\pl@down=\dimen177
-\pl@right=\dimen178
-\pl@temp=\dimen179
+\pl@left=\dimen192
+\pl@down=\dimen193
+\pl@right=\dimen194
+\pl@temp=\dimen195
 ))
-\c@theorem=\count417
-\c@lemma=\count418
-\c@corollary=\count419
-\c@definition=\count420
-\c@axiom=\count421
-\c@assumption=\count422
+\c@theorem=\count445
+\c@lemma=\count446
+\c@corollary=\count447
+\c@definition=\count448
+\c@axiom=\count449
+\c@assumption=\count450
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
 
@@ -1578,9 +1696,30 @@ File: polish.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count423
-\@quotereset=\count424
-(./main.aux
+\@quotelevel=\count451
+\@quotereset=\count452
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+runsystem(which pygmentize && touch main.aex)...executed.
+
+runsystem(rm main.aex)...executed.
+
+ (./main.aux
 
 LaTeX Warning: Label `fig:struktura-sieci' multiply defined.
 
@@ -1596,51 +1735,51 @@ LaTeX Warning: Label `fig:test1' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 22.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 37.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 37.
 
  (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 22.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 22.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 37.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 22.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 22.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 37.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 22.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 22.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -1653,8 +1792,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 22.
-Package biblatex Info: Reference segment=0 on input line 22.
+Package biblatex Info: Reference section=0 on input line 37.
+Package biblatex Info: Reference segment=0 on input line 37.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: Incompatible package detected (regarding \@caption).
 (caption)             \@caption = \long macro:#1[#2]#3->\expandafter \ifx \csna
@@ -1676,6 +1815,7 @@ Package caption Warning: \caption will not be redefined since it's already
 (caption)                unknown to the caption package.
 See the caption package documentation for explanation.
 
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1686,17 +1826,17 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count425
-\scratchdimen=\dimen180
-\scratchbox=\box51
-\nofMPsegments=\count426
-\nofMParguments=\count427
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count428
-\MPscratchDim=\dimen181
-\MPnumerator=\count429
-\makeMPintoPDFobject=\count430
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count453
+\scratchdimen=\dimen196
+\scratchbox=\box60
+\nofMPsegments=\count454
+\nofMParguments=\count455
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count456
+\MPscratchDim=\dimen197
+\MPnumerator=\count457
+\makeMPintoPDFobject=\count458
+\everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1714,8 +1854,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count431
-LaTeX Info: Redefining \microtypecontext on input line 22.
+\c@lstlisting=\count459
+LaTeX Info: Redefining \microtypecontext on input line 37.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1729,18 +1869,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `futs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\AtBeginShipoutBox=\box52
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-LaTeX Info: Redefining \color on input line 86.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-)
-Package hyperref Info: Link coloring ON on input line 22.
+\AtBeginShipoutBox=\box61
+Package hyperref Info: Link coloring ON on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1748,15 +1878,15 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count432
+\c@section@level=\count460
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./main.out) (./main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write7
+\openout7 = `main.out'.
 
 
 *geometry* driver: auto-detecting
@@ -1797,12 +1927,12 @@ LaTeX Info: Redefining \nameref on input line 22.
 <eiti/header.png, id=106, 483.7272pt x 76.8471pt>
 File: eiti/header.png Graphic file (type png)
 <use eiti/header.png>
-Package pdftex.def Info: eiti/header.png  used on input line 43.
+Package pdftex.def Info: eiti/header.png  used on input line 58.
 (pdftex.def)             Requested size: 438.17247pt x 69.61084pt.
 <eiti/title-inz.png, id=107, 483.7272pt x 105.39375pt>
 File: eiti/title-inz.png Graphic file (type png)
 <use eiti/title-inz.png>
-Package pdftex.def Info: eiti/title-inz.png  used on input line 43.
+Package pdftex.def Info: eiti/title-inz.png  used on input line 58.
 (pdftex.def)             Requested size: 438.17247pt x 95.4694pt.
 [1
 
@@ -1812,9 +1942,9 @@ Package pdftex.def Info: eiti/title-inz.png  used on input line 43.
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 49.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 49.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 64.
  [3] [4
 
 
@@ -1826,14 +1956,14 @@ sion: found PDF version <1.7>, but at most version <1.5> allowed
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
 Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line
- 65.
+ 80.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
 [5 <./eiti/oswiadczenie_autora_pracy.pdf>] [6
 
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 71.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 86.
  (./main.toc
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 4.
 
@@ -1870,8 +2000,8 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 4.
 )
-\tf@toc=\write6
-\openout6 = `main.toc'.
+\tf@toc=\write8
+\openout8 = `main.toc'.
 
  [7] [8
 
@@ -1889,7 +2019,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12])
 (./tex/3-opis-teoretyczny.tex [13]
-<img/Odpowiedz_skokowa.png, id=266, 462.528pt x 346.896pt>
+<img/Odpowiedz_skokowa.png, id=269, 462.528pt x 346.896pt>
 File: img/Odpowiedz_skokowa.png Graphic file (type png)
 <use img/Odpowiedz_skokowa.png>
 Package pdftex.def Info: img/Odpowiedz_skokowa.png  used on input line 19.
@@ -1899,28 +2029,40 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
  [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./img/Odpowiedz_skokowa.png>]
+ [15pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.56 \end{equation}
+                    <./img/Odpowiedz_skokowa.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-<img/Regulacja_DMC.png, id=305, 462.528pt x 346.896pt>
+<img/Regulacja_DMC.png, id=308, 462.528pt x 346.896pt>
 File: img/Regulacja_DMC.png Graphic file (type png)
 <use img/Regulacja_DMC.png>
 Package pdftex.def Info: img/Regulacja_DMC.png  used on input line 99.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
-[17 <./img/Regulacja_DMC.png>]
-<img/struktura_sieci1.png, id=313, 599.23875pt x 325.215pt>
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.105 
+       <./img/Regulacja_DMC.png>]
+<img/struktura_sieci1.png, id=316, 599.23875pt x 325.215pt>
 File: img/struktura_sieci1.png Graphic file (type png)
 <use img/struktura_sieci1.png>
 Package pdftex.def Info: img/struktura_sieci1.png  used on input line 111.
 (pdftex.def)             Requested size: 306.71939pt x 166.46286pt.
-<img/model_neuronu.png, id=316, 520.94624pt x 271.0125pt>
+<img/model_neuronu.png, id=319, 520.94624pt x 271.0125pt>
 File: img/model_neuronu.png Graphic file (type png)
 <use img/model_neuronu.png>
 Package pdftex.def Info: img/model_neuronu.png  used on input line 123.
 (pdftex.def)             Requested size: 262.90614pt x 136.77132pt.
-<img/sigmoid.png, id=319, 415.5525pt x 249.93375pt>
+<img/sigmoid.png, id=322, 415.5525pt x 249.93375pt>
 File: img/sigmoid.png Graphic file (type png)
 <use img/sigmoid.png>
 Package pdftex.def Info: img/sigmoid.png  used on input line 129.
@@ -1928,52 +2070,124 @@ Package pdftex.def Info: img/sigmoid.png  used on input line 129.
 
 Underfull \vbox (badness 4779) has occurred while \output is active []
 
- [18 <./img/struktura_sieci1.png>] [19 <./img/model_neuronu.png> <./img/sigmoid
-.png>]
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.132 
+       <./img/struktura_sieci1.png>] [19pdfTeX warning (ext4): destination with
+ the same identifier (name{figure.3.4}) has been already used, duplicate ignore
+d
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.143 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.143 
+       <./img/model_neuronu.png> <./img/sigmoid.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23])
 (./tex/3-1-listing-kodu.tex [24]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [25] [26]
-LaTeX Font Info:    Try loading font information for TS1+futs on input line 86.
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
+t line 9.
+\openout5 = `main.pyg'.
+
+ (./_minted-main/default-pyg-prefix.pygstyle)
+(./_minted-main/default.pygstyle)
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P e
+ncoding=utf8 -o _minted-main/E9DC491355D30F43B1CCC19A47B0717B6313B86276A11BE144
+35757B3374821C.pygtex main.pyg)...executed.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
-File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+(./_minted-main/E9DC491355D30F43B1CCC19A47B0717B6313B86276A11BE14435757B3374821
+C.pygtex
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `futs' (encoding: TS1).
+(microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [27] [28] [29]
-Overfull \hbox (40.1405pt too wide) in paragraph at lines 186--187
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 24.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 24.
+)
+\openout5 = `main.pyg'.
 
-[30]
-Overfull \hbox (2.12415pt too wide) in paragraph at lines 233--234
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+
+(./_minted-main/43F554D774939EB56E5B72231078F3C76313B86276A11BE14435757B3374821
+C.pygtex)
+\openout5 = `main.pyg'.
 
 
-Overfull \hbox (2.12415pt too wide) in paragraph at lines 256--257
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
+(./_minted-main/ACFECFF67AE4CB58D21C923913E74D916313B86276A11BE14435757B3374821
+C.pygtex) [25]
+\openout5 = `main.pyg'.
 
-) (./tex/4-wyniki-pracy.tex [31] [32]
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P e
+ncoding=utf8 -o _minted-main/59A2458DAB31DAB5DD19083A6F76A53F6313B86276A11BE144
+35757B3374821C.pygtex main.pyg)...executed.
+
+
+(./_minted-main/59A2458DAB31DAB5DD19083A6F76A53F6313B86276A11BE14435757B3374821
+C.pygtex) [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-<img/cost_neuron_number_train.png, id=590, 567.3195pt x 346.896pt>
+ [27]
+\openout5 = `main.pyg'.
+
+
+(./_minted-main/8237D4BDB2495F18DD8567EFCB0EAAB06313B86276A11BE14435757B3374821
+C.pygtex)
+\openout5 = `main.pyg'.
+
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P e
+ncoding=utf8 -o _minted-main/9014AC7667B8FBC6393B1D5CC9F3E96D6313B86276A11BE144
+35757B3374821C.pygtex main.pyg)...executed.
+
+
+(./_minted-main/9014AC7667B8FBC6393B1D5CC9F3E96D6313B86276A11BE14435757B3374821
+C.pygtex)
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+ [28]
+\openout5 = `main.pyg'.
+
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P e
+ncoding=utf8 -o _minted-main/E825DE5628174DFE5F4554E4F593AD6F6313B86276A11BE144
+35757B3374821C.pygtex main.pyg)...executed.
+
+
+(./_minted-main/E825DE5628174DFE5F4554E4F593AD6F6313B86276A11BE14435757B3374821
+C.pygtex) [29]
+\openout5 = `main.pyg'.
+
+
+(./_minted-main/78EE7475B5FB22D99F19DB24E6BE3E766313B86276A11BE14435757B3374821
+C.pygtex)) (./tex/4-wyniki-pracy.tex [30] [31]
+Underfull \vbox (badness 1454) has occurred while \output is active []
+
+ [32]
+<img/cost_neuron_number_train.png, id=432, 567.3195pt x 346.896pt>
 File: img/cost_neuron_number_train.png Graphic file (type png)
 <use img/cost_neuron_number_train.png>
 Package pdftex.def Info: img/cost_neuron_number_train.png  used on input line 1
@@ -1983,7 +2197,7 @@ Package pdftex.def Info: img/cost_neuron_number_train.png  used on input line 1
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/cost_neuron_number_test.png, id=591, 560.8152pt x 346.896pt>
+<img/cost_neuron_number_test.png, id=433, 560.8152pt x 346.896pt>
 File: img/cost_neuron_number_test.png Graphic file (type png)
 <use img/cost_neuron_number_test.png>
 Package pdftex.def Info: img/cost_neuron_number_test.png  used on input line 23
@@ -1992,14 +2206,27 @@ Package pdftex.def Info: img/cost_neuron_number_test.png  used on input line 23
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[34] [35 <./img/cost_neuron_number_train.png> <./img/cost_neuron_number_test.pn
-g>]
-<img/cost_epoch_150.png, id=604, 462.528pt x 346.896pt>
+[33] [34pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.5.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.29 \par
+          Należy zwrócić uwagę, że już po 40 epokach wyniki osiągane ...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.29 \par
+          Należy zwrócić uwagę, że już po 40 epokach wyniki osiągane ...
+ <./img/cost_neuron_number_train.png> <./img/cost_neuron_number_test.png>]
+<img/cost_epoch_150.png, id=446, 462.528pt x 346.896pt>
 File: img/cost_epoch_150.png Graphic file (type png)
 <use img/cost_epoch_150.png>
 Package pdftex.def Info: img/cost_epoch_150.png  used on input line 33.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
-<img/cost_epoch_150_zoom.png, id=605, 462.528pt x 346.896pt>
+<img/cost_epoch_150_zoom.png, id=447, 462.528pt x 346.896pt>
 File: img/cost_epoch_150_zoom.png Graphic file (type png)
 <use img/cost_epoch_150_zoom.png>
 Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 39.
@@ -2011,44 +2238,90 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36 <./img/cost_epoch_150.png>]
+[35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.58 
+      <./img/cost_epoch_150.png>]
 Underfull \vbox (badness 1755) has occurred while \output is active []
 
- [37 <./img/cost_epoch_150_zoom.png>]
-<img/regulation_net_5.png, id=620, 462.528pt x 346.896pt>
+ [36pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.60 
+     pdfTeX warning (ext4): destination with the same identifier (name{table.5.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.60 
+      <./img/cost_epoch_150_zoom.png>]
+<img/regulation_net_5.png, id=461, 462.528pt x 346.896pt>
 File: img/regulation_net_5.png Graphic file (type png)
 <use img/regulation_net_5.png>
 Package pdftex.def Info: img/regulation_net_5.png  used on input line 63.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
-<img/regulation_DMC_5.png, id=621, 462.528pt x 346.896pt>
+<img/regulation_DMC_5.png, id=462, 462.528pt x 346.896pt>
 File: img/regulation_DMC_5.png Graphic file (type png)
 <use img/regulation_DMC_5.png>
 Package pdftex.def Info: img/regulation_DMC_5.png  used on input line 69.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
+Underfull \vbox (badness 1043) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ [37pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+5}) has been already used, duplicate ignored
 
-[38]
-<img/cost_OBD_full_test.png, id=626, 565.8741pt x 346.896pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.5
+.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 
+      <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>]
+<img/cost_OBD_full_test.png, id=472, 565.8741pt x 346.896pt>
 File: img/cost_OBD_full_test.png Graphic file (type png)
 <use img/cost_OBD_full_test.png>
 Package pdftex.def Info: img/cost_OBD_full_test.png  used on input line 81.
 (pdftex.def)             Requested size: 306.71939pt x 188.03563pt.
-<img/cost_OBD_full_train.png, id=627, 574.5465pt x 346.896pt>
+<img/cost_OBD_full_train.png, id=473, 574.5465pt x 346.896pt>
 File: img/cost_OBD_full_train.png Graphic file (type png)
 <use img/cost_OBD_full_train.png>
 Package pdftex.def Info: img/cost_OBD_full_train.png  used on input line 87.
 (pdftex.def)             Requested size: 306.71939pt x 185.19318pt.
 
-Underfull \vbox (badness 2035) has occurred while \output is active []
 
- [39 <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>] [40 <./img/cost
-_OBD_full_test.png> <./img/cost_OBD_full_train.png>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38]
+Underfull \vbox (badness 1888) has occurred while \output is active []
+
+ [39pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.92 \par
+          Analizując Rysunki 5.7 oraz 5.8 należy stwierdzić, że pomimo o...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.8}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.92 \par
+          Analizując Rysunki 5.7 oraz 5.8 należy stwierdzić, że pomimo o...
+ <./img/cost_OBD_full_test.png> <./img/cost_OBD_full_train.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
-<img/regulation_net_obd_2.png, id=648, 462.528pt x 346.896pt>
+ [40]
+<img/regulation_net_obd_2.png, id=490, 462.528pt x 346.896pt>
 File: img/regulation_net_obd_2.png Graphic file (type png)
 <use img/regulation_net_obd_2.png>
 Package pdftex.def Info: img/regulation_net_obd_2.png  used on input line 115.
@@ -2057,138 +2330,221 @@ Package pdftex.def Info: img/regulation_net_obd_2.png  used on input line 115.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[42]
-<img/regulation_net_obd_5.png, id=655, 462.528pt x 346.896pt>
+<img/regulation_net_obd_5.png, id=491, 462.528pt x 346.896pt>
 File: img/regulation_net_obd_5.png Graphic file (type png)
 <use img/regulation_net_obd_5.png>
 Package pdftex.def Info: img/regulation_net_obd_5.png  used on input line 123.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3108) has occurred while \output is active []
 
- [43 <./img/regulation_net_obd_2.png> <./img/regulation_net_obd_5.png>]
+ [41pdfTeX warning (ext4): destination with the same identifier (name{table.5.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.125 \end{figure}
+                  ] [42pdfTeX warning (ext4): destination with the same identif
+ier (name{figure.5.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.130 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.130 
+       <./img/regulation_net_obd_2.png> <./img/regulation_net_obd_5.png>]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 10.07397pt on input line 134.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 7.63599pt on input line 134.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 134.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 10.07397pt on input line 134.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.63599pt on input line 134.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 134.
- [44]
-<img/regulation_TD1_net.png, id=670, 462.528pt x 346.896pt>
+
+[43pdfTeX warning (ext4): destination with the same identifier (name{table.5.3}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.146 
+      ]
+<img/regulation_TD1_net.png, id=511, 462.528pt x 346.896pt>
 File: img/regulation_TD1_net.png Graphic file (type png)
 <use img/regulation_TD1_net.png>
 Package pdftex.def Info: img/regulation_TD1_net.png  used on input line 151.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_TD1_dmc.png, id=671, 462.528pt x 346.896pt>
+<img/regulation_TD1_dmc.png, id=512, 462.528pt x 346.896pt>
 File: img/regulation_TD1_dmc.png Graphic file (type png)
 <use img/regulation_TD1_dmc.png>
 Package pdftex.def Info: img/regulation_TD1_dmc.png  used on input line 157.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_TD2_net.png, id=672, 462.528pt x 346.896pt>
+<img/regulation_TD2_net.png, id=513, 462.528pt x 346.896pt>
 File: img/regulation_TD2_net.png Graphic file (type png)
 <use img/regulation_TD2_net.png>
 Package pdftex.def Info: img/regulation_TD2_net.png  used on input line 166.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_TD2_dmc.png, id=673, 462.528pt x 346.896pt>
+<img/regulation_TD2_dmc.png, id=514, 462.528pt x 346.896pt>
 File: img/regulation_TD2_dmc.png Graphic file (type png)
 <use img/regulation_TD2_dmc.png>
 Package pdftex.def Info: img/regulation_TD2_dmc.png  used on input line 172.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
- [45 <./img/regulation_TD1_net.png> <./img/regulation_TD1_dmc.png> <./img/regul
-ation_TD2_net.png> <./img/regulation_TD2_dmc.png>]
-<img/regulation_T73_net.png, id=686, 462.528pt x 346.896pt>
+ [44pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.178 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.178 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.178 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.178 
+       <./img/regulation_TD1_net.png> <./img/regulation_TD1_dmc.png> <./img/reg
+ulation_TD2_net.png> <./img/regulation_TD2_dmc.png>]
+<img/regulation_T73_net.png, id=527, 462.528pt x 346.896pt>
 File: img/regulation_T73_net.png Graphic file (type png)
 <use img/regulation_T73_net.png>
 Package pdftex.def Info: img/regulation_T73_net.png  used on input line 199.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_T73_dmc.png, id=687, 462.528pt x 346.896pt>
+<img/regulation_T73_dmc.png, id=528, 462.528pt x 346.896pt>
 File: img/regulation_T73_dmc.png Graphic file (type png)
 <use img/regulation_T73_dmc.png>
 Package pdftex.def Info: img/regulation_T73_dmc.png  used on input line 205.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+ [45pdfTeX warning (ext4): destination with the same identifier (name{table.5.4
+}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.211 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.15}) has been already used, duplicate ignored
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.211 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+5.16}) has been already used, duplicate ignored
 
-<img/regulation_T41_net.png, id=688, 462.528pt x 346.896pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.211 
+       <./img/regulation_T73_net.png> <./img/regulation_T73_dmc.png>]
+<img/regulation_T41_net.png, id=538, 462.528pt x 346.896pt>
 File: img/regulation_T41_net.png Graphic file (type png)
 <use img/regulation_T41_net.png>
 Package pdftex.def Info: img/regulation_T41_net.png  used on input line 216.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_T41_dmc.png, id=689, 462.528pt x 346.896pt>
+<img/regulation_T41_dmc.png, id=539, 462.528pt x 346.896pt>
 File: img/regulation_T41_dmc.png Graphic file (type png)
 <use img/regulation_T41_dmc.png>
 Package pdftex.def Info: img/regulation_T41_dmc.png  used on input line 222.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+)
+(./tex/5-podsumowanie.tex [46pdfTeX warning (ext4): destination with the same i
+dentifier (name{figure.5.17}) has been already used, duplicate ignored
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \newpage
+             % Rozdziały zaczynamy od nowej strony.pdfTeX warning (ext4): dest
+ination with the same identifier (name{figure.5.18}) has been already used, dup
+licate ignored
 
-[46]) (./tex/5-podsumowanie.tex
-Underfull \vbox (badness 3168) has occurred while \output is active []
-
- [47 <./img/regulation_T73_net.png> <./img/regulation_T73_dmc.png> <./img/regul
-ation_T41_net.png> <./img/regulation_T41_dmc.png>] [48]
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \newpage
+             % Rozdziały zaczynamy od nowej strony. <./img/regulation_T41_net.
+png> <./img/regulation_T41_dmc.png>] [47]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49])
-[50] [51
+ [48])
+[49] [50
 
 
-] (./main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
+] [51] (./main.lof)
+\tf@lof=\write9
+\openout9 = `main.lof'.
 
  (./main.lot [52])
-\tf@lot=\write8
-\openout8 = `main.lot'.
+\tf@lot=\write10
+\openout10 = `main.lot'.
 
  (./main.app)
-\tf@app=\write9
-\openout9 = `main.app'.
+\tf@app=\write11
+\openout11 = `main.app'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
+runsystem(rm _minted-main/063E53C1BC2EA3D59654044E9E5821096313B86276A11BE144357
+57B3374821C.pygtex)...executed.
+
+runsystem(rm _minted-main/5B243B07E090F5998A39181ADF2AD57A6313B86276A11BE144357
+57B3374821C.pygtex)...executed.
+
+runsystem(rm _minted-main/B9A765B9B817A3052F8BEA424F2CF6446313B86276A11BE144357
+57B3374821C.pygtex)...executed.
+
+runsystem(rm _minted-main/7F847B6C60601AF7A8978C16BBFF44186313B86276A11BE144357
+57B3374821C.pygtex)...executed.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
  [53]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 612CF6A2FCFB4BF037F411E08A1E1205;1748.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
+runsystem(rm main.pyg)...executed.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30976 strings out of 494847
- 536090 string characters out of 6178850
- 1269523 words of memory out of 5000000
- 33244 multiletter control sequences out of 15000+600000
- 672061 words of font info for 347 fonts, out of 8000000 for 9000
+ 33146 strings out of 494847
+ 591304 string characters out of 6178850
+ 1356044 words of memory out of 5000000
+ 35480 multiletter control sequences out of 15000+600000
+ 674341 words of font info for 355 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 46i,12n,80p,10397b,3390s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/fourier/fourier-mlb.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
-dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
-putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (53 pages, 1049807 bytes).
+ 47i,12n,76p,10397b,2294s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/kostuss16/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecit1200
+.600pk> </home/kostuss16/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+t1200.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sh
+are/texlive/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/fourier/fourier-mlb.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ado
+be/utopia/putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/p
+utr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (53 pages, 1066999 bytes).
 PDF statistics:
- 865 PDF objects out of 1000 (max. 8388607)
- 734 compressed objects within 8 object streams
- 318 named destinations out of 1000 (max. 500000)
- 32595 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 778 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 33619 words of extra memory for PDF output out of 35830 (max. 10000000)
 
