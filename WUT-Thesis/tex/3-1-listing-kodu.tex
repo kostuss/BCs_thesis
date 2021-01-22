@@ -6,7 +6,7 @@ Rozdział poświęcony będzie najważniejszym elementom implementacji, przedsta
 \subsection{Algorytm DMC z obiektem regulacji}
 Algorytm regulacji predykcyjnej zaimplementowany został jako klasa DMC, której strukturę widzimy w poniższym kodzie:
 \begin{listing}[!htb]
-\captionof{listing}{Klasa DMC}
+\captionof{listing}{Klasa \texttt{DMC}}
 \begin{minted}{python}
 class DMC(object):
  def __init__(self, n_u, n, S_list, psi_const, lambda_const):		
@@ -34,35 +34,52 @@ class DMC(object):
 \end{minted}
 \end{listing}
 
-Klasa inicjalizowana jest zgodnie z opisem teoretycznym w sekcji 3.1.1. z wykorzystaniem wektora odpowiedzi skokowej układu reprezentowanego przez argument \emph{ S{\_}list }. Warto zwrócić tutaj uwagę na linię 27-28 Listingu 1, która stanowi bezpośrednią implementację macierzy \(K\) przedstawionej za pomocą równania (9).
-\par W dalszej części występują funkcje pomocnicze wykorzystywane do tworzenia macierzy \(M\) oraz \(M^P\), które ze względu na ich trywialność zostaną pominięte. Kluczowym elementem całej klasy ze względu na działanie algorytmu jest funkcja wyznaczająca wektor optymalnych przyrostów sterowania w każdej iteracji algorytmu. Implementację funkcji prezentuje Listing 2, gdzie w liniach 4-5 zaimplementowano równanie (8). W każdej iteracji algorytmu zwracaną jest tylko wartość \(\Delta u(k|k) \), której odpowiada zwracana przez funkcję zmienna \emph{delta{\_}u}.
+Klasa inicjalizowana jest zgodnie z opisem teoretycznym w sekcji~3.1.1. z wykorzystaniem wektora odpowiedzi skokowej układu reprezentowanego przez argument \texttt{S{\_}list}. Warto zwrócić tutaj uwagę na linie~23 Listingu~1, która stanowi bezpośrednią implementację macierzy \(K\) przedstawionej za pomocą równania~(9).
+\par W dalszej części występują funkcje pomocnicze wykorzystywane do tworzenia macierzy \(M\) oraz \(M^P\), których implementacja przedstawiona została na Listingu~2.
+
+\begin{listing}[!htb]
+\captionof{listing}{Funkcje wyznaczające macierze \(M\) oraz \(M^P\)}
+\begin{minted}{python}
+def init_M_p(self, S_list, N):
+ arr=np.zeros((N,len(S_list)-1))
+ for i in range(N):
+  for j in range(len(S_list)-1):
+   arr[i][j] = (S_list[i+j+1] if i+j+1+1<=len(S_list) else S_list[-1]) - S_list[j]
+ return arr
+
+def init_M(self, S_list, n, n_u):
+ arr=np.zeros((n,n_u))
+ for i in range(n):
+  for j in range(i+1 if i+1<=n_u else n_u):
+   arr[i][j]= S_list[i-j] if i-j+1<=len(S_list) else S_list[-1]
+ return arr
+\end{minted}
+\end{listing}
+
+Kluczowym elementem całej klasy ze względu na działanie algorytmu jest funkcja wyznaczająca wektor optymalnych przyrostów sterowania w każdej iteracji algorytmu. Implementację funkcji prezentuje Listing~3, gdzie w linii~3 zaimplementowano równanie~(8). W każdej iteracji algorytmu zwracana jest tylko wartość \(\Delta u(k|k) \), której odpowiada zwracana przez funkcję zmienna \texttt{delta{\_}u}.
 
 \begin{listing}[!htb]
 \captionof{listing}{Funcja wyznaczająca wektor przyrostów sterowania}
 \begin{minted}{python}
 def calculate_U_delta(self, Y_current): 
-
-	self.Y_k.fill(Y_current)
-	self.U_delta = self.K @ (self.Y_zad - self.Y_k - (self.M_p @ self.U_delta_P))
-	delta_u = self.U_delta[0]
-	self.update_U_delta_P(delta_u)
-
-	return delta_u
+ self.Y_k.fill(Y_current)
+ self.U_delta = self.K @ (self.Y_zad - self.Y_k - (self.M_p @ self.U_delta_P))
+ delta_u = self.U_delta[0]
+ self.update_U_delta_P(delta_u)
+ return delta_u
 \end{minted}
 \end{listing}
 
-\par Obiekt regulacji zaimplementowany został w postaci klasy \emph{SimObject} gdzie istotę działania obiektu prezentuje funkcja zwracająca wyjście obiektu na podstawie wartości sterowania, w każdej kolejnej iteracji. Listing 3 prezentuje funkcję \emph{make{\_}simulation{\_}step}, w której należy zwrócić uwagę na linie 8-9, w których widzimy zaimplementowane równanie~(10).
+\par Obiekt regulacji zaimplementowany został w postaci klasy \texttt{SimObject} gdzie istotę działania obiektu prezentuje funkcja zwracająca wyjście obiektu na podstawie wartości sterowania, w każdej kolejnej iteracji. Listing~4 prezentuje funkcję   \texttt{make{\_}simulation{\_}step}, w której należy zwrócić uwagę na linie 6, w której widzimy zaimplementowane równanie~(10).
 
 \begin{listing}[!htb]
 \captionof{listing}{Funkcja zwracająca wyjście obiektu sterowania}
 \begin{minted}{python}
-def make_simulation_step(self, u, y_zad):
-		
+def make_simulation_step(self, u, y_zad):		
  u_lag1=self.get_lag_u(self.TD+1)
  u_lag2=self.get_lag_u(self.TD+2)
  y_lag1=self.get_lag_y(1)
  y_lag2=self.get_lag_y(2)
-
  y_current=self.b_1*u_lag1 + self.b_2*u_lag2 - self.a_1*y_lag1 - self.a_2*y_lag2
  self.y_list = np.append(self.y_list, y_current)
  self.u_list = np.append(self.u_list, u)
@@ -71,16 +88,14 @@ def make_simulation_step(self, u, y_zad):
 \end{minted}
 \end{listing}
  
-
 \subsection{Architektura sieci neuronowej}
-Implementacja sieci neuronowej przedstawiona została w postaci klasy \emph{Network}, której konstruktor widzimy w Listingu 4. Struktura sieci składa się z listy macierzy \emph{weights} (linia 7) oraz \emph{biases} (linia 6) odpowiadających kolejnym wagom oraz wyrazom wolnym dla połączeń między neuronami sąsiadujących warstw. Natomiast lista macierzy \emph{saliencies} o tej samej wymiarowości co \emph{weights} zawierają współczynniki asymetrii wyznaczane w trakcie działania algorytmu OBD. Zmienna \emph{mask} wykorzystywana jest przez algorytm OBD do zamrożenia danych wag w trakcie ponownego uczenia sieci. Na końcu inicjalizacji ustalany jest parametr \emph{cost{\_}delta{\_}epsilon} stanowiący graniczną wartość gradientu funkcji celu poniżej, której proces uczenia sieci zostaje zakończony.  
+Implementacja sieci neuronowej przedstawiona została w postaci klasy \emph{Network}, której konstruktor widzimy w Listingu~5. Struktura sieci składa się z listy macierzy \texttt{weights} (linia~6) oraz \texttt{biases} (linia~5) odpowiadających kolejnym wagom oraz wyrazom wolnym dla połączeń między neuronami sąsiadujących warstw. Natomiast lista macierzy \texttt{saliencies} o tej samej wymiarowości co \texttt{weights} zawierają współczynniki asymetrii wyznaczane w trakcie działania algorytmu OBD. Zmienna \texttt{mask} wykorzystywana jest przez algorytm OBD do zamrożenia danych wag w trakcie ponownego uczenia sieci. Na końcu inicjalizacji ustalany jest parametr \texttt{cost{\_}delta{\_}epsilon} stanowiący graniczną wartość gradientu funkcji celu poniżej, której proces uczenia sieci zostaje zakończony. 
   
 \begin{listing}[!htb]
-\captionof{listing}{Klasa Network}
+\captionof{listing}{Klasa \texttt{Network}}
 \begin{minted}{python}
 class Network(object):
- def __init__(self, sizes):
- 
+ def __init__(self, sizes): 
   self.num_layers = len(sizes)
   self.sizes = sizes
   self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
@@ -91,7 +106,7 @@ class Network(object):
 \end{minted}
 \end{listing}
 
-\par Główną część implementacji sieci neuronowej stanowią funkcje wykorzystywane w trakcie procesu trenowania sieci. Jest to odpowiednio funkcja \emph{SGD} implementująca metodę stochastycznego najszybszego spadku (SGD), jedną z najczęściej stosowanych metod iteracyjnej optymalizacji funkcji celu. Metoda to korzysta z funkcji \emph{update{\_}mini{\_}batch}, która to odpowiada za zastosowanie metody wstecznej propagacji dla każdego z przykładów uczących występujących w pojedynczej próbce wyznaczanej przez SGD. Kluczowym dla działania wymienionych funkcji jest implementacja metody wstecznej propagacji dla pojedynczego przykładu uczącego. Teoretyczne założenia używanej metody przedstawione zostały w sekcji 3.2.2, a jej implementacje widzimy na Listingu 5. Poprzednie funkcje nie zostały tutaj zaprezentowane gdyż nie prezentują głównej idei wstecznej propagacji, a jedynie z niej korzystają, co mogłoby niepotrzebnie wydłużyć całość wywodu. W początkowej części (linie 2-3) tworzone są wektory odpowiadające pochodnych cząstkowych \( \frac{\partial q}{\partial w_{jk}^l} \) oraz \( \frac{\partial q}{\partial b_j^l} \). Następnie (linie 5-12) następuje jednokrotne przejście sieci w przód (\emph{ang. feedforward}) czyli wyliczenie wyjścia sieci na podstawie wektora wejściowego \emph{x}. Główna zasada działania wstecznej propagacji znajduje odzwierciedlenie w kolejnych liniach kodu. Należy zwrócić tutaj szczególną uwagę na linie 15-16, gdzie wykorzystane zostało równanie (15) stanowiące warunek początkowy dla algorytmu. Następnie w pętli następuje wsteczna propagacja między warstwami opisania równaniem (16), które znajduje bezpośrednie odzwierciedlenie w linijce 23.
+\par Główną część implementacji sieci neuronowej stanowią funkcje wykorzystywane w trakcie procesu trenowania sieci. Jest to odpowiednio funkcja \texttt{SGD} implementująca metodę stochastycznego najszybszego spadku SGD \emph{(Stochastic Gradient Descent)}, jedną z najczęściej stosowanych metod iteracyjnej optymalizacji funkcji celu. Metoda to korzysta z funkcji \texttt{update{\_}mini{\_}batch}, która to odpowiada za zastosowanie metody wstecznej propagacji dla każdego z przykładów uczących występujących w pojedynczej próbce wyznaczanej przez SGD. Kluczowym dla działania wymienionych funkcji jest implementacja metody wstecznej propagacji dla pojedynczego przykładu uczącego. Teoretyczne założenia używanej metody przedstawione zostały w sekcji 3.2.2, a jej implementację widzimy na Listingu~6. W początkowej części (linie~2-3) tworzone są wektory odpowiadające pochodnych cząstkowych \( \frac{\partial q}{\partial w_{jk}^l} \) oraz \( \frac{\partial q}{\partial b_j^l} \). Następnie w liniach~5-12 następuje jednokrotne przejście sieci w przód (\emph{ang. feedforward}) czyli wyliczenie wyjścia sieci na podstawie wektora wejściowego \emph{x}. Główna zasada działania wstecznej propagacji znajduje odzwierciedlenie w kolejnych liniach kodu. Należy zwrócić tutaj szczególną uwagę na linie~15, gdzie wykorzystane zostało równanie~(15) stanowiące warunek początkowy dla algorytmu. Następnie w pętli następuje wsteczna propagacja między warstwami opisana równaniem~(16), które znajduje bezpośrednie odzwierciedlenie w linii~22.
 
 \begin{listing}[!htb]
 \captionof{listing}{Funkcja wstecznej propagacji}
@@ -124,10 +139,10 @@ def backprop(self, x, y):
 \end{minted}
 \end{listing}
 
-\par Pozostała część implementacji obejmuje funkcje aktywacji, funkcje wyliczająca wyjście sieci na podstawie zadanego wektora wejściowego, a także wszelkie niezbędne funkcje pomocnicze. Sposób ich implementacji nie jest kluczowy dla zrozumienia całości pracy, a może być w łatwy sposób odtworzony na podstawie opisu teoretycznego. Z punktu widzenia czytelnika warto jednak przyjrzeć się ostatniej części klasy \emph{Network}, która zawiera implementację algorytmu redukcji sieci OBD.
+\par Pozostała część implementacji obejmuje funkcje aktywacji, funkcje wyliczającą wyjście sieci na podstawie zadanego wektora wejściowego, a także wszelkie niezbędne funkcje pomocnicze. Sposób ich implementacji nie jest kluczowy dla zrozumienia całości pracy, a może być w łatwy sposób odtworzony na podstawie opisu teoretycznego. Z punktu widzenia czytelnika warto jednak przyjrzeć się ostatniej części klasy \texttt{Network}, która zawiera implementację algorytmu redukcji sieci OBD.
 
 \subsection{Algorytm OBD}
-Algorytm OBD zaimplementowany został jako część klasy \emph{Network} na podstawie opisu teoretycznego zawartego w sekcji 3.2.3. i składa się z trzech głównych funkcji \emph{OBD}, \emph{backpropOBD} oraz \emph{cut{\_}weights}. Pierwsza z nich przedstawiona została na Listingu 6 i odpowiada za implementację procedury algorytmu OBD  przedstawionej w opisie teoretycznym. Kluczowa dla działania algorytmu jest pętla rozpoczynająca się w linii 8, która kolejno wywołuje metodę wstecznej propagacji dla drugich pochodnych. Po iteracji dla wszystkich przykładów uczących obliczana jest wartość współczynników asymetrii i następnie w linii 16 wywoływana jest funkcja \emph{cut{\_}weights} odpowiedzialna za przycinanie sieci. Po redukcji sieć jest ponownie uczona z wykorzystaniem metody \emph{SGD}. Procedura zostaje powtórzona aż do osiągnięcia kryterium wyjścia na danych testujących.
+Algorytm OBD zaimplementowany został jako część klasy \texttt{Network} na podstawie opisu teoretycznego zawartego w sekcji 3.2.3. i składa się z trzech głównych funkcji \texttt{OBD}, \texttt{backpropOBD} oraz \texttt{cut{\_}weights}. Pierwsza z nich przedstawiona została na Listingu~7 i odpowiada za implementację procedury algorytmu OBD  przedstawionej w opisie teoretycznym. Kluczowa dla działania algorytmu jest pętla rozpoczynająca się w linii 8, która kolejno wywołuje metodę wstecznej propagacji dla drugich pochodnych. Po iteracji dla wszystkich przykładów uczących obliczana jest wartość współczynników asymetrii i następnie w linii~15 wywoływana jest funkcja \texttt{cut{\_}weights} odpowiedzialna za przycinanie sieci. Po redukcji sieć jest ponownie uczona z wykorzystaniem metody \texttt{SGD}. Procedura zostaje powtórzona aż do osiągnięcia kryterium wyjścia na danych testujących.
 \begin{listing}[!htb]
 \captionof{listing}{Algorytm OBD}
 \begin{minted}{python}
@@ -159,12 +174,11 @@ def OBD(self, train_data, test_data):
 \end{minted}
 \end{listing}
 
-\par Niezbędnym dla zrozumienia całego algorytmu OBD jest proces wstecznej propagacji zastosowany dla drugich pochodnych. Jego implementacja zaprezentowana została na Listingu 7 i zawiera wiele podobieństw do wcześniej omawianej funkcji \emph{backprop}. Należy zwrócić tutaj szczególną uwagę na linie 23-24, które odpowiadają równaniu (23). W linii 15 widzimy natomiast wykorzystanie funkcji pomocniczej do wyliczenia warunku granicznego z równania (24), zabieg ten sprzyja czytelności kodu, a z uwagi na mało skomplikowaną formę równania nie powinien stanowić utrudnienia w zrozumieniu całej metody.
+\par Niezbędnym dla zrozumienia całego algorytmu OBD jest proces wstecznej propagacji zastosowany dla drugich pochodnych. Jego implementacja zaprezentowana została na Listingu~8 i zawiera wiele podobieństw do wcześniej omawianej funkcji \texttt{backprop}. Należy zwrócić tutaj szczególną uwagę na linie~21, która odpowiada równaniu~(23). W linii~14 widzimy natomiast wykorzystanie funkcji pomocniczej do wyliczenia warunku granicznego z równania~(24), zabieg ten sprzyja czytelności kodu, a z uwagi na mało skomplikowaną formę równania nie powinien stanowić utrudnienia w zrozumieniu całej metody.
 \begin{listing}[!htb]
 \captionof{listing}{Funkcja wstecznej propagacji drugich pochodnych}
 \begin{minted}{python}
-def backpropOBD(self, x, y):
-        
+def backpropOBD(self, x, y):       
  h_vector = [np.zeros(w.shape) for w in self.weights]
  # feedforward
  activation = x
@@ -196,10 +210,10 @@ def backpropOBD(self, x, y):
 \begin{minted}{python}
 def cut_weights(self, limit):
  saliencies_list = []
-  for i_layer , saliencies in enumerate(self.saliencies):
-   for i_row, row in enumerate(saliencies.tolist()):
-    for i_column, value in enumerate(row):
-     saliencies_list.append(( [i_layer, i_row, i_column], value))                    
+ for i_layer , saliencies in enumerate(self.saliencies):
+  for i_row, row in enumerate(saliencies.tolist()):
+   for i_column, value in enumerate(row):
+    saliencies_list.append(( [i_layer, i_row, i_column], value))                    
  saliencies_list.sort(key = lambda x: x[1])
  to_cut = [element[0] for element in saliencies_list[:limit]]
  
@@ -210,5 +224,5 @@ def cut_weights(self, limit):
 \end{minted}
 \end{listing}
 
-\par Ostatnia z wykorzystywanych funkcji w procedurze OBD jest funkcja \emph{cut{\_}weights}. Odpowiada ona za przycięcie odpowiedniej ilości wag, ustalanej przez parametr \emph{limit} według posortowanych wartości współczynników skośności \emph{ang. saliencies}. W liniach 2-8 współczynniki są sortowane i w zmiennej \emph{to{\_}cut} zapisywane są indeksy odpowiednich wag, które to następnie zostają przycięte i zamrożone z wykorzystaniem opisywanej wcześniej maski.
-\par Lektura powyższego rozdziału stanowiąca uzupełnienie do opisu teoretycznego powinna dać czytelnikowi pełny obraz wykorzystywanych w trakcie eksperymentów struktur. Po zapoznaniu się z elementami implementacji można przejść do rozdziału opisującego wyniki przeprowadzonych eksperymentów. Warto zauważyć, że zrozumienie wszystkich przedstawionych w tym rozdziale szczegółów nie jest warunkiem koniecznym do wyciągnięcia ogólnych wniosków z kolejnego rozdziału lecz na pewno stanowi dużą wartość dodaną dla czytelnika niezaznajomionego z prezentowaną w tej pracy tematyką. 
+\par Ostatnią z wykorzystywanych funkcji w procedurze OBD jest funkcja \texttt{cut{\_}weights}, która pokazana została na Listingu~9. Odpowiada ona za przycięcie odpowiedniej ilości wag, ustalanej przez parametr \texttt{limit} według posortowanych wartości współczynników skośności. W liniach~2-7 współczynniki są sortowane aby następnie w zmiennej \texttt{to{\_}cut} zapisać indeksy odpowiednich wag, które to następnie zostają przycięte i zamrożone z wykorzystaniem opisywanej wcześniej maski.
+\par Lektura powyższego rozdziału stanowiąca uzupełnienie do opisu teoretycznego powinna dać czytelnikowi pełny obraz wykorzystywanych w trakcie eksperymentów struktur. Po zapoznaniu się z elementami implementacji można przejść do rozdziału opisującego wyniki przeprowadzonych eksperymentów. Warto zauważyć, że zrozumienie wszystkich przedstawionych w tym rozdziale szczegółów nie jest warunkiem koniecznym do wyciągnięcia ogólnych wniosków z kolejnego rozdziału lecz na pewno stanowi dużą wartość dodaną dla czytelnika niezaznajomionego z prezentowaną w tej pracy tematyką.

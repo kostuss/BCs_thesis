@@ -1,7 +1,6 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{class} \PYG{n+nc}{Network}\PYG{p}{(}\PYG{n+nb}{object}\PYG{p}{):}
  \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{sizes}\PYG{p}{):}
-
   \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{num\PYGZus{}layers} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sizes}\PYG{p}{)}
   \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{sizes} \PYG{o}{=} \PYG{n}{sizes}
   \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{biases} \PYG{o}{=} \PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{for} \PYG{n}{y} \PYG{o+ow}{in} \PYG{n}{sizes}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:]]}

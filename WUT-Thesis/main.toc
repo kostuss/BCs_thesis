@@ -27,7 +27,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1\relax .\kern .5em }Algorytm DMC z obiektem regulacji}{25}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2\relax .\kern .5em }Architektura sieci neuronowej}{25}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2\relax .\kern .5em }Architektura sieci neuronowej}{27}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3\relax .\kern .5em }Algorytm OBD}{29}{subsection.4.3}
 \defcounter {refsection}{0}\relax 

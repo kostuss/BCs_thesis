@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{init\PYGZus{}M\PYGZus{}p}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{S\PYGZus{}list}\PYG{p}{,} \PYG{n}{N}\PYG{p}{):}
+ \PYG{n}{arr}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{N}\PYG{p}{,}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{S\PYGZus{}list}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{))}
+ \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{):}
+  \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{S\PYGZus{}list}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+   \PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}\PYG{n}{S\PYGZus{}list}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{k}{if} \PYG{n}{i}\PYG{o}{+}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}=}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{S\PYGZus{}list}\PYG{p}{)} \PYG{k}{else} \PYG{n}{S\PYGZus{}list}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{o}{\PYGZhy{}} \PYG{n}{S\PYGZus{}list}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}
+ \PYG{k}{return} \PYG{n}{arr}
+
+\PYG{k}{def} \PYG{n+nf}{init\PYGZus{}M}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{S\PYGZus{}list}\PYG{p}{,} \PYG{n}{n}\PYG{p}{,} \PYG{n}{n\PYGZus{}u}\PYG{p}{):}
+ \PYG{n}{arr}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{n}\PYG{p}{,}\PYG{n}{n\PYGZus{}u}\PYG{p}{))}
+ \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+  \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{k}{if} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}=}\PYG{n}{n\PYGZus{}u} \PYG{k}{else} \PYG{n}{n\PYGZus{}u}\PYG{p}{):}
+   \PYG{n}{arr}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}\PYG{o}{=} \PYG{n}{S\PYGZus{}list}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{j}\PYG{p}{]} \PYG{k}{if} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{\PYGZlt{}=}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{S\PYGZus{}list}\PYG{p}{)} \PYG{k}{else} \PYG{n}{S\PYGZus{}list}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+ \PYG{k}{return} \PYG{n}{arr}
+\end{Verbatim}

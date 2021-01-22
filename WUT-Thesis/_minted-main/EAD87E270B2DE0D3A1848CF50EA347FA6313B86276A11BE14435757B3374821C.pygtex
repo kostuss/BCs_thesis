@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{calculate\PYGZus{}U\PYGZus{}delta}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{Y\PYGZus{}current}\PYG{p}{):}
+ \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{Y\PYGZus{}k}\PYG{o}{.}\PYG{n}{fill}\PYG{p}{(}\PYG{n}{Y\PYGZus{}current}\PYG{p}{)}
+ \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{U\PYGZus{}delta} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{K} \PYG{err}{@} \PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{Y\PYGZus{}zad} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{Y\PYGZus{}k} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{M\PYGZus{}p} \PYG{err}{@} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{U\PYGZus{}delta\PYGZus{}P}\PYG{p}{))}
+ \PYG{n}{delta\PYGZus{}u} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{U\PYGZus{}delta}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+ \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{update\PYGZus{}U\PYGZus{}delta\PYGZus{}P}\PYG{p}{(}\PYG{n}{delta\PYGZus{}u}\PYG{p}{)}
+ \PYG{k}{return} \PYG{n}{delta\PYGZus{}u}
+\end{Verbatim}

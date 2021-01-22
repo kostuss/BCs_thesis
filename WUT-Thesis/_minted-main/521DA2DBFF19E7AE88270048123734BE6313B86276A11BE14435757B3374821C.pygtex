@@ -1,6 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{def} \PYG{n+nf}{backpropOBD}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{):}
-
  \PYG{n}{h\PYGZus{}vector} \PYG{o}{=} \PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{w}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)} \PYG{k}{for} \PYG{n}{w} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{weights}\PYG{p}{]}
  \PYG{c+c1}{\PYGZsh{} feedforward}
  \PYG{n}{activation} \PYG{o}{=} \PYG{n}{x}
