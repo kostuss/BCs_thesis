@@ -1,48 +1,38 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {polish}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1.}{\ignorespaces Przyk\IeC {\l }adowa odpowied\IeC {\'z} obiektu na jednostkowy skok sterowania}}{15}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Przyk\IeC {\l }adowa odpowied\IeC {\'z} obiektu na jednostkowy skok sterowania\relax }}{15}{figure.caption.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2.}{\ignorespaces Regulacja DMC dla wybranego obiektu}}{17}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Regulacja DMC dla wybranego obiektu\relax }}{17}{figure.caption.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3.}{\ignorespaces Schemat pogl\IeC {\k a}dowy struktury sieci. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {nielsen2015} }}{18}{figure.3.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Schemat pogl\IeC {\k a}dowy struktury sieci. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {nielsen2015} \relax }}{18}{figure.caption.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4.}{\ignorespaces Model neuronu. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {wawrzynski2019} }}{19}{figure.3.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Model neuronu. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {wawrzynski2019} \relax }}{19}{figure.caption.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5.}{\ignorespaces Przebieg funkcji sigmoidalnej unipolarnej. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {nielsen2015}}}{19}{figure.3.5}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Przebieg funkcji sigmoidalnej unipolarnej. \IeC {\'Z}r\IeC {\'o}d\IeC {\l }o: \cite {nielsen2015}\relax }}{19}{figure.caption.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby neuron\IeC {\'o}w w warstwie ukrytej - dane treningowe}}{34}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Pojedyncze przyk\IeC {\l }ady wygenerowanych danych\relax }}{33}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby neuron\IeC {\'o}w w warstwie ukrytej - dane testowe}}{34}{figure.5.2}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby neuron\IeC {\'o}w w warstwie ukrytej - dane treningowe\relax }}{34}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami}}{35}{figure.5.3}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby neuron\IeC {\'o}w w warstwie ukrytej - dane testowe\relax }}{35}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami (uci\IeC {\k e}te warto\IeC {\'s}ci pocz\IeC {\k a}tkowe)}}{36}{figure.5.4}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami\relax }}{36}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - wytrenowana sie\IeC {\'c} neuronowa}}{37}{figure.5.5}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} kosztu od liczby epok dla sieci z 150 neuronami (uci\IeC {\k e}te warto\IeC {\'s}ci pocz\IeC {\k a}tkowe)\relax }}{36}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - DMC}}{37}{figure.5.6}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21\relax }}{38}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} funkcji kosztu od liczby zredukowanych wag - dane testowe}}{39}{figure.5.7}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} funkcji kosztu od liczby zredukowanych wag - dane testowe\relax }}{39}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8.}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} funkcji kosztu od liczby zredukowanych wag - dane treningowe}}{39}{figure.5.8}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Zale\IeC {\.z}no\IeC {\'s}\IeC {\'c} funkcji kosztu od liczby zredukowanych wag - dane treningowe\relax }}{39}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 2,5 - zredukowana sie\IeC {\'c} neuronowa}}{42}{figure.5.9}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Regulacja z wykorzystaniem zredukowanej sieci neuronowej\relax }}{42}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10.}{\ignorespaces Regulacja do warto\IeC {\'s}ci zadanej 5,21 - zredukowana sie\IeC {\'c} neuronowa}}{42}{figure.5.10}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Por\IeC {\'o}wnanie regulacji dla zmodyfikowanego obiektu (\(T_d=1\))\relax }}{44}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\(T_d=1\))}}{44}{figure.5.11}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Por\IeC {\'o}wnanie regulacji dla zmodyfikowanego obiektu (\(T_d=2\))\relax }}{44}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12.}{\ignorespaces Regulacja DMC obiekt (\(T_d=1\))}}{44}{figure.5.12}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Por\IeC {\'o}wnanie regulacji dla zmodyfikowanego obiektu (\( T_1=7, \tmspace +\thinmuskip {.1667em} T_2=3 \))\relax }}{45}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\(T_d=2\))}}{44}{figure.5.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14.}{\ignorespaces Regulacja DMC obiekt (\(T_d=2\))}}{44}{figure.5.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\( T_1=7, \tmspace +\thinmuskip {.1667em} T_2=3 \))}}{45}{figure.5.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16.}{\ignorespaces Regulacja DMC obiekt (\( T_1=7, \tmspace +\thinmuskip {.1667em} T_2=3 \))}}{45}{figure.5.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17.}{\ignorespaces Regulacja Sie\IeC {\'c} obiekt (\( T_1=4, \tmspace +\thinmuskip {.1667em} T_2=1 \))}}{46}{figure.5.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.18.}{\ignorespaces Regulacja DMC obiekt (\( T_1=4, \tmspace +\thinmuskip {.1667em} T_2=1 \))}}{46}{figure.5.18}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Por\IeC {\'o}wnanie regulacji dla zmodyfikowanego obiektu (\( T_1=4, \tmspace +\thinmuskip {.1667em} T_2=1 \))\relax }}{46}{figure.caption.22}

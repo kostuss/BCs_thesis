@@ -65,8 +65,8 @@ def plot_cost_neurons(train_cost, test_cost, neuron_numbers, test = False):
 	sim_length = len(train_cost)
 	fig = plt.figure()
 	ax = fig.add_subplot(1, 1, 1)
-	x_ticks = np.arange(0, neuron_numbers[-1], 5)
-	x_major_ticks = np.arange(0, neuron_numbers[-1], 20)
+	x_ticks = np.arange(0, neuron_numbers[-1]+1, 5)
+	x_major_ticks = np.arange(0, neuron_numbers[-1]+1, 20)
 
 	ax.set_xticks(x_ticks, minor=True)
 	ax.set_xticks(x_major_ticks)
@@ -80,7 +80,7 @@ def plot_cost_neurons(train_cost, test_cost, neuron_numbers, test = False):
 	else:
 		plt.plot(neuron_numbers, train_cost, color='r', label = 'dane treningowe')
 
-	plt.title(f"Zależność kosztu od liczby neuronów w warstwie ukrytej")
+	#plt.title(f"Zależność kosztu od liczby neuronów w warstwie ukrytej")
 	plt.xlabel("Liczba neuronów warstwy ukrytej")
 	plt.ylabel("Wartość funkcji kosztu")
 	plt.legend()
@@ -143,6 +143,7 @@ if __name__ == "__main__":
 	#print([[round(np.mean(x),3),round(np.mean(y),3)] for x,y in zip(MSE_vector_net, MSE_vector_dmc)])
 	'''
 
+	'''
 	#cost for single network
 	net = network.Network([31, 150, 1])
 	cost_train, cost_test = net.SGD(scaled_train, 300, 10, 3, scaled_test)
@@ -161,7 +162,7 @@ if __name__ == "__main__":
 	#plot_cost_OBD(cost_train[:-100], cost_test[:-100], True)
 	#plot_cost_OBD(cost_train[:-100], cost_test[:-100], False)
 	#simulation.perform_simulation(net, scaler_object, "sieć OBD", 5.21, reference=True)
-	'''
+
 	y_zad_list = [x for x in np.arange(2, 9, 0.1)]
 	MSE_vector_net, MSE_vector_dmc = perform_comparison(net, scaler_object, y_zad_list)
 
@@ -172,26 +173,23 @@ if __name__ == "__main__":
 	#porowananie wynikow
 	#print([[round(np.mean(x),3),round(np.mean(y),3)] for x,y in zip(MSE_vector_net, MSE_vector_dmc)])
 	'''
+	for i in range(3):
+		#iteration by neuron number in hidden layer
+		cost_by_neuron_train = []
+		cost_by_neuron_test = []
+		neuron_numbers = [i for i in range(5,30,5)]+[i for i in range(30,100,10)]+[i for i in range(100,210,25)]
 
+		for neuron_number in neuron_numbers:
+			net = network.Network([31, neuron_number, 1])
+			cost_train, cost_test = net.SGD(scaled_train, 200, 10, 3, scaled_test)
+			cost_by_neuron_train.append(cost_train[-1])
+			cost_by_neuron_test.append(cost_test[-1])
+			print("Net with {} complited".format(neuron_number))
 
-	'''
-	#iteration by neuron number in hidden layer
-	cost_by_neuron_train = []
-	cost_by_neuron_test = []
-	neuron_numbers = [i for i in range(5,30,5)]+[i for i in range(30,100,10)]+[i for i in range(100,210,25)]
+		#print("Train cost: {}".format(cost_train[-1]))
+		#print("Test cost: {}".format(cost_test[-1]))
+		plot_cost_neurons(cost_by_neuron_train, cost_by_neuron_test,neuron_numbers)
+		plot_cost_neurons(cost_by_neuron_train, cost_by_neuron_test,neuron_numbers, True)
 
-	for neuron_number in neuron_numbers:
-		net = network.Network([31, neuron_number, 1])
-		cost_train, cost_test = net.SGD(scaled_train, 200, 10, 3, scaled_test)
-		cost_by_neuron_train.append(cost_train[-1])
-		cost_by_neuron_test.append(cost_test[-1])
-		print("Net with {} complited".format(neuron_number))
-
-	#print("Train cost: {}".format(cost_train[-1]))
-	#print("Test cost: {}".format(cost_test[-1]))
-	plot_cost_neurons(cost_by_neuron_train, cost_by_neuron_test,neuron_numbers)
-	plot_cost_neurons(cost_by_neuron_train, cost_by_neuron_test,neuron_numbers, True)
-
-	'''
 
 

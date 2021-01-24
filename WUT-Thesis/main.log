@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  22 JAN 2021 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  24 JAN 2021 18:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1542,6 +1542,11 @@ LaTeX Info: Redefining \bm on input line 207.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count415
+\c@subtable=\count416
+)
 (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
 
@@ -1554,11 +1559,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count415
+\FV@CodeLineNo=\count417
 \FV@InFile=\read2
 \FV@TabBox=\box51
-\c@FancyVerbLine=\count416
-\FV@StepNumber=\count417
+\c@FancyVerbLine=\count418
+\FV@StepNumber=\count419
 \FV@OutFile=\write5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
@@ -1567,55 +1572,55 @@ tim
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count418
+\linenopenalty=\count420
 \output=\toks36
-\linenoprevgraf=\count419
+\linenoprevgraf=\count421
 \linenumbersep=\dimen175
 \linenumberwidth=\dimen176
-\c@linenumber=\count420
-\c@pagewiselinenumber=\count421
-\c@LN@truepage=\count422
-\c@internallinenumber=\count423
-\c@internallinenumbers=\count424
+\c@linenumber=\count422
+\c@pagewiselinenumber=\count423
+\c@LN@truepage=\count424
+\c@internallinenumber=\count425
+\c@internallinenumbers=\count426
 \quotelinenumbersep=\dimen177
 \bframerule=\dimen178
 \bframesep=\dimen179
 \bframebox=\box52
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count425
-\c@FV@TrueTabCounter=\count426
+\c@FV@TrueTabGroupLevel=\count427
+\c@FV@TrueTabCounter=\count428
 \FV@TabBox@Group=\box53
 \FV@TmpLength=\skip120
-\c@FV@HighlightLinesStart=\count427
-\c@FV@HighlightLinesStop=\count428
-\FV@LoopCount=\count429
+\c@FV@HighlightLinesStart=\count429
+\c@FV@HighlightLinesStop=\count430
+\FV@LoopCount=\count431
 \FV@NCharsBox=\box54
 \FV@BreakIndent=\dimen180
-\FV@BreakIndentNChars=\count430
+\FV@BreakIndentNChars=\count432
 \FV@BreakSymbolSepLeft=\dimen181
-\FV@BreakSymbolSepLeftNChars=\count431
+\FV@BreakSymbolSepLeftNChars=\count433
 \FV@BreakSymbolSepRight=\dimen182
-\FV@BreakSymbolSepRightNChars=\count432
+\FV@BreakSymbolSepRightNChars=\count434
 \FV@BreakSymbolIndentLeft=\dimen183
-\FV@BreakSymbolIndentLeftNChars=\count433
+\FV@BreakSymbolIndentLeftNChars=\count435
 \FV@BreakSymbolIndentRight=\dimen184
-\FV@BreakSymbolIndentRightNChars=\count434
-\c@FancyVerbLineBreakLast=\count435
+\FV@BreakSymbolIndentRightNChars=\count436
+\c@FancyVerbLineBreakLast=\count437
 \FV@LineBox=\box55
 \FV@LineIndentBox=\box56
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count436
-\calc@Bcount=\count437
+\calc@Acount=\count438
+\calc@Bcount=\count439
 \calc@Adimen=\dimen185
 \calc@Bdimen=\dimen186
 \calc@Askip=\skip121
 \calc@Bskip=\skip122
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count438
+\calc@Ccount=\count440
 \calc@Cskip=\skip123
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
@@ -1643,7 +1648,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count439
+\c@float@type=\count441
 \float@exts=\toks37
 \float@box=\box57
 \@float@everytoks=\toks38
@@ -1652,10 +1657,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \minted@appexistsfile=\read3
 \minted@bgbox=\box59
 \minted@code=\write6
-\c@minted@FancyVerbLineTemp=\count440
-\c@minted@pygmentizecounter=\count441
+\c@minted@FancyVerbLineTemp=\count442
+\c@minted@pygmentizecounter=\count443
 \@float@every@listing=\toks39
-\c@listing=\count442
+\c@listing=\count444
 )
 runsystem(mkdir -p _minted-main)...executed.
 
@@ -1671,11 +1676,11 @@ Language: polish 2005/03/31 v1.2l Polish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count443
+\babel@savecnt=\count445
 \U@D=\dimen191
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count444
+\bbl@dirlevel=\count446
 )
 Package babel Info: Making " an active character on input line 83.
 \pl@left=\dimen192
@@ -1683,12 +1688,12 @@ Package babel Info: Making " an active character on input line 83.
 \pl@right=\dimen194
 \pl@temp=\dimen195
 ))
-\c@theorem=\count445
-\c@lemma=\count446
-\c@corollary=\count447
-\c@definition=\count448
-\c@axiom=\count449
-\c@assumption=\count450
+\c@theorem=\count447
+\c@lemma=\count448
+\c@corollary=\count449
+\c@definition=\count450
+\c@axiom=\count451
+\c@assumption=\count452
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
 
@@ -1699,8 +1704,8 @@ File: polish.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count451
-\@quotereset=\count452
+\@quotelevel=\count453
+\@quotereset=\count454
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -1726,63 +1731,54 @@ runsystem(rm main.aex)...executed.
 
 LaTeX Warning: Label `fig:struktura-sieci' multiply defined.
 
-
-LaTeX Warning: Label `fig:test1' multiply defined.
-
-
-LaTeX Warning: Label `fig:test1' multiply defined.
-
-
-LaTeX Warning: Label `fig:test1' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 38.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 40.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 40.
 
  (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 38.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 40.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 38.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 40.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 38.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
@@ -1795,8 +1791,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 38.
-Package biblatex Info: Reference segment=0 on input line 38.
+Package biblatex Info: Reference section=0 on input line 40.
+Package biblatex Info: Reference segment=0 on input line 40.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: Incompatible package detected (regarding \@caption).
 (caption)             \@caption = \long macro:#1[#2]#3->\expandafter \ifx \csna
@@ -1813,9 +1809,9 @@ currentHref }{#3}\else \Hy@raisedlink {\expandafter \hyper@@anchor \expandafter
  {\@currentHref }{\relax }}#3\fi }\fi \par \endgroup .
 
 
-Package caption Warning: \caption will not be redefined since it's already
-(caption)                redefined by a document class or package which is
-(caption)                unknown to the caption package.
+Package caption Warning: Forced redefinition of \caption since the
+(caption)                unsupported(!) package option `compatibility=false'
+(caption)                was given.
 See the caption package documentation for explanation.
 
 Package caption Info: float package is loaded.
@@ -1829,16 +1825,16 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count453
+\scratchcounter=\count455
 \scratchdimen=\dimen196
 \scratchbox=\box60
-\nofMPsegments=\count454
-\nofMParguments=\count455
+\nofMPsegments=\count456
+\nofMParguments=\count457
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count456
+\MPscratchCnt=\count458
 \MPscratchDim=\dimen197
-\MPnumerator=\count457
-\makeMPintoPDFobject=\count458
+\MPnumerator=\count459
+\makeMPintoPDFobject=\count460
 \everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1857,8 +1853,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count459
-LaTeX Info: Redefining \microtypecontext on input line 38.
+\c@lstlisting=\count461
+LaTeX Info: Redefining \microtypecontext on input line 40.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1873,7 +1869,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 38.
+Package hyperref Info: Link coloring ON on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1881,11 +1877,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count460
+\c@section@level=\count462
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
 
 (./main.out) (./main.out)
 \@outlinefile=\write7
@@ -1927,15 +1923,15 @@ LaTeX Info: Redefining \nameref on input line 38.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<eiti/header.png, id=106, 483.7272pt x 76.8471pt>
+<eiti/header.png, id=102, 483.7272pt x 76.8471pt>
 File: eiti/header.png Graphic file (type png)
 <use eiti/header.png>
-Package pdftex.def Info: eiti/header.png  used on input line 59.
+Package pdftex.def Info: eiti/header.png  used on input line 61.
 (pdftex.def)             Requested size: 438.17247pt x 69.61084pt.
-<eiti/title-inz.png, id=107, 483.7272pt x 105.39375pt>
+<eiti/title-inz.png, id=103, 483.7272pt x 105.39375pt>
 File: eiti/title-inz.png Graphic file (type png)
 <use eiti/title-inz.png>
-Package pdftex.def Info: eiti/title-inz.png  used on input line 59.
+Package pdftex.def Info: eiti/title-inz.png  used on input line 61.
 (pdftex.def)             Requested size: 438.17247pt x 95.4694pt.
 [1
 
@@ -1945,28 +1941,27 @@ Package pdftex.def Info: eiti/title-inz.png  used on input line 59.
 
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 67.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 65.
- [3] [4
-
-
-]
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 67.
+ [3] [4]
 
 pdfTeX warning: pdflatex (file ./eiti/oswiadczenie_autora_pracy.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<eiti/oswiadczenie_autora_pracy.pdf, id=127, 597.55246pt x 845.07718pt>
+<eiti/oswiadczenie_autora_pracy.pdf, id=123, 597.55246pt x 845.07718pt>
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
 Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line
- 81.
+ 85.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
 [5 <./eiti/oswiadczenie_autora_pracy.pdf>] [6
 
 
+
+
 ]
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 91.
  (./main.toc
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 4.
 
@@ -2022,7 +2017,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12])
 (./tex/3-opis-teoretyczny.tex [13]
-<img/Odpowiedz_skokowa.png, id=269, 462.528pt x 346.896pt>
+<img/Odpowiedz_skokowa.png, id=265, 462.528pt x 346.896pt>
 File: img/Odpowiedz_skokowa.png Graphic file (type png)
 <use img/Odpowiedz_skokowa.png>
 Package pdftex.def Info: img/Odpowiedz_skokowa.png  used on input line 19.
@@ -2032,40 +2027,28 @@ LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
  [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
-1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.56 \end{equation}
-                    <./img/Odpowiedz_skokowa.png>]
+ [15 <./img/Odpowiedz_skokowa.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-<img/Regulacja_DMC.png, id=308, 462.528pt x 346.896pt>
+<img/Regulacja_DMC.png, id=304, 462.528pt x 346.896pt>
 File: img/Regulacja_DMC.png Graphic file (type png)
 <use img/Regulacja_DMC.png>
 Package pdftex.def Info: img/Regulacja_DMC.png  used on input line 99.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.105 
-       <./img/Regulacja_DMC.png>]
-<img/struktura_sieci1.png, id=316, 599.23875pt x 325.215pt>
+[17 <./img/Regulacja_DMC.png>]
+<img/struktura_sieci1.png, id=312, 599.23875pt x 325.215pt>
 File: img/struktura_sieci1.png Graphic file (type png)
 <use img/struktura_sieci1.png>
 Package pdftex.def Info: img/struktura_sieci1.png  used on input line 111.
 (pdftex.def)             Requested size: 306.71939pt x 166.46286pt.
-<img/model_neuronu.png, id=319, 520.94624pt x 271.0125pt>
+<img/model_neuronu.png, id=315, 520.94624pt x 271.0125pt>
 File: img/model_neuronu.png Graphic file (type png)
 <use img/model_neuronu.png>
 Package pdftex.def Info: img/model_neuronu.png  used on input line 123.
 (pdftex.def)             Requested size: 262.90614pt x 136.77132pt.
-<img/sigmoid.png, id=322, 415.5525pt x 249.93375pt>
+<img/sigmoid.png, id=318, 415.5525pt x 249.93375pt>
 File: img/sigmoid.png Graphic file (type png)
 <use img/sigmoid.png>
 Package pdftex.def Info: img/sigmoid.png  used on input line 129.
@@ -2073,26 +2056,8 @@ Package pdftex.def Info: img/sigmoid.png  used on input line 129.
 
 Underfull \vbox (badness 4779) has occurred while \output is active []
 
- [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
-3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.132 
-       <./img/struktura_sieci1.png>] [19pdfTeX warning (ext4): destination with
- the same identifier (name{figure.3.4}) has been already used, duplicate ignore
-d
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.143 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.143 
-       <./img/model_neuronu.png> <./img/sigmoid.png>]
+ [18 <./img/struktura_sieci1.png>] [19 <./img/model_neuronu.png> <./img/sigmoid
+.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
@@ -2131,10 +2096,15 @@ LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 24.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 24.
-)
-Underfull \vbox (badness 2213) has occurred while \output is active []
-
- [25]
+) [25]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 41.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 41.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 41.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 41.
 \openout5 = `main.pyg'.
 
 
@@ -2154,10 +2124,7 @@ e-zen-tuje funk-cj� \T1/pcr/m/n/12 make_simulation_step\T1/futs/m/n/12 (-20) ,
 
 
 (./_minted-main/22F73A4242580602B0D5D381A8C078856313B86276A11BE14435757B3374821
-C.pygtex)
-Underfull \vbox (badness 2359) has occurred while \output is active []
-
- [26]
+C.pygtex) [26]
 \openout5 = `main.pyg'.
 
 
@@ -2172,10 +2139,7 @@ C.pygtex)
 
 
 (./_minted-main/9014AC7667B8FBC6393B1D5CC9F3E96D6313B86276A11BE14435757B3374821
-C.pygtex)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28]
+C.pygtex) [28]
 \openout5 = `main.pyg'.
 
 
@@ -2189,296 +2153,201 @@ C.pygtex) [30]) (./tex/4-wyniki-pracy.tex [31]
 Underfull \vbox (badness 1454) has occurred while \output is active []
 
  [32]
-<img/cost_neuron_number_train.png, id=434, 567.3195pt x 346.896pt>
+<img/Train_example.png, id=430, 438.63875pt x 601.24625pt>
+File: img/Train_example.png Graphic file (type png)
+<use img/Train_example.png>
+Package pdftex.def Info: img/Train_example.png  used on input line 14.
+(pdftex.def)             Requested size: 207.57916pt x 284.52756pt.
+<img/Test_example.png, id=431, 419.5675pt x 602.25pt>
+File: img/Test_example.png Graphic file (type png)
+<use img/Test_example.png>
+Package pdftex.def Info: img/Test_example.png  used on input line 20.
+(pdftex.def)             Requested size: 198.22748pt x 284.52756pt.
+
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 12--23
+ [][]  [] 
+ []
+
+[33 <./img/Train_example.png> <./img/Test_example.png>]
+<img/cost_neuron_number_train.png, id=439, 578.8827pt x 346.896pt>
 File: img/cost_neuron_number_train.png Graphic file (type png)
 <use img/cost_neuron_number_train.png>
-Package pdftex.def Info: img/cost_neuron_number_train.png  used on input line 1
-7.
-(pdftex.def)             Requested size: 306.71939pt x 187.54865pt.
-<img/cost_neuron_number_test.png, id=435, 560.8152pt x 346.896pt>
+Package pdftex.def Info: img/cost_neuron_number_train.png  used on input line 3
+4.
+(pdftex.def)             Requested size: 306.71939pt x 183.80106pt.
+<img/cost_neuron_number_test.png, id=440, 591.1686pt x 346.896pt>
 File: img/cost_neuron_number_test.png Graphic file (type png)
 <use img/cost_neuron_number_test.png>
-Package pdftex.def Info: img/cost_neuron_number_test.png  used on input line 23
+Package pdftex.def Info: img/cost_neuron_number_test.png  used on input line 40
 .
-(pdftex.def)             Requested size: 306.71939pt x 189.71886pt.
-
-[33] [34pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.5.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.29 \par N
-           ależy zwrócić uwagę, że już po 40 epokach wyniki osiągane ...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.29 \par N
-           ależy zwrócić uwagę, że już po 40 epokach wyniki osiągane ...
- <./img/cost_neuron_number_train.png> <./img/cost_neuron_number_test.png>]
-<img/cost_epoch_150.png, id=448, 462.528pt x 346.896pt>
+(pdftex.def)             Requested size: 306.71939pt x 179.98466pt.
+ [34 <./img/cost_neuron_number_train.png>]
+<img/cost_epoch_150.png, id=447, 462.528pt x 346.896pt>
 File: img/cost_epoch_150.png Graphic file (type png)
 <use img/cost_epoch_150.png>
-Package pdftex.def Info: img/cost_epoch_150.png  used on input line 33.
+Package pdftex.def Info: img/cost_epoch_150.png  used on input line 50.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
-<img/cost_epoch_150_zoom.png, id=449, 462.528pt x 346.896pt>
+<img/cost_epoch_150_zoom.png, id=448, 462.528pt x 346.896pt>
 File: img/cost_epoch_150_zoom.png Graphic file (type png)
 <use img/cost_epoch_150_zoom.png>
-Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 39.
+Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 56.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./img/cost_neuron_number_test.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
-}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.58 
-      <./img/cost_epoch_150.png>]
-Underfull \vbox (badness 1755) has occurred while \output is active []
+Underfull \vbox (badness 1681) has occurred while \output is active []
 
- [36pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.60 
-     pdfTeX warning (ext4): destination with the same identifier (name{table.5.
-1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.60 
-      <./img/cost_epoch_150_zoom.png>]
+ [36 <./img/cost_epoch_150.png> <./img/cost_epoch_150_zoom.png>]
 <img/regulation_net_5.png, id=463, 462.528pt x 346.896pt>
 File: img/regulation_net_5.png Graphic file (type png)
 <use img/regulation_net_5.png>
-Package pdftex.def Info: img/regulation_net_5.png  used on input line 63.
-(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+Package pdftex.def Info: img/regulation_net_5.png  used on input line 82.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
 <img/regulation_DMC_5.png, id=464, 462.528pt x 346.896pt>
 File: img/regulation_DMC_5.png Graphic file (type png)
 <use img/regulation_DMC_5.png>
-Package pdftex.def Info: img/regulation_DMC_5.png  used on input line 69.
-(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
- [37pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-5}) has been already used, duplicate ignored
+Package pdftex.def Info: img/regulation_DMC_5.png  used on input line 88.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.74 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.5
-.6}) has been already used, duplicate ignored
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 80--91
+ [][]  [] 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.74 
-      <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>]
-<img/cost_OBD_full_test.png, id=474, 565.8741pt x 346.896pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \vbox (badness 4001) has occurred while \output is active []
+
+ [38 <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>]
+<img/cost_OBD_full_test.png, id=478, 565.8741pt x 346.896pt>
 File: img/cost_OBD_full_test.png Graphic file (type png)
 <use img/cost_OBD_full_test.png>
-Package pdftex.def Info: img/cost_OBD_full_test.png  used on input line 81.
+Package pdftex.def Info: img/cost_OBD_full_test.png  used on input line 102.
 (pdftex.def)             Requested size: 306.71939pt x 188.03563pt.
-<img/cost_OBD_full_train.png, id=475, 574.5465pt x 346.896pt>
+<img/cost_OBD_full_train.png, id=479, 574.5465pt x 346.896pt>
 File: img/cost_OBD_full_train.png Graphic file (type png)
 <use img/cost_OBD_full_train.png>
-Package pdftex.def Info: img/cost_OBD_full_train.png  used on input line 87.
+Package pdftex.def Info: img/cost_OBD_full_train.png  used on input line 108.
 (pdftex.def)             Requested size: 306.71939pt x 185.19318pt.
- [38]
-Underfull \vbox (badness 1888) has occurred while \output is active []
-
- [39pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.92 \par
-          Analizując Rysunki 5.7 oraz 5.8 należy stwierdzić, że pomimo o...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.8}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.92 \par
-          Analizując Rysunki 5.7 oraz 5.8 należy stwierdzić, że pomimo o...
- <./img/cost_OBD_full_test.png> <./img/cost_OBD_full_train.png>]
+ [39 <./img/cost_OBD_full_test.png> <./img/cost_OBD_full_train.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-<img/regulation_net_obd_2.png, id=492, 462.528pt x 346.896pt>
+Underfull \vbox (badness 3492) has occurred while \output is active []
+
+ [41]
+<img/regulation_net_obd_2.png, id=496, 462.528pt x 346.896pt>
 File: img/regulation_net_obd_2.png Graphic file (type png)
 <use img/regulation_net_obd_2.png>
-Package pdftex.def Info: img/regulation_net_obd_2.png  used on input line 115.
-(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
-<img/regulation_net_obd_5.png, id=493, 462.528pt x 346.896pt>
+Package pdftex.def Info: img/regulation_net_obd_2.png  used on input line 140.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
+<img/regulation_net_obd_5.png, id=497, 462.528pt x 346.896pt>
 File: img/regulation_net_obd_5.png Graphic file (type png)
 <use img/regulation_net_obd_5.png>
-Package pdftex.def Info: img/regulation_net_obd_5.png  used on input line 123.
-(pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
+Package pdftex.def Info: img/regulation_net_obd_5.png  used on input line 146.
+(pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
-) has been already used, duplicate ignored
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 138--149
+ [][]  [] 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.130 
-      ] [42pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.5.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.130 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.130 
-       <./img/regulation_net_obd_2.png> <./img/regulation_net_obd_5.png>]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 134.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 134.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 134.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 134.
-
-[43pdfTeX warning (ext4): destination with the same identifier (name{table.5.3}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.146 
-      ]
-<img/regulation_TD1_net.png, id=513, 462.528pt x 346.896pt>
+[42 <./img/regulation_net_obd_2.png> <./img/regulation_net_obd_5.png>]
+<img/regulation_TD1_net.png, id=505, 462.528pt x 346.896pt>
 File: img/regulation_TD1_net.png Graphic file (type png)
 <use img/regulation_TD1_net.png>
-Package pdftex.def Info: img/regulation_TD1_net.png  used on input line 151.
+Package pdftex.def Info: img/regulation_TD1_net.png  used on input line 177.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_TD1_dmc.png, id=514, 462.528pt x 346.896pt>
+<img/regulation_TD1_dmc.png, id=506, 462.528pt x 346.896pt>
 File: img/regulation_TD1_dmc.png Graphic file (type png)
 <use img/regulation_TD1_dmc.png>
-Package pdftex.def Info: img/regulation_TD1_dmc.png  used on input line 157.
+Package pdftex.def Info: img/regulation_TD1_dmc.png  used on input line 183.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_TD2_net.png, id=515, 462.528pt x 346.896pt>
+
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 175--186
+ [][]  [] 
+ []
+
+<img/regulation_TD2_net.png, id=507, 462.528pt x 346.896pt>
 File: img/regulation_TD2_net.png Graphic file (type png)
 <use img/regulation_TD2_net.png>
-Package pdftex.def Info: img/regulation_TD2_net.png  used on input line 166.
+Package pdftex.def Info: img/regulation_TD2_net.png  used on input line 193.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_TD2_dmc.png, id=516, 462.528pt x 346.896pt>
+<img/regulation_TD2_dmc.png, id=508, 462.528pt x 346.896pt>
 File: img/regulation_TD2_dmc.png Graphic file (type png)
 <use img/regulation_TD2_dmc.png>
-Package pdftex.def Info: img/regulation_TD2_dmc.png  used on input line 172.
+Package pdftex.def Info: img/regulation_TD2_dmc.png  used on input line 199.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
- [44pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-11}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.178 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.12}) has been already used, duplicate ignored
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 191--202
+ [][]  [] 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.178 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.13}) has been already used, duplicate ignored
+[43]
+Underfull \vbox (badness 4872) has occurred while \output is active []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.178 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.14}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.178 
-       <./img/regulation_TD1_net.png> <./img/regulation_TD1_dmc.png> <./img/reg
-ulation_TD2_net.png> <./img/regulation_TD2_dmc.png>]
-<img/regulation_T73_net.png, id=529, 462.528pt x 346.896pt>
+ [44 <./img/regulation_TD1_net.png> <./img/regulation_TD1_dmc.png> <./img/regul
+ation_TD2_net.png> <./img/regulation_TD2_dmc.png>]
+<img/regulation_T73_net.png, id=525, 462.528pt x 346.896pt>
 File: img/regulation_T73_net.png Graphic file (type png)
 <use img/regulation_T73_net.png>
-Package pdftex.def Info: img/regulation_T73_net.png  used on input line 199.
+Package pdftex.def Info: img/regulation_T73_net.png  used on input line 227.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_T73_dmc.png, id=530, 462.528pt x 346.896pt>
+<img/regulation_T73_dmc.png, id=526, 462.528pt x 346.896pt>
 File: img/regulation_T73_dmc.png Graphic file (type png)
 <use img/regulation_T73_dmc.png>
-Package pdftex.def Info: img/regulation_T73_dmc.png  used on input line 205.
+Package pdftex.def Info: img/regulation_T73_dmc.png  used on input line 233.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_T41_net.png, id=531, 462.528pt x 346.896pt>
+
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 225--236
+ [][]  [] 
+ []
+
+<img/regulation_T41_net.png, id=527, 462.528pt x 346.896pt>
 File: img/regulation_T41_net.png Graphic file (type png)
 <use img/regulation_T41_net.png>
-Package pdftex.def Info: img/regulation_T41_net.png  used on input line 216.
+Package pdftex.def Info: img/regulation_T41_net.png  used on input line 245.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
-<img/regulation_T41_dmc.png, id=532, 462.528pt x 346.896pt>
+<img/regulation_T41_dmc.png, id=528, 462.528pt x 346.896pt>
 File: img/regulation_T41_dmc.png Graphic file (type png)
 <use img/regulation_T41_dmc.png>
-Package pdftex.def Info: img/regulation_T41_dmc.png  used on input line 222.
+Package pdftex.def Info: img/regulation_T41_dmc.png  used on input line 251.
 (pdftex.def)             Requested size: 219.08623pt x 164.31679pt.
- [45pdfTeX warning (ext4): destination with the same identifier (name{table.5.4
-}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.225 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.5.15}) has been already used, duplicate ignored
+Overfull \hbox (3.76799pt too wide) in paragraph at lines 243--254
+ [][]  [] 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.225 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.5.16}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.225 \end{figure}
-                   <./img/regulation_T73_net.png> <./img/regulation_T73_dmc.png
->]) (./tex/5-podsumowanie.tex [46pdfTeX warning (ext4): destination with the sa
-me identifier (name{figure.5.17}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \newpage
-             % Rozdziały zaczynamy od nowej strony.pdfTeX warning (ext4): dest
-ination with the same identifier (name{figure.5.18}) has been already used, dup
-licate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \newpage
-             % Rozdziały zaczynamy od nowej strony. <./img/regulation_T41_net.
-png> <./img/regulation_T41_dmc.png>] [47]
+[45 <./img/regulation_T73_net.png> <./img/regulation_T73_dmc.png>])
+(./tex/5-podsumowanie.tex [46 <./img/regulation_T41_net.png> <./img/regulation_
+T41_dmc.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48])
-[49] [50
+ [47])
+[48] [49
 
 
-] [51] (./main.lof)
+] (./main.lof)
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- (./main.lot [52])
+ (./main.lot)
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
- (./main.app)
-\tf@app=\write11
-\openout11 = `main.app'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
- [53]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
+ [50]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 612CF6A2FCFB4BF037F411E08A1E1205;1748.
+(rerunfilecheck)             Checksum: A2999E65A90C075F72D49DAC59C03431;1693.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2490,13 +2359,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33148 strings out of 494847
- 591492 string characters out of 6178850
- 1353200 words of memory out of 5000000
- 35510 multiletter control sequences out of 15000+600000
- 676912 words of font info for 334 fonts, out of 8000000 for 9000
+ 33185 strings out of 494847
+ 592469 string characters out of 6178850
+ 1354611 words of memory out of 5000000
+ 35560 multiletter control sequences out of 15000+600000
+ 677157 words of font info for 331 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 47i,12n,76p,10397b,2294s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,12n,77p,10397b,2294s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dis
@@ -2509,10 +2378,10 @@ putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
 /texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrro8a.pfb>
-Output written on main.pdf (53 pages, 1074548 bytes).
+Output written on main.pdf (50 pages, 1119583 bytes).
 PDF statistics:
- 689 PDF objects out of 1000 (max. 8388607)
- 557 compressed objects within 6 object streams
- 161 named destinations out of 1000 (max. 500000)
- 36691 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 665 PDF objects out of 1000 (max. 8388607)
+ 532 compressed objects within 6 object streams
+ 152 named destinations out of 1000 (max. 500000)
+ 37205 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -16,6 +16,8 @@
 
 \usepackage{bm}
 \usepackage{courier}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
 \usepackage{minted}
 \setminted[python]{
 	xleftmargin=22pt, 
@@ -62,8 +64,10 @@
 % Streszczenie po polsku
 %--------------------------------------
 \cleardoublepage % Zaczynamy od nieparzystej strony
-\streszczenie TODO
-%\lipsum[1-3]
+\streszczenie
+\par Założeniem pracy było dokonanie weryfikacji zdolności sieci neuronowej do generalizacji zadania regulacji. Na podstawie dostępnej literatury przedmiotu można wskazać przykłady udanego wykorzystania sztucznych sieci neuronowych w obszarze sterowania. Niniejsza praca wpisuje się natomiast w pewną niszę polegająca na braku prac przedstawiających możliwie ogólny charakter porównania. Weryfikacji dokonano na przykładzie jednokierunkowej sztucznej sieci neuronowej z jedną warstwą ukrytą oraz powszechnie stosowanego algorytm regulacji predykcyjnej DMC. Dodatkowo ważnym aspektem pracy jest wykorzystanie jednej z metod redukcji sieci neuronowej jaką jest algorytm OBD. Przycinanie wag w swoim założeniu ma na celu zwiększyć zdolność generalizacji danego zagadnienia.
+\par Przy użyciu samodzielnie zaimplementowanych struktur wygenerowano i odpowiednie przeskalowano dane wykorzystywane w dalszej procedurze uczenia sieci neuronowej. Zasadnicza część prac podzielona została na trzy etapy. W pierwszym z nich skupiono się na doborze odpowiedniej architektury sieci pozwalającej na optymalną generalizację zadania regulacji. Efektem tych badań był wybór struktury opartej o 150 neuronów warstwy ukrytej, a za zmienne na podstawie których odbywa się sterowanie przyjęto 30 wartości uchybu regulacji oraz aktualną wartość zadaną. Wstępne porównanie w pełni wytrenowanej struktury sieci z regulatorem DMC wskazuje na zbliżoną efektywność obu metod, z pewnymi niedoskonałościami działania sieci neuronowej w obszarze małych wartości zadanych. Drugi etap prac dotyczył zastosowania procedury redukcji sieci neuronowej i pokazał, że redukcja blisko 55\% połączeń międzyneuronowych przyczynia się do około 90\% procentowej redukcji funkcji kosztu. Zredukowana sieć neuronowa już w pełni poradziła sobie z zadaniem regulacji. Za jedyną niedoskonałość sieci neuronowej należy uznać problem z długotrwałym utrzymaniem stałej wartości sterowania jednak należy uznać to jedynie za marginalny problem. Zakończeniem było zweryfikowanie odporności dwóch porównywanych regulatorów na zmiany obiektu regulacji, za przykład którego posłużył człon inercyjny drugiego rzędu z opóźnieniem. Wykazano, że zmiana opóźnienia w znaczący sposób przyczynia się do wzrostu błędu regulacji, jednak sieć neuronowa radziła sobie systematycznie lepiej od algorytmu DMC. Należy uznać to za jedną z głównych przewag badanej struktury. Zmiany stałych czasowych obiektów regulacji wiązały się natomiast z mniejszymi zakłóceniami działania algorytmów i obie metody poradziły sobie w tym przypadku porównywalnie dobrze.
+\par W ogólności niniejsza praca udowadnia, że sztuczne sieci neuronowe mogą z powodzeniem być wykorzystywane w obszarze regulacji. Praca miała jednak charakter ogólnego i uniwersalnego porównania, z tego względu należałoby w ramach przyszłej pracy skupić się nad uwzględnieniem w analizie wysoce dynamicznych procesów oraz dokładniej zbadać wpływ algorytmu OBD na redukcję wrażliwości sieci pod kątem modyfikacji układów regulacji.
 \slowakluczowe Sieci neuronowe, regulacja predykcyjna, upraszczanie sieci neuronowej, algorytm OBD, algorytm DMC
 
 %--------------------------------------
@@ -137,9 +141,9 @@
 \vspace{1cm}          % vertical space
 \listoftablestoc      % Spis tabel.
 \vspace{1cm}          % vertical space
-\listofappendicestoc  % Spis załączników
+%\listofappendicestoc  % Spis załączników
 
-% Załączniki
+% Załączniki 
 %\newpage
 %\appendix{Nazwa załącznika 1}
 
