@@ -37,7 +37,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2\relax .\kern .5em }Wyb\IeC {\'o}r struktury sieci}{34}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3\relax .\kern .5em }Zastosowanie algorytmu OBD}{38}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.3\relax .\kern .5em }Zastosowanie algorytmu OBD}{37}{subsection.5.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.4\relax .\kern .5em }Zastosowanie innych obiekt\IeC {\'o}w regulacji}{42}{subsection.5.4}
 \defcounter {refsection}{0}\relax 

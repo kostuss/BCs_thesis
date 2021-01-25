@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  24 JAN 2021 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.12.19)  25 JAN 2021 21:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2187,10 +2187,10 @@ File: img/cost_epoch_150.png Graphic file (type png)
 <use img/cost_epoch_150.png>
 Package pdftex.def Info: img/cost_epoch_150.png  used on input line 50.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
-<img/cost_epoch_150_zoom.png, id=448, 462.528pt x 346.896pt>
-File: img/cost_epoch_150_zoom.png Graphic file (type png)
-<use img/cost_epoch_150_zoom.png>
-Package pdftex.def Info: img/cost_epoch_150_zoom.png  used on input line 56.
+<img/cost_epoch_log.png, id=448, 462.528pt x 346.896pt>
+File: img/cost_epoch_log.png Graphic file (type png)
+<use img/cost_epoch_log.png>
+Package pdftex.def Info: img/cost_epoch_log.png  used on input line 56.
 (pdftex.def)             Requested size: 306.71939pt x 230.04774pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2199,10 +2199,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 1681) has occurred while \output is active []
-
- [36 <./img/cost_epoch_150.png> <./img/cost_epoch_150_zoom.png>]
+[36 <./img/cost_epoch_150.png> <./img/cost_epoch_log.png>]
 <img/regulation_net_5.png, id=463, 462.528pt x 346.896pt>
 File: img/regulation_net_5.png Graphic file (type png)
 <use img/regulation_net_5.png>
@@ -2218,13 +2215,7 @@ Overfull \hbox (3.76799pt too wide) in paragraph at lines 80--91
  [][]  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37]
-Underfull \vbox (badness 4001) has occurred while \output is active []
-
- [38 <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>]
+[37] [38 <./img/regulation_net_5.png> <./img/regulation_DMC_5.png>]
 <img/cost_OBD_full_test.png, id=478, 565.8741pt x 346.896pt>
 File: img/cost_OBD_full_test.png Graphic file (type png)
 <use img/cost_OBD_full_test.png>
@@ -2239,9 +2230,7 @@ Package pdftex.def Info: img/cost_OBD_full_train.png  used on input line 108.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-Underfull \vbox (badness 3492) has occurred while \output is active []
-
- [41]
+[41]
 <img/regulation_net_obd_2.png, id=496, 462.528pt x 346.896pt>
 File: img/regulation_net_obd_2.png Graphic file (type png)
 <use img/regulation_net_obd_2.png>
@@ -2359,11 +2348,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33185 strings out of 494847
- 592469 string characters out of 6178850
+ 33181 strings out of 494847
+ 592403 string characters out of 6178850
  1354611 words of memory out of 5000000
  35560 multiletter control sequences out of 15000+600000
- 677157 words of font info for 331 fonts, out of 8000000 for 9000
+ 676887 words of font info for 328 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
  47i,12n,77p,10397b,2294s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2378,10 +2367,10 @@ putbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb>
 /texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrro8a.pfb>
-Output written on main.pdf (50 pages, 1119583 bytes).
+Output written on main.pdf (50 pages, 1125006 bytes).
 PDF statistics:
- 665 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
+ 664 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
  152 named destinations out of 1000 (max. 500000)
  37205 words of extra memory for PDF output out of 42996 (max. 10000000)
 
